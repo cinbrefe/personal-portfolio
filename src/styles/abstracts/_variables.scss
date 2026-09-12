@@ -1,0 +1,35 @@
+// Color tokens
+$color-bg: #0f1115;
+$color-surface: #171a21;
+$color-text: #e8e9ec;
+$color-text-muted: #9ba0ab;
+$color-accent: #5eead4;
+$color-border: #5f6673; // >=3:1 against $color-bg/$color-surface (WCAG 1.4.11)
+
+// Typography
+$font-base: 'Inter', system-ui, -apple-system, sans-serif;
+$font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+$fs-sm: 0.875rem;
+$fs-base: 1rem;
+$fs-lg: 1.25rem;
+$fs-xl: 1.75rem;
+$fs-2xl: 2.5rem;
+$fs-3xl: 3.5rem;
+
+// Spacing scale
+$space-xs: 0.5rem;
+$space-sm: 1rem;
+$space-md: 1.5rem;
+$space-lg: 2.5rem;
+$space-xl: 4rem;
+$space-2xl: 6rem;
+
+// Layout
+$max-width: 72rem;
+$radius: 0.5rem;
+
+// Breakpoints
+$bp-sm: 480px;
+$bp-md: 768px;
+$bp-lg: 1024px;
