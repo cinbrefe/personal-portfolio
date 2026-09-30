@@ -1,0 +1,29 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.app {
+	@include flex(column);
+	position: relative;
+}
+
+.site-main {
+	padding: $spacing-md 0;
+
+	@include respond-to(md) {
+		padding: $spacing-xl 0;
+	}
+
+	&__container {
+		@include flex(column);
+
+		@include respond-to(md) {
+			@include flex(row);
+			gap: $spacing-xl;
+		}
+	}
+
+	&__content {
+		flex: 1;
+		padding: $spacing-md 0;
+	}
+}

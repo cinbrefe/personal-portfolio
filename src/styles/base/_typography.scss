@@ -1,36 +1,26 @@
 @use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
 
-html {
-	scroll-behavior: smooth;
+@font-face {
+	font-family: 'Onest';
+	src: url('../fonts/Onest-VariableFont_wght.ttf') format('truetype');
+	font-weight: 100 900;
+	font-style: normal;
+	font-display: swap;
 }
 
-body {
-	font-family: $font-base;
-	font-size: $fs-base;
-	line-height: 1.6;
-	background-color: $color-bg;
-	color: $color-text;
-}
-
-h1,
-h2,
-h3 {
+h1, h2, h3, h4 {
 	line-height: 1.2;
 	font-weight: 700;
 }
 
-h1 {
-	font-size: $fs-3xl;
-}
+h1, .h1 { font-size: $font-size-2xl; }
+h2, .h2 { font-size: $font-size-xl; }
+h3, .h3 { font-size: $font-size-lg; }
+h4, .h4 { font-size: $font-size-md; }
 
-h2 {
-	font-size: $fs-2xl;
-}
-
-h3 {
-	font-size: $fs-xl;
-}
-
-p {
-	color: $color-text-muted;
+a {
+	color: $color-interactive;
+	text-decoration: underline;
+	text-underline-offset: 0.2em;
 }

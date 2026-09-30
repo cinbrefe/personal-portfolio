@@ -1,0 +1,20 @@
+@use '../abstracts/variables' as *;
+
+html {
+	font-size: $font-size-base;
+	scroll-behavior: smooth;
+}
+
+body {
+	-webkit-font-smoothing: antialiased;
+	background-color: $color-background;
+	color: $color-text;
+	font-family: $font-base;
+	line-height: 1.625;
+	min-height: 100vh;
+}
+
+:focus-visible {
+	outline: 2px solid $color-interactive;
+	outline-offset: 3px;
+}

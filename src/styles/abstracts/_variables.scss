@@ -1,35 +1,42 @@
 // Color tokens
-$color-bg: #0f1115;
-$color-surface: #171a21;
-$color-text: #e8e9ec;
-$color-text-muted: #9ba0ab;
-$color-accent: #5eead4;
-$color-border: #5f6673; // >=3:1 against $color-bg/$color-surface (WCAG 1.4.11)
+$color-background: #181A1E;
+$color-accent: #144E54;
+$color-surface: #181A1E;
+$color-text: #D6E4E2;
+$color-text-muted: #B9CECB;
+$color-interactive: #5EC8BE;
+$color-border: $color-interactive; // >=3:1 against page background and accent surface (WCAG 1.4.11)
 
 // Typography
-$font-base: 'Inter', system-ui, -apple-system, sans-serif;
-$font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+$font-base: 'Onest', sans-serif;
+$font-size-base: 16px;
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.875rem;
+$font-size-md: 1rem;
+$font-size-lg: 1.25rem;
+$font-size-xl: 1.5rem;
+$font-size-2xl: 2rem;
+$font-size-3xl: 2.5rem;
 
-$fs-sm: 0.875rem;
-$fs-base: 1rem;
-$fs-lg: 1.25rem;
-$fs-xl: 1.75rem;
-$fs-2xl: 2.5rem;
-$fs-3xl: 3.5rem;
-
-// Spacing scale
-$space-xs: 0.5rem;
-$space-sm: 1rem;
-$space-md: 1.5rem;
-$space-lg: 2.5rem;
-$space-xl: 4rem;
-$space-2xl: 6rem;
+// Spacing
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+$spacing-2xl: 3rem;
 
 // Layout
 $max-width: 72rem;
 $radius: 0.5rem;
 
 // Breakpoints
-$bp-sm: 480px;
-$bp-md: 768px;
-$bp-lg: 1024px;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Shadows
+$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
+$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
