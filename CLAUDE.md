@@ -13,12 +13,12 @@ Personal portfolio site. Single developer (Cindy) plus a set of specialized revi
 
 ```
 src/
-  components/<Name>/<Name>.jsx + <Name>.module.scss   # one folder per component, styles colocated
-  content/                                            # copy.js, projects.js — all site text/data lives here
-  styles/
-    abstracts/   # _variables.scss, _mixins.scss — no CSS output, imported via @use
-    base/        # _reset.scss, _typography.scss — global element styles
-    main.scss    # forwards base/*, imported once in main.jsx
+	components/<Name>/<Name>.jsx + <Name>.module.scss   # one folder per component, styles colocated
+	content/                                            # copy.js, projects.js — all site text/data lives here
+	styles/
+		abstracts/   # _variables.scss, _mixins.scss — no CSS output, imported via @use
+		base/        # _reset.scss, _typography.scss — global element styles
+		main.scss    # forwards base/*, imported once in main.jsx
 ```
 
 Conventions:
