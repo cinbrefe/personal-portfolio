@@ -5,7 +5,7 @@ $color-surface: #181A1E;
 $color-text: #D6E4E2;
 $color-text-muted: #B9CECB;
 $color-interactive: #5EC8BE;
-$color-border: $color-interactive; // >=3:1 against page background and accent surface (WCAG 1.4.11)
+$color-border: rgba(94, 200, 190, 0.18);
 
 // Typography
 $font-base: 'Onest', sans-serif;
@@ -25,9 +25,10 @@ $spacing-md: 1rem;
 $spacing-lg: 1.5rem;
 $spacing-xl: 2rem;
 $spacing-2xl: 3rem;
+$spacing-3xl: 6rem;
 
 // Layout
-$max-width: 72rem;
+$max-width: 75rem;
 $radius: 0.5rem;
 
 // Breakpoints

@@ -1,0 +1,18 @@
+@use '../../../styles/abstracts/variables' as *;
+@use '../../../styles/abstracts/mixins' as *;
+
+.site-navigation__list {
+	@include flex($wrap: wrap);
+	gap: $spacing-sm $spacing-md;
+	justify-content: flex-end;
+}
+
+@media (max-width: $breakpoint-md - 1px) {
+	.site-navigation {
+		width: 100%;
+	}
+
+	.site-navigation__list {
+		justify-content: flex-start;
+	}
+}

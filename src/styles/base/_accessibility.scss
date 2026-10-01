@@ -1,16 +1,4 @@
 @use '../abstracts/variables' as *;
-@use '../abstracts/mixins' as *;
-
-.container {
-	margin: 0 auto;
-	max-width: $max-width;
-	padding: 0 $spacing-md;
-	width: 100%;
-
-	@include respond-to(md) {
-		padding: 0 $spacing-xl;
-	}
-}
 
 .visually-hidden {
 	border: 0;
@@ -36,9 +24,4 @@
 	&:focus-visible {
 		top: 0;
 	}
-}
-
-.error-message {
-	text-align: center;
-	margin-block: $spacing-lg;
 }
