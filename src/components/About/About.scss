@@ -1,0 +1,46 @@
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/mixins' as *;
+
+// One column on mobile; text and the "Currently" card side by side from md up
+.about__layout {
+	display: grid;
+	gap: $spacing-xl;
+
+	@include respond-to(md) {
+		align-items: start;
+		grid-template-columns: 2fr 1fr;
+	}
+}
+
+.about__intro {
+	@include flex(column);
+	gap: $spacing-md;
+}
+
+.about__label {
+	color: $color-interactive;
+	font-size: $font-size-sm;
+	font-weight: $font-weight-semibold;
+	text-transform: uppercase;
+}
+
+.about__lead {
+	font-size: $font-size-lg;
+}
+
+.about__currently {
+	background-color: $color-surface;
+	border: 1px solid $color-border;
+	padding: $spacing-lg;
+}
+
+.about__list {
+	@include flex(column);
+	gap: $spacing-md;
+	margin-top: $spacing-md;
+}
+
+.about__term {
+	color: $color-text-muted;
+	font-size: $font-size-sm;
+}
