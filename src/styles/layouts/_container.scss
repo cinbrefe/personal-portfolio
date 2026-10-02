@@ -4,7 +4,7 @@
 .container {
 	margin: 0 auto;
 	max-width: $max-width;
-	padding: 0 $spacing-md;
+	padding: 0 $spacing-lg;
 	width: 100%;
 
 	@include respond-to(md) {

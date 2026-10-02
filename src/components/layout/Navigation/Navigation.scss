@@ -48,6 +48,11 @@ $bar-offset: calc(($bar-height + $bar-gap) / 2);
 	}
 }
 
+// Hidden on desktop; shown in the mobile menu below
+.site-navigation__arrow {
+	display: none;
+}
+
 .site-navigation__link:not(.button) {
 	color: $color-text-muted;
 	display: block;
@@ -83,14 +88,14 @@ $bar-offset: calc(($bar-height + $bar-gap) / 2);
 @include mobile-only {
 	.site-navigation {
 		display: none;
-		left: $spacing-md;
+		left: 0;
 		// 100% is the header's height, so the panel scrolls instead of running off-screen
 		max-height: calc(100dvh - 100%);
 		overflow-y: auto;
 		overscroll-behavior: contain;
 		position: absolute;
-		right: $spacing-md;
-		top: 100%;
+		right: 0;
+		top: calc(100% + 1px);
 	}
 
 	.site-navigation--open {
@@ -104,23 +109,35 @@ $bar-offset: calc(($bar-height + $bar-gap) / 2);
 
 	.site-navigation__list {
 		align-items: stretch;
-		background-color: $color-surface;
-		border: 1px solid $color-border-strong;
+		background-color: $color-background;
 		box-shadow: $shadow-overlay;
 		flex-direction: column;
 		gap: $spacing-xs;
-		padding: $spacing-md;
+		padding: $spacing-md $spacing-xl;
 	}
 
 	.site-navigation__link:not(.button) {
 		align-items: center;
+		border-bottom: 1px solid $color-border-strong;
 		display: flex;
+		font-size: $font-size-xl;
+		font-weight: $font-weight-bold;
+		justify-content: space-between;
 		min-height: $tap-target-min;
+		padding-block: $spacing-sm;
+	}
+
+	.site-navigation__arrow {
+		color: $color-interactive;
+		display: block;
+		flex-shrink: 0;
 	}
 
 	.site-navigation__link.button {
 		align-self: flex-start;
-		margin-top: $spacing-xs;
+		font-size: $font-size-md;
+		margin-top: $spacing-md;
+		width: 100%;
 	}
 }
 

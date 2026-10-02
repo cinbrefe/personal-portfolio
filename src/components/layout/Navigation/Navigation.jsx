@@ -50,6 +50,8 @@ export default function Navigation() {
 							>
 								{item.label}
 								{item.icon && <ArrowIcon direction={item.icon} className="button__icon" />}
+								{/* Plain links get an arrow; CSS only shows it on mobile */}
+								{!item.variant && <ArrowIcon direction="arrow-right" className="site-navigation__arrow" />}
 							</a>
 						</li>
 					))}
