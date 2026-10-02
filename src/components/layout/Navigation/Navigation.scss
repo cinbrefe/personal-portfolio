@@ -1,18 +1,132 @@
 @use '../../../styles/abstracts/variables' as *;
 @use '../../../styles/abstracts/mixins' as *;
 
+$bar-width: 20px;
+$bar-height: 2px;
+$bar-gap: $spacing-xs;
+// Moves each bar to the shared center line so they cross into an "X"
+$bar-offset: calc(($bar-height + $bar-gap) / 2);
+
 .site-navigation__list {
-	@include flex($wrap: wrap);
-	gap: $spacing-sm $spacing-md;
+	@include flex($align: center, $wrap: wrap);
+	gap: $spacing-sm $spacing-xl;
 	justify-content: flex-end;
 }
 
-@media (max-width: $breakpoint-md - 1px) {
+.site-navigation__toggle {
+	align-items: center;
+	border-radius: $radius-circle;
+	border: 2px solid $color-interactive;
+	display: none;
+	flex-direction: column;
+	gap: $bar-gap;
+	height: $tap-target-min;
+	justify-content: center;
+	width: $tap-target-min;
+
+	&:focus-visible {
+		outline: 2px solid $color-interactive;
+		outline-offset: 3px;
+	}
+}
+
+.site-navigation__bar {
+	background-color: $color-text;
+	display: block;
+	height: $bar-height;
+	transition: transform 160ms ease, opacity 160ms ease;
+	width: $bar-width;
+}
+
+.site-navigation__toggle--open {
+	.site-navigation__bar--top {
+		transform: translateY($bar-offset) rotate(45deg);
+	}
+
+	.site-navigation__bar--bottom {
+		transform: translateY(calc(-1 * $bar-offset)) rotate(-45deg);
+	}
+}
+
+.site-navigation__link:not(.button) {
+	color: $color-text-muted;
+	display: block;
+	font-size: $font-size-sm;
+	font-weight: $font-weight-semibold;
+	padding: $spacing-xs 0;
+	position: relative;
+	text-decoration: none;
+
+	&::after {
+		background-color: $color-accent;
+		bottom: 1px;
+		content: '';
+		height: 2px;
+		left: 0;
+		position: absolute;
+		right: 0;
+		transform-origin: left;
+		transform: scaleX(0);
+		transition: transform 200ms ease;
+	}
+
+	&:hover,
+	&:focus-visible {
+		color: $color-interactive;
+
+		&::after {
+			transform: scaleX(1);
+		}
+	}
+}
+
+@include mobile-only {
 	.site-navigation {
-		width: 100%;
+		display: none;
+		left: $spacing-md;
+		// 100% is the header's height, so the panel scrolls instead of running off-screen
+		max-height: calc(100dvh - 100%);
+		overflow-y: auto;
+		overscroll-behavior: contain;
+		position: absolute;
+		right: $spacing-md;
+		top: 100%;
+	}
+
+	.site-navigation--open {
+		display: block;
+	}
+
+	.site-navigation__toggle {
+		display: flex;
+		margin-left: auto;
 	}
 
 	.site-navigation__list {
-		justify-content: flex-start;
+		align-items: stretch;
+		background-color: $color-surface;
+		border: 1px solid $color-border-strong;
+		box-shadow: $shadow-overlay;
+		flex-direction: column;
+		gap: $spacing-xs;
+		padding: $spacing-md;
+	}
+
+	.site-navigation__link:not(.button) {
+		align-items: center;
+		display: flex;
+		min-height: $tap-target-min;
+	}
+
+	.site-navigation__link.button {
+		align-self: flex-start;
+		margin-top: $spacing-xs;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.site-navigation__bar,
+	.site-navigation__link::after {
+		transition: none;
 	}
 }

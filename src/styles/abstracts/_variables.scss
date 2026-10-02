@@ -1,11 +1,12 @@
 // Color tokens
 $color-background: #181A1E;
 $color-accent: #144E54;
-$color-surface: #181A1E;
+$color-surface: #23272D; // raised panels (menus, skip link) — one step lighter than background
 $color-text: #D6E4E2;
 $color-text-muted: #B9CECB;
 $color-interactive: #5EC8BE;
 $color-border: rgba(94, 200, 190, 0.18);
+$color-border-strong: rgba(94, 200, 190, 0.35);
 
 // Typography
 $font-base: 'Onest', sans-serif;
@@ -34,6 +35,8 @@ $spacing-3xl: 6rem;
 // Layout
 $max-width: 75rem;
 $radius: 62.4375rem;
+$radius-circle: 50%;
+$tap-target-min: 44px;
 
 // Breakpoints
 $breakpoint-sm: 576px;
@@ -45,3 +48,4 @@ $breakpoint-xl: 1200px;
 $shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
 $shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
 $shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+$shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.18);

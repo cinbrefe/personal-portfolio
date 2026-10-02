@@ -1,3 +1,4 @@
+@use 'sass:color';
 @use '../../../styles/abstracts/variables' as *;
 @use '../../../styles/abstracts/mixins' as *;
 
@@ -8,11 +9,31 @@
 
 .site-header__brand {
 	color: $color-text;
-	font-weight: 700;
+	font-weight: $font-weight-bold;
 	text-decoration: none;
 	white-space: nowrap;
 }
 
 .site-header__brand-suffix {
 	color: $color-interactive;
+}
+
+.site-header {
+	backdrop-filter: blur(12px);
+	background-color: color.change($color-background, $alpha: 0.88);
+	position: sticky;
+	top: 0;
+	transition: background-color 220ms ease, box-shadow 220ms ease, backdrop-filter 220ms ease;
+	z-index: 100;
+}
+
+.site-header--scrolled {
+	background-color: color.change($color-background, $alpha: 0.96);
+	box-shadow: $shadow-overlay;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.site-header {
+		transition: none;
+	}
 }

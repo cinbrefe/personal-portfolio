@@ -15,9 +15,9 @@
 	}
 }
 
-// Mobile only (max-width)
+// Mobile only (below $breakpoint-md)
 @mixin mobile-only {
-	@media (max-width: ($breakpoint-md - 1px)) { @content; }
+	@media (width < $breakpoint-md) { @content; }
 }
 
 // Flexbox
