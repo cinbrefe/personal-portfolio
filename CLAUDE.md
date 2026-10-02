@@ -5,7 +5,7 @@ Personal portfolio site. Single developer (Cindy) plus a set of specialized revi
 ## Stack
 
 - **React 19** + **Vite** (JavaScript, not TypeScript — chosen for less ceremony on a small site).
-- **Sass** with **CSS Modules** per component (`Component.module.scss`), plus a shared `src/styles/` layer for tokens, reset, and typography.
+- **Sass** with global, BEM-named classes (`.block__element--modifier`). Each component imports its own colocated `<Name>.scss`; shared styles live in `src/styles/`. No CSS Modules.
 - Single-page scrolling site (Hero, Projects, About, Contact as anchor-linked sections within one page) — no router.
 - Linting: `oxlint` (`npm run lint`).
 
@@ -13,17 +13,20 @@ Personal portfolio site. Single developer (Cindy) plus a set of specialized revi
 
 ```
 src/
-	components/<Name>/<Name>.jsx + <Name>.module.scss   # one folder per component, styles colocated
+	components/<Name>/<Name>.jsx + <Name>.scss          # one folder per component, styles colocated (layout/ holds Header, Navigation)
+	hooks/                                              # reusable custom hooks (e.g. useMobileMenu.js)
 	content/                                            # copy.js, projects.js — all site text/data lives here
 	styles/
-		abstracts/   # _variables.scss, _mixins.scss — no CSS output, imported via @use
-		base/        # _reset.scss, _typography.scss — global element styles
-		main.scss    # forwards base/*, imported once in main.jsx
+		abstracts/      # _variables.scss, _mixins.scss — no CSS output, imported via @use
+		base/           # _reset.scss, _base.scss, _typography.scss, _accessibility.scss — global element styles
+		components/     # shared UI classes used across components (buttons, icon links)
+		layouts/        # container, main, section wrappers
+		main.scss       # @uses base/, components/, layouts/; imported once in main.jsx
 ```
 
 Conventions:
-- Colors, spacing, typography, and breakpoints are all Sass variables in `styles/abstracts/_variables.scss` — never hardcode a color/spacing value in a component's `.module.scss`, reference the variable.
-- Component styles `@use` the abstracts layer directly (no global class leakage; CSS Modules scope everything else).
+- Colors, spacing, typography, and breakpoints are all Sass variables in `styles/abstracts/_variables.scss` — never hardcode a color/spacing value in a component's `.scss`, reference the variable (use `sass:color` functions for alpha variants).
+- Component styles `@use` the abstracts layer directly. Classes are global, so prefix every class with its BEM block name (e.g. `.site-navigation__link`) to avoid collisions.
 - All user-facing text and project data lives in `src/content/` (`copy.js`, `projects.js`), not inline in JSX — this is what the `copywriter` agent edits, and it should never need to touch component logic.
 - Placeholder text in `src/content/` is wrapped in `[brackets]` — anything still bracketed is not real content yet.
 
