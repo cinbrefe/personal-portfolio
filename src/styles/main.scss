@@ -8,6 +8,10 @@
 @use 'base/typography';
 @use 'base/accessibility';
 
+// Components
+@use 'components/buttons';
+@use 'components/icon-links';
+
 // Layouts
 @use 'layouts/container';
 @use 'layouts/main';

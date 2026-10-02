@@ -1,0 +1,8 @@
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/mixins' as *;
+
+.hero__actions {
+	@include flex($wrap: wrap);
+	gap: $spacing-sm;
+	margin-top: $spacing-lg;
+}

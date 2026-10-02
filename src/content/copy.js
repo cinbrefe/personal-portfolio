@@ -7,7 +7,7 @@ export const nav = [
 	{ label: 'Experience', href: '#experience' },
 	{ label: 'Education', href: '#education' },
 	{ label: 'Contact', href: '#contact' },
-	{ label: 'Resume (PDF)', href: '/cindy-brenes-resume.pdf' },
+	{ label: 'Resume (PDF)', href: '/documents/cindy-brenes-resume.pdf', variant: 'ghost', icon: 'arrow-up-right', newTab: true },
 ];
 
 export const brand = {
@@ -22,8 +22,8 @@ export const hero = {
 	role: 'Frontend Developer',
 	location: 'St. Paul, MN',
 	body: 'I build accessible frontend experiences for enterprise brands, bringing 15+ years in web production and a growing React practice.',
-	primaryCta: { label: 'View my projects', href: '#projects' },
-	secondaryCta: { label: 'Download resume', href: '/cindy-brenes-resume.pdf' },
+	primaryCta: { label: 'View my projects', href: '#projects', icon: 'arrow-right' },
+	secondaryCta: { label: 'Download resume', href: '/documents/cindy-brenes-resume.pdf' },
 };
 
 export const about = {

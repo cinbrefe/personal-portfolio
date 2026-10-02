@@ -1,0 +1,62 @@
+@use '../abstracts/variables' as *;
+
+.button {
+	align-items: center;
+	border-radius: $radius;
+	border: 1px solid transparent;
+	display: inline-flex;
+	font: inherit;
+	font-weight: $font-weight-semibold;
+	justify-content: center;
+	min-height: 44px;
+	padding: 0 $spacing-md;
+	text-decoration: none;
+	transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+
+.button--sm {
+	font-size: $font-size-sm;
+	min-height: 44px;
+	padding: 0 $spacing-md;
+}
+
+.button--primary {
+	background-color: $color-accent;
+	border-color: $color-accent;
+	color: $color-text;
+
+	&:hover {
+		background-color: $color-interactive;
+		border-color: $color-interactive;
+		color: $color-background;
+	}
+}
+
+.button--ghost {
+	background-color: transparent;
+	border-color: $color-interactive;
+	color: $color-text;
+
+	&:hover {
+		background-color: $color-accent;
+	}
+}
+
+.button__icon {
+	flex: none;
+}
+
+.button--arrow-up-right {
+	gap: 0.25rem;
+}
+
+.button--arrow-right {
+	gap: 0.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.button {
+		transition: none;
+	}
+
+}
