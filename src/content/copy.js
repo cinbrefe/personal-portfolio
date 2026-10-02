@@ -10,6 +10,10 @@ export const nav = [
 	{ label: 'Resume (PDF)', href: '/documents/cindy-brenes-resume.pdf', variant: 'ghost', icon: 'arrow-up-right', newTab: true },
 ];
 
+export const a11y = {
+	skipLink: 'Skip to main content',
+};
+
 export const brand = {
 	name: 'cindybrenes',
 	suffix: '.dev',

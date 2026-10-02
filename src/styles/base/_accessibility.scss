@@ -19,9 +19,15 @@
 	padding: $spacing-sm $spacing-md;
 	position: absolute;
 	top: -100%;
-	z-index: 100;
+	// Above the sticky header (z-index 100)
+	z-index: 101;
 
 	&:focus-visible {
 		top: 0;
 	}
+}
+
+// Skip-link target receives focus programmatically; it doesn't need a ring
+[tabindex='-1']:focus {
+	outline: none;
 }

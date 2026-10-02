@@ -1,11 +1,15 @@
 import Header from './components/layout/Header/Header';
 import Hero from './components/Hero/Hero';
+import { a11y } from './content/copy.js';
 
 function App() {
 	return (
 		<div>
+			<a className="skip-link" href="#main">{a11y.skipLink}</a>
 			<Header />
-			<Hero />
+			<main id="main" tabIndex={-1}>
+				<Hero />
+			</main>
 		</div>
 	);
 }
