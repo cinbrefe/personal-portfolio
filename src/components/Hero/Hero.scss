@@ -1,8 +1,86 @@
 @use '../../styles/abstracts/variables' as *;
 @use '../../styles/abstracts/mixins' as *;
 
-.hero__actions {
-	@include flex($wrap: wrap);
-	gap: $spacing-sm;
-	margin-top: $spacing-lg;
+$dot-glow: 4px; // ring around the availability dot
+$highlight-band: 8px; // outer band of the inspected-name highlight
+
+.hero {
+	text-align: center;
+
+	// Stacks the hero blocks (header, tooltip, intro, buttons).
+	// The space between them differs, so Hero sets margins on its own blocks instead of a shared gap.
+	&__inner {
+		@include flex(column, $align: center);
+	}
+
+	&__header {
+		@include flex(column, $align: center);
+		gap: $spacing-2xl;
+		margin-bottom: $spacing-md; // keeps the tooltip close to the name it points at
+	}
+
+	&__availability {
+		@include flex($align: center);
+		border: 1px solid $color-interactive;
+		border-radius: $radius-pill;
+		font-size: $font-size-sm;
+		font-weight: $font-weight-semibold;
+		gap: $spacing-sm;
+		padding: $spacing-sm $spacing-md;
+
+		// Status dot
+		&::before {
+			background-color: $color-interactive;
+			border-radius: $radius-circle;
+			box-shadow: 0 0 0 $dot-glow $color-highlight;
+			content: '';
+			flex-shrink: 0;
+			height: $spacing-sm;
+			width: $spacing-sm;
+		}
+	}
+
+	&__title {
+		font-size: $font-size-xl;
+		font-weight: $font-weight-semibold;
+	}
+
+	// Styled like an element highlighted in browser dev tools
+	&__name {
+		background-clip: padding-box; // keeps the fill out from under the see-through band
+		background-color: $color-highlight;
+		border: $highlight-band solid $color-highlight-edge;
+		display: block;
+		font-size: $font-size-2xl;
+		font-weight: $font-weight-bold;
+		position: relative; // anchor for the cursor icon
+
+		@include respond-to(md) {
+			font-size: $font-size-3xl;
+		}
+	}
+
+	// Mouse pointer "inspecting" the name, like the dev-tools element picker
+	&__cursor {
+		bottom: calc(-1 * $spacing-md);
+		color: $color-text; // fill
+		height: $spacing-xl;
+		position: absolute;
+		right: $spacing-lg;
+		stroke: $color-background; // dark outline, like a real cursor
+		width: $spacing-xl;
+	}
+
+	&__intro {
+		color: $color-text-muted;
+		font-size: $font-size-lg;
+		margin-top: $spacing-2xl; // extra room separates the "inspector" from the intro
+		max-width: $max-width-text;
+	}
+
+	&__actions {
+		@include flex($justify: center, $wrap: wrap);
+		gap: $spacing-md;
+		margin-top: $spacing-xl;
+	}
 }

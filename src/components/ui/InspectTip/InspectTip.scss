@@ -1,0 +1,76 @@
+@use '../../../styles/abstracts/variables' as *;
+@use '../../../styles/abstracts/mixins' as *;
+
+$divider-height: 0.75rem; // 12px
+$arrow-size: 7px;
+
+.inspect-tip {
+	@include flex(column, $align: center);
+	background-color: $color-surface-inverse;
+	border-radius: $radius-sm;
+	color: $color-text-inverse;
+	font-size: $font-size-xs;
+	font-weight: $font-weight-semibold;
+	gap: $spacing-xs;
+	padding: $spacing-sm $spacing-md;
+	position: relative;
+
+	// Arrow pointing up at the name: a zero-size box whose bottom border becomes a triangle
+	&::before {
+		border: $arrow-size solid transparent;
+		border-bottom-color: $color-surface-inverse; // same as the tooltip, so it looks attached
+		border-top: 0;
+		bottom: 100%;
+		content: '';
+		left: 50%;
+		position: absolute;
+		transform: translateX(-50%); // centers it without knowing its width
+	}
+
+	&__head {
+		@include flex(row, $align: center);
+		color: $color-accent;
+		font-weight: $font-weight-bold;
+		gap: $spacing-md;
+	}
+
+	&__class {
+		color: $color-text-inverse;
+	}
+
+	&__size {
+		color: $color-accent;
+		font-weight: $font-weight-medium;
+	}
+
+	&__body {
+		@include flex(row, $align: center);
+		gap: $spacing-sm; // space before each line
+	}
+
+	// Line between items: every item that follows another item gets a short line on its left.
+	// Drawn as a 1px-wide background so it can be shorter than the item (a border can't).
+	&__item + &__item {
+		background: linear-gradient($color-border-inverse, $color-border-inverse) left center / 1px $divider-height no-repeat;
+		padding-left: $spacing-sm; // space after each line
+	}
+
+	// "☐ Aa 13.3 ✓": square drawn with ::before, check mark with ::after
+	&__font {
+		align-items: center;
+		display: inline-flex;
+		gap: $spacing-xs;
+
+		&::before {
+			border: 1px solid currentColor;
+			border-radius: $radius-xs;
+			content: '';
+			height: 1em; // sized to the text
+			width: 1em;
+		}
+
+		&::after {
+			content: '✓';
+		}
+	}
+}

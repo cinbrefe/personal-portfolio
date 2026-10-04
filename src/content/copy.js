@@ -25,6 +25,7 @@ export const hero = {
 	name: 'Cindy Brenes',
 	role: 'Frontend Developer',
 	location: 'St. Paul, MN',
+	inspectTip: { tag: 'span', selectorClass: '.cindy-brenes', size: '251 x 44', font: 'Aa 13.3' },
 	body: 'I build accessible frontend experiences for enterprise brands, bringing 15+ years in web production and a growing React practice.',
 	primaryCta: { label: 'View my projects', href: '#projects', icon: 'arrow-right' },
 	secondaryCta: { label: 'Download resume', href: '/documents/cindy-brenes-resume.pdf' },
