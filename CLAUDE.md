@@ -26,6 +26,7 @@ src/
 
 Conventions:
 - Colors, spacing, typography, and breakpoints are all Sass variables in `styles/abstracts/_variables.scss` — never hardcode a color/spacing value in a component's `.scss`, reference the variable (use `sass:color` functions for alpha variants).
+- Colors have two layers: a palette (`$gray-900`, `$teal-400` …) and roles (`$color-text`, `$color-surface` …). Components use only `$color-*` roles; roles point at palette colors, never at other roles.
 - Component styles `@use` the abstracts layer directly. Classes are global, so prefix every class with its BEM block name (e.g. `.site-navigation__link`) to avoid collisions.
 - All user-facing text and project data lives in `src/content/` (`copy.js`, `projects.js`), not inline in JSX — this is what the `copywriter` agent edits, and it should never need to touch component logic.
 - Placeholder text in `src/content/` is wrapped in `[brackets]` — anything still bracketed is not real content yet.

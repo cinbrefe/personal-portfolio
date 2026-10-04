@@ -2,13 +2,14 @@
 
 .button {
 	align-items: center;
-	border-radius: $radius;
+	border-radius: $radius-pill;
 	border: 1px solid transparent;
 	display: inline-flex;
 	font: inherit;
 	font-weight: $font-weight-semibold;
+	gap: $spacing-sm; // space between label and icon; no effect without an icon
 	justify-content: center;
-	min-height: 44px;
+	min-height: $control-size-md;
 	padding: 0 $spacing-md;
 	text-decoration: none;
 	transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
@@ -16,19 +17,17 @@
 
 .button--sm {
 	font-size: $font-size-sm;
-	min-height: 44px;
-	padding: 0 $spacing-md;
+	min-height: $control-size-sm;
 }
 
 .button--primary {
-	background-color: $color-accent;
-	border-color: $color-accent;
-	color: $color-text;
+	background-color: $color-interactive;
+	border-color: $color-interactive;
+	color: $color-text-inverse;
 
 	&:hover {
-		background-color: $color-interactive;
-		border-color: $color-interactive;
-		color: $color-background;
+		background-color: $color-interactive-hover;
+		border-color: $color-interactive-hover;
 	}
 }
 
@@ -44,14 +43,6 @@
 
 .button__icon {
 	flex: none;
-}
-
-.button--arrow-up-right {
-	gap: 0.25rem;
-}
-
-.button--arrow-right {
-	gap: 0.5rem;
 }
 
 @media (prefers-reduced-motion: reduce) {

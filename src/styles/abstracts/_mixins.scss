@@ -15,11 +15,6 @@
 	}
 }
 
-// Mobile only (below $breakpoint-md)
-@mixin mobile-only {
-	@media (width < $breakpoint-md) { @content; }
-}
-
 // Flexbox
 @mixin flex($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap) {
 	display: flex;

@@ -7,26 +7,27 @@ $bar-gap: $spacing-xs;
 // Moves each bar to the shared center line so they cross into an "X"
 $bar-offset: calc(($bar-height + $bar-gap) / 2);
 
-.site-navigation__list {
-	@include flex($align: center, $wrap: wrap);
-	gap: $spacing-sm $spacing-xl;
-	justify-content: flex-end;
-}
+// Toggle button
 
 .site-navigation__toggle {
 	align-items: center;
 	border-radius: $radius-circle;
 	border: 2px solid $color-interactive;
-	display: none;
+	display: flex;
 	flex-direction: column;
 	gap: $bar-gap;
-	height: $tap-target-min;
+	height: $control-size-sm;
 	justify-content: center;
-	width: $tap-target-min;
+	margin-left: auto;
+	width: $control-size-sm;
 
 	&:focus-visible {
 		outline: 2px solid $color-interactive;
 		outline-offset: 3px;
+	}
+
+	@include respond-to(md) {
+		display: none;
 	}
 }
 
@@ -48,25 +49,74 @@ $bar-offset: calc(($bar-height + $bar-gap) / 2);
 	}
 }
 
-// Hidden on desktop; shown in the mobile menu below
-.site-navigation__arrow {
+// Dropdown panel
+
+.site-navigation {
 	display: none;
+	left: 0;
+	// 100% is the header's height, so the panel scrolls instead of running off-screen
+	max-height: calc(100dvh - 100%);
+	overflow-y: auto;
+	overscroll-behavior: contain;
+	position: absolute;
+	right: 0;
+	// + 1px keeps the header's bottom border visible
+	top: calc(100% + 1px);
+
+	// Undo the dropdown panel so the nav sits in the header's flow
+	@include respond-to(md) {
+		display: block;
+		max-height: none;
+		overflow-y: visible;
+		position: static;
+	}
 }
 
-.site-navigation__link:not(.button) {
-	color: $color-text-muted;
+.site-navigation--open {
 	display: block;
-	font-size: $font-size-sm;
-	font-weight: $font-weight-semibold;
-	padding: $spacing-xs 0;
+}
+
+.site-navigation__list {
+	align-items: stretch;
+	background-color: $color-background;
+	box-shadow: $shadow-overlay;
+	display: flex;
+	flex-direction: column;
+	gap: $spacing-xs;
+	padding: $spacing-md $spacing-xl;
+
+	@include respond-to(md) {
+		align-items: center;
+		background-color: transparent;
+		box-shadow: none;
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: $spacing-sm $spacing-xl;
+		justify-content: flex-end;
+		padding: 0;
+	}
+}
+
+// Links
+
+.site-navigation__link:not(.button) {
+	align-items: center;
+	border-bottom: 1px solid $color-border-strong;
+	color: $color-text-muted;
+	display: flex;
+	font-size: $font-size-xl;
+	font-weight: $font-weight-bold;
+	justify-content: space-between;
+	min-height: $control-size-sm;
+	padding: $spacing-sm 0;
 	position: relative;
 	text-decoration: none;
 
 	&::after {
-		background-color: $color-accent;
+		background-color: $color-interactive;
 		bottom: 1px;
 		content: '';
-		height: 2px;
+		height: 1px;
 		left: 0;
 		position: absolute;
 		right: 0;
@@ -83,61 +133,38 @@ $bar-offset: calc(($bar-height + $bar-gap) / 2);
 			transform: scaleX(1);
 		}
 	}
+
+	@include respond-to(md) {
+		border-bottom: 0;
+		display: block;
+		font-size: $font-size-sm;
+		font-weight: $font-weight-semibold;
+		min-height: 0;
+		padding: $spacing-xs 0;
+	}
 }
 
-@include mobile-only {
-	.site-navigation {
+.site-navigation__arrow {
+	color: $color-interactive;
+	display: block;
+	flex-shrink: 0;
+
+	@include respond-to(md) {
 		display: none;
-		left: 0;
-		// 100% is the header's height, so the panel scrolls instead of running off-screen
-		max-height: calc(100dvh - 100%);
-		overflow-y: auto;
-		overscroll-behavior: contain;
-		position: absolute;
-		right: 0;
-		top: calc(100% + 1px);
 	}
+}
 
-	.site-navigation--open {
-		display: block;
-	}
+.site-navigation__link.button {
+	align-self: flex-start;
+	font-size: $font-size-md;
+	margin-top: $spacing-md;
+	width: 100%;
 
-	.site-navigation__toggle {
-		display: flex;
-		margin-left: auto;
-	}
-
-	.site-navigation__list {
-		align-items: stretch;
-		background-color: $color-background;
-		box-shadow: $shadow-overlay;
-		flex-direction: column;
-		gap: $spacing-xs;
-		padding: $spacing-md $spacing-xl;
-	}
-
-	.site-navigation__link:not(.button) {
-		align-items: center;
-		border-bottom: 1px solid $color-border-strong;
-		display: flex;
-		font-size: $font-size-xl;
-		font-weight: $font-weight-bold;
-		justify-content: space-between;
-		min-height: $tap-target-min;
-		padding-block: $spacing-sm;
-	}
-
-	.site-navigation__arrow {
-		color: $color-interactive;
-		display: block;
-		flex-shrink: 0;
-	}
-
-	.site-navigation__link.button {
-		align-self: flex-start;
-		font-size: $font-size-md;
-		margin-top: $spacing-md;
-		width: 100%;
+	@include respond-to(md) {
+		align-self: auto;
+		font-size: $font-size-sm;
+		margin-top: 0;
+		width: auto;
 	}
 }
 

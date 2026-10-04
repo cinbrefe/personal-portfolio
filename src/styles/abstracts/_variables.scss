@@ -1,12 +1,29 @@
-// Color tokens
-$color-background: #181A1E;
-$color-accent: #144E54;
-$color-surface: #23272D; // raised panels (menus, skip link) — one step lighter than background
-$color-text: #D6E4E2;
-$color-text-muted: #B9CECB;
-$color-interactive: #5EC8BE;
-$color-border: rgba(94, 200, 190, 0.18);
-$color-border-strong: rgba(94, 200, 190, 0.35);
+@use 'sass:color';
+
+// Color palette — raw colors, named by how they look.
+// Components never use these directly; they use the color roles below.
+$gray-900: #181A1E;
+$gray-800: #23272D;
+$gray-200: #B9CECB;
+$gray-100: #D6E4E2;
+$teal-400: #5EC8BE;
+$teal-800: #144E54;
+
+// Color roles — named by purpose. Each role points at a palette color, never at another role.
+$color-background: $gray-900;
+$color-surface: $gray-800; // raised panels (menus, skip link)
+$color-surface-inverse: $gray-100; // light panels on the dark page (inspect tip)
+$color-text: $gray-100;
+$color-text-muted: $gray-200;
+$color-text-inverse: $gray-900; // text on light panels
+$color-border-inverse: color.change($gray-900, $alpha: 0.2); // dividers on light panels
+$color-interactive: $teal-400;
+$color-interactive-hover: $gray-100; // hover state of filled interactive elements (primary button)
+$color-highlight: color.change($teal-400, $alpha: 0.2); // dev-tools style highlight fill, status-dot glow
+$color-highlight-edge: color.change($teal-400, $alpha: 0.1); // outer band of the highlight
+$color-accent: $teal-800;
+$color-border: color.change($teal-400, $alpha: 0.18);
+$color-border-strong: color.change($teal-400, $alpha: 0.35);
 
 // Typography
 $font-base: 'Onest', sans-serif;
@@ -14,7 +31,7 @@ $font-weight-regular: 400;
 $font-weight-medium: 500;
 $font-weight-semibold: 600;
 $font-weight-bold: 700;
-$font-size-base: 100%; // respects the visitor's browser font-size setting (16px by default)
+$font-size-base: 100%;
 $font-size-xs: 0.75rem;
 $font-size-sm: 0.875rem;
 $font-size-md: 1rem;
@@ -30,13 +47,21 @@ $spacing-md: 1rem;
 $spacing-lg: 1.5rem;
 $spacing-xl: 2rem;
 $spacing-2xl: 3rem;
-$spacing-3xl: 6rem;
+$spacing-3xl: 5rem;
 
 // Layout
 $max-width: 75rem;
-$radius: 62.4375rem;
-$radius-circle: 50%;
-$tap-target-min: 44px;
+$max-width-text: 65ch; // comfortable reading line length for paragraphs
+
+// Interactive controls (buttons, links, icon buttons) — height, or width + height for square ones
+$control-size-sm: 44px; // smallest comfortable tap size
+$control-size-md: 52px; // default button
+
+// Border radius
+$radius-xs: 0.125rem; // 2px — tiny details (checkbox-style icons)
+$radius-sm: 0.5rem; // 8px — cards, panels, tooltips
+$radius-pill: 9999px; // fully rounded ends on any width (buttons, badges)
+$radius-circle: 50%; // perfect circle on square elements (icon buttons, dots)
 
 // Breakpoints
 $breakpoint-sm: 576px;
