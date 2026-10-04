@@ -1,4 +1,4 @@
-import { about } from '../../content/copy.js';
+import { about } from '../../../content/copy.js';
 import './About.scss';
 
 export default function About() {

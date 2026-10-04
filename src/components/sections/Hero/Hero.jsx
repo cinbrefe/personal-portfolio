@@ -1,7 +1,7 @@
-import { hero } from '../../content/copy.js';
-import ArrowIcon from '../ui/ArrowIcon.jsx';
-import CursorIcon from '../ui/CursorIcon.jsx';
-import InspectTip from '../ui/InspectTip/InspectTip.jsx';
+import { hero } from '../../../content/copy.js';
+import ArrowIcon from '../../ui/ArrowIcon.jsx';
+import CursorIcon from '../../ui/CursorIcon.jsx';
+import InspectTip from '../../ui/InspectTip/InspectTip.jsx';
 import './Hero.scss';
 
 export default function Hero() {

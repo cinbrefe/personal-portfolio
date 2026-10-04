@@ -1,5 +1,5 @@
-@use '../../styles/abstracts/variables' as *;
-@use '../../styles/abstracts/mixins' as *;
+@use '../../../styles/abstracts/variables' as *;
+@use '../../../styles/abstracts/mixins' as *;
 
 $dot-glow: 4px; // ring around the availability dot
 $highlight-band: 8px; // outer band of the inspected-name highlight

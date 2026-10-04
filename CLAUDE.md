@@ -13,7 +13,10 @@ Personal portfolio site. Single developer (Cindy) plus a set of specialized revi
 
 ```
 src/
-	components/<Name>/<Name>.jsx + <Name>.scss          # one folder per component, styles colocated (layout/ holds Header, Navigation)
+	components/                                         # a component gets its own folder (<Name>/<Name>.jsx + <Name>.scss) when it has styles
+		layout/                                         # site frame on every page: Header, Navigation, Footer
+		sections/                                       # page content, one per nav anchor: Hero, About, Skills, Projects…
+		ui/                                             # small reusable pieces used inside sections: InspectTip, icons
 	hooks/                                              # reusable custom hooks (e.g. useMobileMenu.js)
 	content/                                            # copy.js, projects.js — all site text/data lives here
 	styles/

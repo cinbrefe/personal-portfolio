@@ -1,5 +1,5 @@
-@use '../../styles/abstracts/variables' as *;
-@use '../../styles/abstracts/mixins' as *;
+@use '../../../styles/abstracts/variables' as *;
+@use '../../../styles/abstracts/mixins' as *;
 
 // One column on mobile; text and the "Currently" card side by side from md up
 .about__layout {
