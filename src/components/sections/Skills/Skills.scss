@@ -1,0 +1,48 @@
+@use '../../../styles/abstracts/variables' as *;
+@use '../../../styles/abstracts/mixins' as *;
+
+$dot-size: 2px;
+
+.skills {
+	&__groups {
+		display: grid;
+
+		@include respond-to(md) {
+			column-gap: $spacing-3xl;
+			grid-template-columns: max-content 1fr;
+		}
+	}
+
+	&__group {
+		border-top: 2px solid $color-border;
+		display: grid;
+		grid-column: 1 / -1;
+		grid-template-columns: subgrid;
+		padding-block: $spacing-xl;
+		row-gap: $spacing-md;
+
+		&-name {
+			white-space: nowrap;
+		}
+	}
+
+	&__tags {
+		@include flex($align: center, $wrap: wrap);
+		gap: $spacing-xs $spacing-sm;
+	}
+
+	&__tag {
+		@include flex($align: center);
+		gap: $spacing-sm;
+	}
+
+	// Dot before every skill except the first, drawn as a small circle so screen readers ignore it
+	&__tag + &__tag::before {
+		background-color: $color-interactive;
+		border-radius: $radius-circle;
+		content: '';
+		flex-shrink: 0;
+		height: $dot-size;
+		width: $dot-size;
+	}
+}
