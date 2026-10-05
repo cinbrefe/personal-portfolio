@@ -8,6 +8,6 @@
 	width: 100%;
 
 	@include respond-to(md) {
-		padding: 0 $spacing-xl;
+		padding: 0 $spacing-2xl;
 	}
 }
