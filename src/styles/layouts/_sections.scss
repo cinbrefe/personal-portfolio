@@ -12,12 +12,3 @@
 .page-section--hero {
 	padding-block: $spacing-3xl;
 }
-
-// Small uppercase label above a section's title (e.g. "About", "Projects")
-.page-section__label {
-	color: $color-interactive;
-	font-size: $font-size-sm;
-	font-weight: $font-weight-semibold;
-	letter-spacing: $letter-spacing-wider;
-	text-transform: uppercase;
-}

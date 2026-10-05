@@ -23,3 +23,11 @@
 	justify-content: $justify;
 	flex-wrap: $wrap;
 }
+
+@mixin label-text {
+	color: $color-interactive;
+	font-size: $font-size-sm;
+	font-weight: $font-weight-semibold;
+	letter-spacing: $letter-spacing-wider;
+	text-transform: uppercase;
+}

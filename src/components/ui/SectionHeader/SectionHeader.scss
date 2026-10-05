@@ -1,0 +1,13 @@
+@use '../../../styles/abstracts/variables' as *;
+@use '../../../styles/abstracts/mixins' as *;
+
+// Label + title at the top of a section
+.section-header {
+	@include flex(column);
+	gap: $spacing-md;
+	margin-bottom: $spacing-xl;
+
+	&__label {
+		@include label-text;
+	}
+}

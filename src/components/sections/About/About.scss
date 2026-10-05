@@ -2,7 +2,8 @@
 @use '../../../styles/abstracts/mixins' as *;
 
 .about {
-	&__inner {
+	// Intro text and the "Currently" card: stacked on mobile, side by side from md up
+	&__content {
 		display: grid;
 		gap: $spacing-xl $spacing-2xl;
 
@@ -12,13 +13,8 @@
 		}
 	}
 
-	&__header {
-		@include flex(column);
-		gap: $spacing-md;
-
-		@include respond-to(md) {
-			grid-column: 1 / -1;
-		}
+	&__currently-title {
+		@include label-text;
 	}
 
 	&__intro {
