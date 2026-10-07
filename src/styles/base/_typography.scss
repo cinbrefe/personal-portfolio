@@ -22,7 +22,7 @@ h4, .h4 { font-size: $font-size-md; }
 a {
 	color: $color-interactive;
 	text-decoration: underline;
-	text-underline-offset: 0.2em;
+	text-underline-offset: $underline-offset;
 	transition:
 		color $transition-duration $transition-easing,
 		text-decoration-color $transition-duration $transition-easing;

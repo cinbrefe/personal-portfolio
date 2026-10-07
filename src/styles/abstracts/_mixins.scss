@@ -67,6 +67,6 @@
 
 	// Line between rows
 	&:not(:first-child) {
-		border-top: 2px solid $color-border;
+		border-top: $border-width solid $color-border;
 	}
 }

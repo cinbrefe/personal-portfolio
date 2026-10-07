@@ -20,6 +20,6 @@ body {
 }
 
 :focus-visible {
-	outline: 2px solid $color-interactive;
+	outline: $border-width solid $color-interactive;
 	outline-offset: 3px;
 }

@@ -19,7 +19,7 @@ $groups-max-width: 800px;
 
 	&__item {
 		@include flex($justify: space-between, $align: baseline);
-		border-top: 2px solid $color-border;
+		border-top: $border-width solid $color-border;
 		gap: $spacing-sm;
 		padding-block: $spacing-md;
 

@@ -33,12 +33,12 @@
 
 	&__item {
 		@include flex(row);
-		border-top: 2px solid $color-border;
+		border-top: $border-width solid $color-border;
 		gap: $spacing-lg;
 		padding-block: $spacing-md;
 
 		&:last-child {
-			border-bottom: 2px solid $color-border;
+			border-bottom: $border-width solid $color-border;
 		}
 	}
 

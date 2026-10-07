@@ -11,8 +11,7 @@
 		color: $color-text;
 		font-weight: $font-weight-semibold;
 		text-decoration-color: $color-interactive;
-		text-decoration-thickness: 2px;
-		text-underline-offset: $spacing-xs;
+		text-decoration-thickness: $border-width;
 
 		&:focus-visible,
 		&:hover {

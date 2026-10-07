@@ -63,6 +63,10 @@ $sidebar-width: 15rem; // 240px — left column in Skills and Experience; fits t
 $control-size-sm: 44px; // smallest comfortable tap size
 $control-size-md: 52px; // default button
 
+// Lines
+$border-width: 2px; // row dividers, rings, focus outlines and link underlines
+$underline-offset: 0.25em; // gap between text and its underline
+
 // Border radius
 $radius-xs: 0.125rem; // 2px — tiny details (checkbox-style icons)
 $radius-sm: 0.5rem; // 8px — cards, panels, tooltips

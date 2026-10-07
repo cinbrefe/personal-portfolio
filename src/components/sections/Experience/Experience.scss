@@ -44,7 +44,7 @@ $timeline-dot-top: calc(($font-size-lg * $line-height-heading - $timeline-dot) /
 		// Ring next to the title
 		&::before {
 			background-color: $color-background; // hides the line behind the ring
-			border: 2px solid $color-decoration;
+			border: $border-width solid $color-decoration;
 			border-radius: $radius-circle;
 			content: '';
 			height: $timeline-dot;
