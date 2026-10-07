@@ -1,5 +1,5 @@
-import SectionHeader from '../../ui/SectionHeader/SectionHeader.jsx';
 import { skills } from '../../../content/copy.js';
+import SectionHeader from '../../ui/SectionHeader/SectionHeader.jsx';
 import './Skills.scss';
 
 export default function Skills() {

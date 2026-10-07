@@ -1,7 +1,6 @@
-
 import { useEffect, useState } from 'react';
-import Navigation from '../Navigation/Navigation.jsx';
 import { brand } from '../../../content/copy.js';
+import Navigation from '../Navigation/Navigation.jsx';
 import './Header.scss';
 
 export default function Header() {
