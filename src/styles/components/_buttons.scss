@@ -12,7 +12,10 @@
 	min-height: $control-size-md;
 	padding: 0 $spacing-md;
 	text-decoration: none;
-	transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+	transition:
+		background-color $transition-duration $transition-easing,
+		border-color $transition-duration $transition-easing,
+		color $transition-duration $transition-easing;
 }
 
 .button--sm {

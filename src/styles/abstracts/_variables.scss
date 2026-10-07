@@ -80,3 +80,7 @@ $shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
 $shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
 $shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
 $shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.18);
+
+// Motion — shared by links, buttons and other hover/focus changes
+$transition-duration: 180ms;
+$transition-easing: ease;

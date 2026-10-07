@@ -23,4 +23,11 @@ a {
 	color: $color-interactive;
 	text-decoration: underline;
 	text-underline-offset: 0.2em;
+	transition:
+		color $transition-duration $transition-easing,
+		text-decoration-color $transition-duration $transition-easing;
+
+	@media (prefers-reduced-motion: reduce) {
+		transition: none;
+	}
 }
