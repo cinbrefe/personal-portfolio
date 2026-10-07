@@ -31,3 +31,36 @@
 	letter-spacing: $letter-spacing-wider;
 	text-transform: uppercase;
 }
+
+// Small highlighted text for dates and periods
+@mixin meta-text {
+	color: $color-text-accent;
+	font-size: $font-size-sm;
+	font-weight: $font-weight-semibold;
+}
+
+// Sections with a name column on the left and content on the right (Skills, Experience).
+// Use sidebar-rows on the list and sidebar-row on each item: stacked on phones,
+// two shared columns from md up so every row lines up.
+@mixin sidebar-rows {
+	display: grid;
+
+	@include respond-to(md) {
+		column-gap: $spacing-3xl;
+		grid-template-columns: $sidebar-width minmax(0, 1fr);
+	}
+}
+
+@mixin sidebar-row {
+	display: grid;
+	grid-column: 1 / -1;
+	grid-template-columns: subgrid; // reuses the parent's columns
+	padding-block: $spacing-xl;
+	// Space between the name and its content when stacked on phones; no effect side by side
+	row-gap: $spacing-md;
+
+	// Line between rows
+	&:not(:first-child) {
+		border-top: 2px solid $color-border;
+	}
+}

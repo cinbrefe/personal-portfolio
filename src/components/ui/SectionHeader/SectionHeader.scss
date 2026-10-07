@@ -5,7 +5,11 @@
 .section-header {
 	@include flex(column);
 	gap: $spacing-md;
-	margin-bottom: $spacing-xl;
+	margin-bottom: $spacing-sm;
+
+	@include respond-to(md) {
+		margin-bottom: $spacing-xl;
+	}
 
 	&__label {
 		@include label-text;

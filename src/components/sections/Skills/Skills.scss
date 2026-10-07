@@ -5,21 +5,11 @@ $dot-size: 2px;
 
 .skills {
 	&__groups {
-		display: grid;
-
-		@include respond-to(md) {
-			column-gap: $spacing-3xl;
-			grid-template-columns: max-content 1fr;
-		}
+		@include sidebar-rows;
 	}
 
 	&__group {
-		border-top: 2px solid $color-border;
-		display: grid;
-		grid-column: 1 / -1;
-		grid-template-columns: subgrid;
-		padding-block: $spacing-xl;
-		row-gap: $spacing-md;
+		@include sidebar-row;
 
 		&-name {
 			white-space: nowrap;
@@ -38,7 +28,7 @@ $dot-size: 2px;
 
 	// Dot before every skill except the first, drawn as a small circle so screen readers ignore it
 	&__tag + &__tag::before {
-		background-color: $color-interactive;
+		background-color: $color-decoration;
 		border-radius: $radius-circle;
 		content: '';
 		flex-shrink: 0;
