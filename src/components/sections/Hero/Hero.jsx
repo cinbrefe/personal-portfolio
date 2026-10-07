@@ -8,7 +8,7 @@ export default function Hero() {
 	const { availability, greeting, name, role, location, inspectTip, body, primaryCta, secondaryCta } = hero;
 
 	return (
-		<section className="hero page-section page-section--hero" aria-labelledby="hero-title">
+		<section id="hero" className="hero page-section page-section--hero" aria-labelledby="hero-title">
 			<div className="container hero__inner">
 				<div className="hero__header">
 					<p className="hero__availability">{availability}</p>
@@ -20,7 +20,6 @@ export default function Hero() {
 						</span>
 					</h1>
 				</div>
-
 				<InspectTip
 					tag={inspectTip.tag}
 					selectorClass={inspectTip.selectorClass}
@@ -29,9 +28,7 @@ export default function Hero() {
 					role={role}
 					location={location}
 				/>
-
 				<p className="hero__intro">{body}</p>
-
 				<div className="hero__actions">
 					<a className="button button--primary" href={primaryCta.href}>
 						{primaryCta.label}

@@ -9,7 +9,7 @@ export default function Contact() {
 		<section id="contact" className="contact page-section" aria-labelledby="contact-title">
 			<div className="container contact__inner">
 				<SectionHeader name="contact" label={label} heading={heading} />
-			{/* Contact content goes here */}
+				{/* Contact content goes here */}
 			</div>
 		</section>
 	);

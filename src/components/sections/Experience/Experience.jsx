@@ -9,7 +9,7 @@ export default function Experience() {
 		<section id="experience" className="experience page-section" aria-labelledby="experience-title">
 			<div className="container experience__inner">
 				<SectionHeader name="experience" label={label} heading={heading} />
-			{/* Experience content goes here */}
+				{/* Experience content goes here */}
 			</div>
 		</section>
 	);

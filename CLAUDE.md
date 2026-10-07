@@ -32,6 +32,7 @@ Conventions:
 - Colors have two layers: a palette (`$gray-900`, `$teal-400` …) and roles (`$color-text`, `$color-surface` …). Components use only `$color-*` roles; roles point at palette colors, never at other roles.
 - Component styles `@use` the abstracts layer directly. Classes are global, so prefix every class with its BEM block name (e.g. `.site-navigation__link`) to avoid collisions.
 - Import order in every file, with no blank lines between imports: React/external packages → content (`src/content/`) → hooks → components → the file's own `.scss` last. Use file extensions (`.js`, `.jsx`) in relative imports.
+- JSX attribute order: `key`/`ref` → `id` → `className` → other attributes → `aria-*` → event handlers (`onClick`, …). No blank lines inside a component's JSX.
 - All user-facing text and project data lives in `src/content/` (`copy.js`, `projects.js`), not inline in JSX — this is what the `copywriter` agent edits, and it should never need to touch component logic.
 - Placeholder text in `src/content/` is wrapped in `[brackets]` — anything still bracketed is not real content yet.
 

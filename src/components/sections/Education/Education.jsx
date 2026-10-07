@@ -9,7 +9,7 @@ export default function Education() {
 		<section id="education" className="education page-section" aria-labelledby="education-title">
 			<div className="container education__inner">
 				<SectionHeader name="education" label={label} heading={heading} />
-			{/* Education content goes here */}
+				{/* Education content goes here */}
 			</div>
 		</section>
 	);

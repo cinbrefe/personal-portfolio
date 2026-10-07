@@ -30,9 +30,9 @@ export default function Navigation() {
 			</button>
 			<nav
 				ref={panelRef}
+				id="site-navigation-links"
 				className={`site-navigation${isOpen ? ' site-navigation--open' : ''}`}
 				aria-label="Main"
-				id="site-navigation-links"
 				onBlur={handleBlur}
 			>
 				<ul className="site-navigation__list">

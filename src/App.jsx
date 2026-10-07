@@ -8,7 +8,7 @@ import Experience from './components/sections/Experience/Experience.jsx';
 import Education from './components/sections/Education/Education.jsx';
 import Contact from './components/sections/Contact/Contact.jsx';
 
-function App() {
+export default function App() {
 	return (
 		<div>
 			<a className="skip-link" href="#main">{a11y.skipLink}</a>
@@ -25,5 +25,3 @@ function App() {
 		</div>
 	);
 }
-
-export default App;
