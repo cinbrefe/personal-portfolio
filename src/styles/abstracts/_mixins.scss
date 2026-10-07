@@ -37,6 +37,7 @@
 	color: $color-text-accent;
 	font-size: $font-size-sm;
 	font-weight: $font-weight-semibold;
+	white-space: nowrap; // dates are short and shouldn't break mid-range ("2006 – / 2011")
 }
 
 // Sections with a name column on the left and content on the right (Skills, Experience).
@@ -58,6 +59,11 @@
 	padding-block: $spacing-xl;
 	// Space between the name and its content when stacked on phones; no effect side by side
 	row-gap: $spacing-md;
+
+	// The first row sits right under the section header: no line, no space above it
+	&:first-child {
+		padding-top: 0;
+	}
 
 	// Line between rows
 	&:not(:first-child) {
