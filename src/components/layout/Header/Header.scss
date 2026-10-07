@@ -2,38 +2,43 @@
 @use '../../../styles/abstracts/variables' as *;
 @use '../../../styles/abstracts/mixins' as *;
 
-.site-header__inner {
-	@include flex($justify: space-between, $align: center, $wrap: wrap);
-	gap: $spacing-md $spacing-xl;
-}
+$header-blur: 12px;
+$header-transition: 220ms ease;
 
-.site-header__brand {
-	color: $color-text;
-	font-weight: $font-weight-bold;
-	text-decoration: none;
-	white-space: nowrap;
-}
-
-.site-header__brand-suffix {
-	color: $color-interactive;
-}
-
+// Sticky bar that turns more solid, with a shadow, once the page scrolls
 .site-header {
-	backdrop-filter: blur(12px);
+	backdrop-filter: blur($header-blur);
 	background-color: color.change($color-background, $alpha: 0.88);
 	position: sticky;
 	top: 0;
-	transition: background-color 220ms ease, box-shadow 220ms ease, backdrop-filter 220ms ease;
-	z-index: 100;
-}
+	transition:
+		background-color $header-transition,
+		box-shadow $header-transition,
+		backdrop-filter $header-transition;
+	z-index: $z-header;
 
-.site-header--scrolled {
-	background-color: color.change($color-background, $alpha: 0.96);
-	box-shadow: $shadow-overlay;
-}
-
-@media (prefers-reduced-motion: reduce) {
-	.site-header {
+	@media (prefers-reduced-motion: reduce) {
 		transition: none;
+	}
+
+	&--scrolled {
+		background-color: color.change($color-background, $alpha: 0.96);
+		box-shadow: $shadow-overlay;
+	}
+
+	&__inner {
+		@include flex($justify: space-between, $align: center, $wrap: wrap);
+		gap: $spacing-md $spacing-xl;
+	}
+
+	&__brand {
+		color: $color-text;
+		font-weight: $font-weight-bold;
+		text-decoration: none;
+		white-space: nowrap;
+
+		&-suffix {
+			color: $color-interactive;
+		}
 	}
 }

@@ -19,8 +19,7 @@
 	padding: $spacing-sm $spacing-md;
 	position: absolute;
 	top: -100%;
-	// Above the sticky header (z-index 100)
-	z-index: 101;
+	z-index: $z-skip-link;
 
 	&:focus-visible {
 		top: 0;

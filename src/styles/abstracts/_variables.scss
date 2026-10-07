@@ -84,3 +84,7 @@ $shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.18);
 // Motion — shared by links, buttons and other hover/focus changes
 $transition-duration: 180ms;
 $transition-easing: ease;
+
+// Stacking order — higher numbers sit on top
+$z-header: 100; // sticky header and its mobile menu
+$z-skip-link: $z-header + 1; // must appear above the header when focused
