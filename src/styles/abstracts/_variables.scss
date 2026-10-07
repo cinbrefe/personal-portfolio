@@ -42,7 +42,8 @@ $font-size-xl: 1.5rem; // 24px
 $font-size-2xl: 2rem; // 32px
 $font-size-3xl: 2.5rem; // 40px
 $font-size-4xl: 3rem; // 48px
-$letter-spacing-wider: 0.08em;
+$letter-spacing-wide: 0.02em; // subtle, for small bold text
+$letter-spacing-wider: 0.08em; // uppercase text, which looks cramped without extra space
 $line-height-heading: 1.2;
 
 // Spacing

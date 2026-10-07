@@ -7,10 +7,11 @@ import Projects from './components/sections/Projects/Projects.jsx';
 import Experience from './components/sections/Experience/Experience.jsx';
 import Education from './components/sections/Education/Education.jsx';
 import Contact from './components/sections/Contact/Contact.jsx';
+import Footer from './components/layout/Footer/Footer.jsx';
 
 export default function App() {
 	return (
-		<div>
+		<div id="top">
 			<a className="skip-link" href="#main">{a11y.skipLink}</a>
 			<Header />
 			<main id="main" tabIndex={-1}>
@@ -22,6 +23,7 @@ export default function App() {
 				<Education />
 				<Contact />
 			</main>
+			<Footer />
 		</div>
 	);
 }

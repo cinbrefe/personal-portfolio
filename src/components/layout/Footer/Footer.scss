@@ -1,0 +1,38 @@
+@use '../../../styles/abstracts/variables' as *;
+@use '../../../styles/abstracts/mixins' as *;
+
+.site-footer {
+	padding-block: $spacing-lg;
+
+	&__inner {
+		@include flex($justify: space-between, $align: center, $wrap: wrap);
+		font-size: $font-size-sm;
+		font-weight: $font-weight-semibold;
+		gap: $spacing-sm;
+		letter-spacing: $letter-spacing-wide;
+
+		@include respond-to(md) {
+			gap: $spacing-md $spacing-xl;
+		}
+	}
+
+	&__meta {
+		@include flex($align: center);
+		gap: $spacing-sm;
+	}
+
+	&__credit::after {
+		content: '·' / '';
+		margin-left: $spacing-sm;
+	}
+
+	&__top-link {
+		color: $color-text;
+		text-decoration: none;
+
+		&:focus-visible,
+		&:hover {
+			color: $color-interactive;
+		}
+	}
+}

@@ -16,7 +16,6 @@ export default function Header() {
 
 	return (
 		<header
-			id="top"
 			className={`site-header page-section page-section--compact${isScrolled ? ' site-header--scrolled' : ''}`}
 		>
 			<div className="container site-header__inner">
