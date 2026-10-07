@@ -1,8 +1,12 @@
-import Header from './components/layout/Header/Header';
-import Hero from './components/sections/Hero/Hero';
-import About from './components/sections/About/About';
-import Skills from './components/sections/Skills/Skills';
 import { a11y } from './content/copy.js';
+import Header from './components/layout/Header/Header.jsx';
+import Hero from './components/sections/Hero/Hero.jsx';
+import About from './components/sections/About/About.jsx';
+import Skills from './components/sections/Skills/Skills.jsx';
+import Projects from './components/sections/Projects/Projects.jsx';
+import Experience from './components/sections/Experience/Experience.jsx';
+import Education from './components/sections/Education/Education.jsx';
+import Contact from './components/sections/Contact/Contact.jsx';
 
 function App() {
 	return (
@@ -13,6 +17,10 @@ function App() {
 				<Hero />
 				<About />
 				<Skills />
+				<Projects />
+				<Experience />
+				<Education />
+				<Contact />
 			</main>
 		</div>
 	);
