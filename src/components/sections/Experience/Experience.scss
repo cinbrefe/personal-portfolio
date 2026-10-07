@@ -1,0 +1,111 @@
+@use '../../../styles/abstracts/variables' as *;
+@use '../../../styles/abstracts/mixins' as *;
+
+// Timeline next to the roles
+$timeline-dot: 10px;
+$timeline-line: 1px;
+$roles-gap: $spacing-2xl; // space between roles; the line stretches across it
+// Centers the ring on the first line of the role title (its font size × heading line height)
+$timeline-dot-top: calc(($font-size-lg * $line-height-heading - $timeline-dot) / 2);
+
+.experience {
+	&__companies {
+		@include sidebar-rows;
+	}
+
+	&__company {
+		@include sidebar-row;
+
+		&-name {
+			font-size: $font-size-xl;
+		}
+
+		&-note {
+			color: $color-text-muted;
+			font-size: $font-size-sm;
+		}
+
+		&-period {
+			@include meta-text;
+		}
+	}
+
+	&__roles {
+		@include flex(column);
+		gap: $roles-gap;
+	}
+
+	&__role {
+		@include flex(column);
+		gap: $spacing-md;
+		padding-left: $spacing-xl;
+		position: relative;
+
+		// Ring next to the title
+		&::before {
+			background-color: $color-background; // hides the line behind the ring
+			border: 2px solid $color-decoration;
+			border-radius: $radius-circle;
+			content: '';
+			height: $timeline-dot;
+			left: 0;
+			position: absolute;
+			top: $timeline-dot-top;
+			width: $timeline-dot;
+		}
+
+		// Line from this ring down to the next role's ring
+		&::after {
+			background-color: $color-decoration;
+			// Reaches across the gap and down to the next ring (which sits $timeline-dot-top below the next role's top)
+			bottom: calc(-1 * ($roles-gap + $timeline-dot-top));
+			content: '';
+			left: calc(($timeline-dot - $timeline-line) / 2);
+			position: absolute;
+			top: calc($timeline-dot-top + $timeline-dot);
+			width: $timeline-line;
+		}
+
+		// The last role in a company has no next ring to connect to
+		&:last-child::after {
+			display: none;
+		}
+
+		&-header {
+			@include flex($direction: column, $justify: space-between, $wrap: wrap);
+			gap: $spacing-sm;
+
+			@include respond-to(md) {
+				flex-direction: row;
+			}
+		}
+
+		&-title {
+			font-size: $font-size-lg;
+		}
+
+		&-period {
+			@include meta-text;
+		}
+	}
+
+	&__bullets {
+		@include flex(column);
+		gap: $spacing-sm;
+		list-style: disc;
+		padding-left: $spacing-lg;
+	}
+
+	&__tags {
+		@include flex($wrap: wrap);
+		gap: $spacing-sm;
+	}
+
+	&__tag {
+		background-color: $color-accent;
+		border-radius: $radius-pill;
+		font-size: $font-size-xs;
+		font-weight: $font-weight-semibold;
+		padding: $spacing-xs $spacing-sm;
+	}
+}
