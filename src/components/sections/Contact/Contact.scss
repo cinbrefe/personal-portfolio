@@ -1,0 +1,26 @@
+@use '../../../styles/abstracts/variables' as *;
+@use '../../../styles/abstracts/mixins' as *;
+
+.contact {
+	&__list {
+		@include flex(row, $wrap: wrap);
+		gap: $spacing-xl;
+	}
+
+	&__link {
+		color: $color-text;
+		font-weight: $font-weight-semibold;
+		text-decoration-color: $color-interactive;
+		text-decoration-thickness: 2px;
+		text-underline-offset: $spacing-xs;
+
+		&:focus-visible,
+		&:hover {
+			color: $color-interactive;
+		}
+	}
+
+	&__icon {
+		color: $color-interactive;
+	}
+}

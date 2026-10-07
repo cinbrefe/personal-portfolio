@@ -197,8 +197,8 @@ export const contact = {
 	heading: "Let's work together",
 	links: [
 		{ label: 'cinbrefe@gmail.com', href: 'mailto:cinbrefe@gmail.com', icon: 'mail' },
-		{ label: 'LinkedIn', href: 'https://linkedin.com/in/cindybrenes', icon: 'linkedin' },
-		{ label: 'GitHub', href: 'https://github.com/cinbrefe', icon: 'github' },
+		{ label: 'LinkedIn', href: 'https://linkedin.com/in/cindybrenes', icon: 'linkedin', newTab: true },
+		{ label: 'GitHub', href: 'https://github.com/cinbrefe', icon: 'github', newTab: true },
 	],
 };
 

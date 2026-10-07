@@ -3,13 +3,9 @@
 .icon-link {
 	align-items: center;
 	display: inline-flex;
-	gap: 0.25rem;
-}
+	gap: $spacing-sm;
 
-.icon-link--arrow-right {
-	gap: 0.5rem;
-}
-
-.icon-link__icon {
-	flex: none;
+	&__icon {
+		flex-shrink: 0;
+	}
 }
