@@ -1,0 +1,57 @@
+@use '../../../styles/abstracts/variables' as *;
+@use '../../../styles/abstracts/mixins' as *;
+
+$groups-max-width: 800px;
+
+.education {
+	&__groups {
+		@include flex(column);
+		gap: $spacing-xl;
+		max-width: $groups-max-width;
+	}
+
+	&__group {
+		&-name {
+			@include label-text;
+			margin-bottom: $spacing-sm;
+		}
+	}
+
+	&__item {
+		@include flex($justify: space-between, $align: baseline);
+		border-top: 2px solid $color-border;
+		gap: $spacing-sm;
+		padding-block: $spacing-md;
+
+		&-content {
+			@include flex(column);
+			gap: $spacing-xs;
+
+			@include respond-to(md) {
+				flex-direction: row;
+				flex-wrap: wrap;
+				gap: $spacing-sm;
+			}
+		}
+
+		&-title {
+			font-weight: $font-weight-semibold;
+		}
+
+		&-institution {
+			color: $color-text-muted;
+			font-size: $font-size-sm;
+
+			@include respond-to(md) {
+				&::before {
+					content: '— ' / '';
+				}
+			}
+		}
+
+		&-period {
+			@include meta-text;
+			flex-shrink: 0;
+		}
+	}
+}
