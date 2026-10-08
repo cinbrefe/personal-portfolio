@@ -70,3 +70,25 @@
 		border-top: $border-width solid $color-border;
 	}
 }
+
+// Inline list with a small dot between items (Skills, project stacks).
+// Put it on the <ul>; the dots are drawn shapes, so screen readers ignore them.
+@mixin dot-list($dot-size: 2px) {
+	@include flex($align: center, $wrap: wrap);
+	gap: $spacing-xs $spacing-sm;
+
+	> li {
+		@include flex($align: center);
+		gap: $spacing-sm;
+	}
+
+	// Dot before every item except the first
+	> li + li::before {
+		background-color: $color-decoration;
+		border-radius: $radius-circle;
+		content: '';
+		flex-shrink: 0;
+		height: $dot-size;
+		width: $dot-size;
+	}
+}

@@ -1,8 +1,6 @@
 @use '../../../styles/abstracts/variables' as *;
 @use '../../../styles/abstracts/mixins' as *;
 
-$dot-size: 2px;
-
 .skills {
 	&__groups {
 		@include sidebar-rows;
@@ -17,22 +15,6 @@ $dot-size: 2px;
 	}
 
 	&__tags {
-		@include flex($align: center, $wrap: wrap);
-		gap: $spacing-xs $spacing-sm;
-	}
-
-	&__tag {
-		@include flex($align: center);
-		gap: $spacing-sm;
-	}
-
-	// Dot before every skill except the first, drawn as a small circle so screen readers ignore it
-	&__tag + &__tag::before {
-		background-color: $color-decoration;
-		border-radius: $radius-circle;
-		content: '';
-		flex-shrink: 0;
-		height: $dot-size;
-		width: $dot-size;
+		@include dot-list;
 	}
 }
