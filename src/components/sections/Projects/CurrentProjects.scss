@@ -1,0 +1,100 @@
+@use '../../../styles/abstracts/variables' as *;
+@use '../../../styles/abstracts/mixins' as *;
+
+$number-column: $spacing-2xl; // fits "01"–"99"
+
+.current-projects {
+	@include flex(column);
+	gap: $spacing-lg;
+
+	&__header {
+		@include flex($align: center, $justify: space-between, $wrap: wrap);
+		gap: $spacing-sm;
+	}
+
+	&__title {
+		@include label-text;
+	}
+
+	&__period {
+		@include meta-text;
+	}
+
+	// One shared grid for all rows (number · content · stack · links), so every column lines up.
+	// Stacked on phones; four columns from md up.
+	&__items {
+		display: grid;
+
+		@include respond-to(md) {
+			column-gap: $spacing-xl;
+			grid-template-columns: $number-column minmax(0, 1.6fr) minmax(0, 1fr) auto;
+		}
+	}
+
+	&__item {
+		border-top: $border-width solid $color-border;
+		display: grid;
+		padding-block: $spacing-xl;
+		// Space between stacked parts on phones. Only row-gap, so the columns keep the parent's column-gap from md up.
+		row-gap: $spacing-sm;
+
+		@include respond-to(md) {
+			align-items: center;
+			grid-column: 1 / -1;
+			grid-template-columns: subgrid; // reuses the parent's four columns
+		}
+
+		&-number {
+			@include label-text;
+		}
+
+		&-content {
+			@include flex(column);
+			gap: $spacing-sm;
+		}
+
+		&-title {
+			font-size: $font-size-xl;
+		}
+
+		&-description {
+			color: $color-text-muted;
+		}
+
+		// Hidden on phones to save space; the full stack is on GitHub behind "Code"
+		&-stack {
+			display: none;
+
+			@include respond-to(md) {
+				@include dot-list;
+				color: $color-text-muted;
+				font-size: $font-size-sm;
+			}
+		}
+
+		&-links {
+			@include flex(row);
+			gap: $spacing-lg;
+			margin-top: $spacing-sm; // + the row's 0.5rem gap = 1rem above the links on phones
+
+			@include respond-to(md) {
+				justify-self: end; // links sit at the right edge of their column
+				margin-top: 0; // side by side in the grid, no extra space needed
+			}
+		}
+
+		// Layout (icon + text) comes from the shared .icon-link class
+		&-link {
+			color: $color-text;
+			font-size: $font-size-sm;
+			font-weight: $font-weight-semibold;
+			min-height: $control-size-sm; // comfortable tap target; the extra height is invisible
+			text-decoration: none;
+
+			&:focus-visible,
+			&:hover {
+				color: $color-interactive;
+			}
+		}
+	}
+}

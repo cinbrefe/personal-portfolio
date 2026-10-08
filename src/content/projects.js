@@ -8,29 +8,32 @@ export const projects = {
 		period: '2025 – present',
 		items: [
 		{
+			number: "01",
 			title: 'React Search App',
-			description: 'Search and explore movies and TV shows using data from the TMDB API.',
+			description: 'A search and discovery app for movies and shows, powered by the TMDB API.',
 			stack: ['React', 'JavaScript', 'Sass', 'TMDB API'],
 			links: [
-			{ label: 'Live demo', href: '[live demo url]' },
+			{ label: 'Live demo', href: 'https://github.com/cinbrefe/react-search-app' },
 			{ label: 'Code', href: 'https://github.com/cinbrefe/react-search-app' },
 			],
 		},
 		{
+			number: "02",
 			title: 'React Project Manager',
 			description: 'Create, organize and track projects, each with its own task list.',
 			stack: ['React 19', 'Custom Hooks', 'Tailwind CSS'],
 			links: [
-			{ label: 'Live demo', href: '[live demo url]' },
+			{ label: 'Live demo', href: 'https://github.com/cinbrefe/react-project-manager' },
 			{ label: 'Code', href: 'https://github.com/cinbrefe/react-project-manager' },
 			],
 		},
 		{
+			number: "03",
 			title: 'This portfolio',
 			description: 'Token-driven dark palette tuned for WCAG contrast, deployed to Vercel on a custom domain.',
 			stack: ['React', 'Sass', 'Vercel'],
 			links: [
-			{ label: 'Code', href: '[portfolio repo url]' },
+			{ label: 'Code', href: 'https://github.com/cinbrefe/personal-portfolio' },
 			],
 		},
 		],
