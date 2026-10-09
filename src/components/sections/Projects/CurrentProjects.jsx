@@ -1,3 +1,4 @@
+import { a11y } from '../../../content/copy.js';
 import ArrowIcon from '../../ui/ArrowIcon.jsx';
 import './CurrentProjects.scss';
 
@@ -30,7 +31,7 @@ export default function CurrentProjects({ heading, period, items }) {
 										href={link.href}
 										target="_blank"
 										rel="noopener noreferrer"
-										aria-label={`${link.label} (opens in new tab)`}
+										aria-label={`${link.label} ${a11y.newTab}`}
 									>
 										{link.label}
 										<ArrowIcon direction="arrow-up-right" className="icon-link__icon" />

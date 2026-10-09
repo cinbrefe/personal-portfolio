@@ -11,8 +11,13 @@ export const nav = [
 	{ label: 'Resume (PDF)', href: '/documents/cindy-brenes-resume.pdf', variant: 'ghost', icon: 'arrow-up-right', newTab: true },
 ];
 
+// Text only screen readers hear (labels for icon buttons, landmarks and links)
 export const a11y = {
 	skipLink: 'Skip to main content',
+	menuButton: 'Menu',
+	mainNav: 'Main',
+	homeLink: 'home', // read after the brand name: "cindybrenes.dev home"
+	newTab: '(opens in new tab)', // added after a link's text when it opens a new tab
 };
 
 export const brand = {

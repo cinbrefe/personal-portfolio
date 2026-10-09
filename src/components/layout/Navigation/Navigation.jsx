@@ -1,4 +1,4 @@
-import { nav } from '../../../content/copy.js';
+import { a11y, nav } from '../../../content/copy.js';
 import useMobileMenu from '../../../hooks/useMobileMenu.js';
 import ArrowIcon from '../../ui/ArrowIcon.jsx';
 import './Navigation.scss';
@@ -21,7 +21,7 @@ export default function Navigation() {
 				type="button"
 				aria-controls="site-navigation-links"
 				aria-expanded={isOpen}
-				aria-label="Menu"
+				aria-label={a11y.menuButton}
 				onClick={toggle}
 				onBlur={handleBlur}
 			>
@@ -32,7 +32,7 @@ export default function Navigation() {
 				ref={panelRef}
 				id="site-navigation-links"
 				className={`site-navigation${isOpen ? ' site-navigation--open' : ''}`}
-				aria-label="Main"
+				aria-label={a11y.mainNav}
 				onBlur={handleBlur}
 			>
 				<ul className="site-navigation__list">
@@ -43,7 +43,7 @@ export default function Navigation() {
 								href={item.href}
 								target={item.newTab ? '_blank' : undefined}
 								rel={item.newTab ? 'noopener noreferrer' : undefined}
-								aria-label={item.newTab ? `${item.label} (opens in new tab)` : undefined}
+								aria-label={item.newTab ? `${item.label} ${a11y.newTab}` : undefined}
 								onClick={close}
 							>
 								{item.label}

@@ -1,4 +1,4 @@
-import { contact } from '../../../content/copy.js';
+import { a11y, contact } from '../../../content/copy.js';
 import ArrowIcon from '../../ui/ArrowIcon.jsx';
 import ContactIcon from '../../ui/ContactIcon.jsx';
 import SectionHeader from '../../ui/SectionHeader/SectionHeader.jsx';
@@ -19,7 +19,7 @@ export default function Contact() {
 								href={link.href}
 								target={link.newTab ? '_blank' : undefined}
 								rel={link.newTab ? 'noopener noreferrer' : undefined}
-								aria-label={link.newTab ? `${link.label} (opens in new tab)` : undefined}
+								aria-label={link.newTab ? `${link.label} ${a11y.newTab}` : undefined}
 							>
 								{link.icon && <ContactIcon name={link.icon} className="icon-link__icon contact__icon" />}
 								{link.label}
