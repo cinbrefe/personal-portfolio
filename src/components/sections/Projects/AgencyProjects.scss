@@ -117,26 +117,11 @@
 
 	&__other-clients {
 		&-label {
-			display: inline;
-			font-weight: $font-weight-semibold;
-			margin-right: $spacing-xs;
-			white-space: nowrap;
+			@include inline-label;
 		}
 
 		&-list {
-			color: $color-text-muted;
-			display: inline;
-
-			> li {
-				display: inline;
-				white-space: nowrap;
-			}
-
-			> li + li::before {
-				color: $color-decoration;
-				content: ' ·\00a0' / '';
-				white-space: normal;
-			}
+			@include inline-dot-list;
 		}
 	}
 }

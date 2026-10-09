@@ -92,3 +92,33 @@
 		width: $dot-size;
 	}
 }
+
+// "Label: item · item · item" that reads like a sentence and wraps under the label
+// (Agency "Also delivered for", project page "Stack"). Use inline-label on the label
+// and inline-dot-list on the <ul>.
+@mixin inline-label($gap: $spacing-xs) {
+	display: inline;
+	font-weight: $font-weight-semibold;
+	margin-right: $gap;
+	white-space: nowrap; // the label never splits
+}
+
+@mixin inline-dot-list {
+	color: $color-text-muted;
+	display: inline;
+
+	> li {
+		display: inline;
+		white-space: nowrap; // names like "Costco Travel" never split
+	}
+
+	// " · " before every item except the first. The leading space is a normal space, so a line can
+	// break before the dot, and browsers drop a space that lands at the start of a line — that's why
+	// wrapped lines start flush with "·". The non-breaking space keeps the dot with its item.
+	// "/ ''" hides the dot from screen readers.
+	> li + li::before {
+		color: $color-decoration;
+		content: ' ·\00a0' / '';
+		white-space: normal;
+	}
+}
