@@ -1,0 +1,142 @@
+@use '../../../styles/abstracts/variables' as *;
+@use '../../../styles/abstracts/mixins' as *;
+
+.agency-projects {
+	@include flex(column);
+	gap: $spacing-xl;
+
+	&__title {
+		@include label-text;
+	}
+
+	&__items {
+		display: grid;
+		gap: $spacing-xl;
+
+		@include respond-to(md) {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+
+		@include respond-to(xl) {
+			grid-template-columns: repeat(4, minmax(0, 1fr));
+		}
+	}
+
+	&__item {
+		@include flex(column);
+		gap: $spacing-md;
+		position: relative;
+
+		&-link {
+			color: inherit;
+			text-decoration: none;
+
+			&::after {
+				content: '';
+				inset: 0;
+				position: absolute;
+			}
+
+			&:focus-visible {
+				outline: none;
+
+				&::after {
+					outline: $border-width solid $color-interactive;
+					outline-offset: $spacing-xs;
+				}
+			}
+		}
+
+		&:hover &-link,
+		&:focus-within &-link {
+			color: $color-interactive;
+		}
+
+		&-media {
+			border-radius: $radius-xs;
+			overflow: hidden;
+		}
+
+		&-image {
+			aspect-ratio: 16 / 10;
+			height: auto;
+			object-fit: cover;
+			transition: transform $transition-duration $transition-easing;
+			width: 100%;
+		}
+
+		&:hover &-image,
+		&:focus-within &-image {
+			transform: scale(1.03);
+		}
+
+		&-content {
+			@include flex(column);
+			gap: $spacing-xs;
+		}
+
+		&-meta {
+			@include meta-text;
+			@include dot-list;
+			font-size: $font-size-xs;
+			order: -1;
+		}
+
+		&-header {
+			@include flex(row, $justify: space-between, $align: center);
+		}
+
+		&-icon {
+			transition:
+				color $transition-duration $transition-easing,
+				transform $transition-duration $transition-easing;
+		}
+
+		&:hover &-icon,
+		&:focus-within &-icon {
+			color: $color-interactive;
+			transform: translateX($spacing-xs);
+		}
+
+		&-description {
+			color: $color-text-muted;
+			font-size: $font-size-sm;
+		}
+
+		&-client {
+			font-size: $font-size-lg;
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			&-image,
+			&-icon {
+				transition: none;
+			}
+		}
+	}
+
+	&__other-clients {
+		&-label {
+			display: inline;
+			font-weight: $font-weight-semibold;
+			margin-right: $spacing-xs;
+			white-space: nowrap;
+		}
+
+		&-list {
+			color: $color-text-muted;
+			display: inline;
+
+			> li {
+				display: inline;
+				white-space: nowrap;
+			}
+
+			> li + li::before {
+				color: $color-decoration;
+				content: ' ·\00a0' / '';
+				white-space: normal;
+			}
+		}
+	}
+}

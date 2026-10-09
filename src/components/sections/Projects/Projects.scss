@@ -1,0 +1,10 @@
+@use '../../../styles/abstracts/variables' as *;
+@use '../../../styles/abstracts/mixins' as *;
+
+.projects {
+	// Space between the current and agency lists
+	&__lists {
+		@include flex(column);
+		gap: $spacing-2xl;
+	}
+}
