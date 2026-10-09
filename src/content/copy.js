@@ -1,12 +1,13 @@
 // Site copy. Edit this file to change text without touching component logic.
 
+// Section links start with "/" so they reach the home page's sections from any page (e.g. a project page)
 export const nav = [
-	{ label: 'About', href: '#about' },
-	{ label: 'Skills', href: '#skills' },
-	{ label: 'Projects', href: '#projects' },
-	{ label: 'Experience', href: '#experience' },
-	{ label: 'Education', href: '#education' },
-	{ label: 'Contact', href: '#contact' },
+	{ label: 'About', href: '/#about' },
+	{ label: 'Skills', href: '/#skills' },
+	{ label: 'Projects', href: '/#projects' },
+	{ label: 'Experience', href: '/#experience' },
+	{ label: 'Education', href: '/#education' },
+	{ label: 'Contact', href: '/#contact' },
 	{ label: 'Resume (PDF)', href: '/documents/cindy-brenes-resume.pdf', variant: 'ghost', icon: 'arrow-up-right', newTab: true },
 ];
 
