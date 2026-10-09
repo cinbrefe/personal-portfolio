@@ -57,6 +57,8 @@ $spacing-3xl: 5rem; // 80px
 
 // Layout
 $max-width: 75rem;
+$container-gutter: $spacing-lg; // side padding of .container on phones
+$container-gutter-md: $spacing-2xl; // side padding of .container from md up
 $max-width-text: 65ch; // comfortable reading line length for paragraphs
 $sidebar-width: 15rem; // 240px — left column in Skills and Experience; fits the longest skill group name
 

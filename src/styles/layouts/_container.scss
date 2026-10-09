@@ -4,10 +4,10 @@
 .container {
 	margin: 0 auto;
 	max-width: $max-width;
-	padding: 0 $spacing-lg;
+	padding: 0 $container-gutter;
 	width: 100%;
 
 	@include respond-to(md) {
-		padding: 0 $spacing-2xl;
+		padding: 0 $container-gutter-md;
 	}
 }
