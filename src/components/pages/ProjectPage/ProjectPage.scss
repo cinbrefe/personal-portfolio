@@ -1,0 +1,127 @@
+@use '../../../styles/abstracts/variables' as *;
+@use '../../../styles/abstracts/mixins' as *;
+
+$next-icon-size: 28px;
+
+.project-page {
+	padding-block: $spacing-2xl;
+
+	&__inner {
+		@include flex(column);
+		gap: $spacing-md;
+	}
+
+	// Layout (icon + text) comes from the shared .icon-link class
+	&__back {
+		align-self: flex-start; // only as wide as its content inside the column
+		color: $color-text-muted;
+		font-size: $font-size-sm;
+		font-weight: $font-weight-semibold;
+		margin-bottom: $spacing-md;
+		min-height: $control-size-sm;
+		text-decoration: none;
+
+		&:focus-visible,
+		&:hover {
+			color: $color-interactive;
+		}
+	}
+
+	&__header {
+		@include flex(column);
+		gap: $spacing-md;
+	}
+
+	&__meta {
+		@include meta-text;
+		@include dot-list;
+	}
+
+	&__content {
+		@include flex(column);
+		gap: $spacing-lg;
+		max-width: $max-width-text;
+	}
+
+	&__intro {
+		color: $color-text-muted;
+		font-size: $font-size-lg;
+	}
+
+	&__contributions {
+		@include flex(column);
+		gap: $spacing-sm;
+		list-style: disc;
+		padding-left: $spacing-lg;
+	}
+
+	&__stack {
+		&-label {
+			@include inline-label($spacing-sm);
+			font-size: $font-size-sm;
+		}
+
+		&-list {
+			@include inline-dot-list;
+			font-size: $font-size-sm;
+		}
+	}
+
+	// "Next project / F5 Labs →" row across the bottom of the page
+	&__next {
+		border-top: $border-width solid $color-border;
+		margin-top: $spacing-xl;
+
+		&-link {
+			@include flex($justify: space-between, $align: center);
+			color: $color-text;
+			gap: $spacing-md;
+			padding-block: $spacing-xl;
+			text-decoration: none;
+		}
+
+		&-text {
+			@include flex(column);
+			gap: $spacing-xs;
+		}
+
+		&-label {
+			@include meta-text;
+		}
+
+		&-client {
+			font-size: $font-size-2xl;
+			font-weight: $font-weight-bold;
+			line-height: $line-height-heading;
+			transition: color $transition-duration $transition-easing;
+		}
+
+		&-icon {
+			flex-shrink: 0;
+			height: $next-icon-size;
+			transition:
+				color $transition-duration $transition-easing,
+				transform $transition-duration $transition-easing;
+			width: $next-icon-size;
+		}
+
+		// Hover or keyboard focus: name turns teal, arrow slides right
+		&-link:hover &-client,
+		&-link:focus-visible &-client {
+			color: $color-interactive;
+		}
+
+		&-link:hover &-icon,
+		&-link:focus-visible &-icon {
+			color: $color-interactive;
+			transform: translateX($spacing-xs);
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			&-client,
+			&-icon {
+				transition: none;
+			}
+		}
+	}
+}

@@ -38,6 +38,15 @@ export const projects = {
 		},
 		],
 	},
+	// Fixed text on every project page (/projects/<slug>)
+	page: {
+		back: 'Back to projects',
+		stackLabel: 'Stack:',
+		nextLabel: 'Next project',
+		navLabel: 'Project navigation',
+		notFound: 'Project not found',
+		titleSuffix: 'Cindy Brenes', // browser tab: "Target | Cindy Brenes"
+	},
 	agency: {
 		heading: 'Agency projects',
 		// Each item is a card on the home page and its own page at /projects/<slug>.
