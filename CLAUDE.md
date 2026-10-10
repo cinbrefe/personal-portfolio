@@ -6,25 +6,30 @@ Personal portfolio site. Single developer (Cindy) plus a set of specialized revi
 
 - **React 19** + **Vite** (JavaScript, not TypeScript — chosen for less ceremony on a small site).
 - **Sass** with global, BEM-named classes (`.block__element--modifier`). Each component imports its own colocated `<Name>.scss`; shared styles live in `src/styles/`. No CSS Modules.
-- Single-page scrolling site (Hero, Projects, About, Contact as anchor-linked sections within one page) — no router.
+- **React Router** (`react-router`): `/` is the one-page home (anchor-linked sections), `/projects/:slug` is a page per agency project. Nav links use `/#section` so they work from any page.
+- **Embla Carousel** (`embla-carousel-react` + `embla-carousel-class-names` plugin) powers the screenshot carousel on project pages.
+- Deployed on **Vercel**: `vercel.json` rewrites every non-file URL to `index.html` so direct visits to `/projects/<slug>` work.
 - Linting: `oxlint` (`npm run lint`).
 
 ## Structure
 
 ```
 src/
+	App.jsx                                             # shared frame (skip link, Header, <main>, Footer) + <Routes>
 	components/                                         # a component gets its own folder (<Name>/<Name>.jsx + <Name>.scss) when it has styles
+		pages/                                          # one component per route: HomePage (sections), ProjectPage/
 		layout/                                         # site frame on every page: Header, Navigation, Footer
-		sections/                                       # page content, one per nav anchor: Hero, About, Skills, Projects…
-		ui/                                             # small reusable pieces used inside sections: InspectTip, icons
+		sections/                                       # home page content, one per nav anchor: Hero, About, Skills, Projects…
+		ui/                                             # small reusable pieces: SectionHeader, InspectTip, Carousel, Icon
 	hooks/                                              # reusable custom hooks (e.g. useMobileMenu.js)
-	content/                                            # copy.js, projects.js — all site text/data lives here
+	content/                                            # copy.js (site text, a11y labels), projects.js (project data + project page text)
 	styles/
 		abstracts/      # _variables.scss, _mixins.scss — no CSS output, imported via @use
 		base/           # _reset.scss, _base.scss, _typography.scss, _accessibility.scss — global element styles
 		components/     # shared UI classes used across components (buttons, icon links)
 		layouts/        # container, main, section wrappers
 		main.scss       # @uses base/, components/, layouts/; imported once in main.jsx
+public/                 # served as-is from the site root: images/projects/<project>/, documents/ (resume), favicons
 ```
 
 Conventions:
@@ -35,6 +40,8 @@ Conventions:
 - JSX attribute order: `key`/`ref` → `id` → `className` → other attributes → `aria-*` → event handlers (`onClick`, …). No blank lines inside a component's JSX.
 - All user-facing text and project data lives in `src/content/` (`copy.js`, `projects.js`), not inline in JSX — this is what the `copywriter` agent edits, and it should never need to touch component logic.
 - Placeholder text in `src/content/` is wrapped in `[brackets]` — anything still bracketed is not real content yet.
+- Icons: use `<Icon name="…" />` from `components/ui/Icon.jsx` (one list of icon shapes + a shared `<svg>` wrapper with `aria-hidden` and `currentColor`). Add new icons there, not as separate components.
+- Shared looks are Sass mixins in `_mixins.scss` (e.g. `label-text`, `meta-text`, `dot-list`, `inline-dot-list`, `sidebar-rows`); reuse them before writing a new pattern.
 
 ## Commands
 
