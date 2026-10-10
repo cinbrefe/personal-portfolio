@@ -11,3 +11,8 @@
 		padding: 0 $container-gutter-md;
 	}
 }
+
+// Narrower container for reading-focused pages. Adds the side padding so the content itself is $max-width-narrow wide.
+.container--narrow {
+	max-width: calc($max-width-narrow + 2 * $container-gutter-md);
+}
