@@ -1,5 +1,5 @@
 import { a11y } from '../../../content/copy.js';
-import ArrowIcon from '../../ui/ArrowIcon.jsx';
+import Icon from '../../ui/Icon.jsx';
 import './CurrentProjects.scss';
 
 export default function CurrentProjects({ heading, period, items }) {
@@ -34,7 +34,7 @@ export default function CurrentProjects({ heading, period, items }) {
 										aria-label={`${link.label} ${a11y.newTab}`}
 									>
 										{link.label}
-										<ArrowIcon direction="arrow-up-right" className="icon-link__icon" />
+										<Icon name="arrow-up-right" className="icon-link__icon" />
 									</a>
 								</li>
 							))}

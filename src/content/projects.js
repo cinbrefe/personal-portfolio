@@ -46,6 +46,7 @@ export const projects = {
 		navLabel: 'Project navigation',
 		notFound: 'Project not found',
 		titleSuffix: 'Cindy Brenes', // browser tab: "Target | Cindy Brenes"
+		galleryLabel: 'Screenshots',
 	},
 	agency: {
 		heading: 'Agency projects',

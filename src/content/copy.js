@@ -18,6 +18,9 @@ export const a11y = {
 	mainNav: 'Main',
 	homeLink: 'home', // read after the brand name: "cindybrenes.dev home"
 	newTab: '(opens in new tab)', // added after a link's text when it opens a new tab
+	carouselPrevious: 'Previous screenshot',
+	carouselNext: 'Next screenshot',
+	carouselGoTo: 'Go to screenshot',
 };
 
 export const brand = {

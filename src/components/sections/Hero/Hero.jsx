@@ -1,6 +1,5 @@
 import { hero } from '../../../content/copy.js';
-import ArrowIcon from '../../ui/ArrowIcon.jsx';
-import CursorIcon from '../../ui/CursorIcon.jsx';
+import Icon from '../../ui/Icon.jsx';
 import InspectTip from '../../ui/InspectTip/InspectTip.jsx';
 import './Hero.scss';
 
@@ -16,7 +15,7 @@ export default function Hero() {
 						{greeting}{' '}
 						<span className="hero__name">
 							{name}
-							<CursorIcon className="hero__cursor" />
+							<Icon name="cursor" className="hero__cursor" />
 						</span>
 					</h1>
 				</div>
@@ -32,7 +31,7 @@ export default function Hero() {
 				<div className="hero__actions">
 					<a className="button button--primary" href={primaryCta.href}>
 						{primaryCta.label}
-						{primaryCta.icon && <ArrowIcon direction={primaryCta.icon} className="button__icon" />}
+						{primaryCta.icon && <Icon name={primaryCta.icon} className="button__icon" />}
 					</a>
 					<a className="button button--ghost" href={secondaryCta.href} download>
 						{secondaryCta.label}

@@ -1,4 +1,4 @@
-import ArrowIcon from '../../ui/ArrowIcon.jsx';
+import Icon from '../../ui/Icon.jsx';
 import './AgencyProjects.scss';
 
 export default function AgencyProjects({ heading, items, otherClients }) {
@@ -25,7 +25,7 @@ export default function AgencyProjects({ heading, items, otherClients }) {
 										{item.client}
 									</a>
 								</h4>
-								<ArrowIcon direction="arrow-right" className="agency-projects__item-icon" />
+								<Icon name="arrow-right" className="agency-projects__item-icon" />
 							</div>
 							<ul className="agency-projects__item-meta">
 								<li>{item.agency}</li>

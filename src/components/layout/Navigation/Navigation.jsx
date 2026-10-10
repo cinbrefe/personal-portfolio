@@ -1,6 +1,6 @@
 import { a11y, nav } from '../../../content/copy.js';
 import useMobileMenu from '../../../hooks/useMobileMenu.js';
-import ArrowIcon from '../../ui/ArrowIcon.jsx';
+import Icon from '../../ui/Icon.jsx';
 import './Navigation.scss';
 
 // Plain links get the nav style; items with a variant render as small buttons
@@ -47,9 +47,9 @@ export default function Navigation() {
 								onClick={close}
 							>
 								{item.label}
-								{item.icon && <ArrowIcon direction={item.icon} className="button__icon" />}
+								{item.icon && <Icon name={item.icon} className="button__icon" />}
 								{/* Plain links get an arrow; CSS only shows it on mobile */}
-								{!item.variant && <ArrowIcon direction="arrow-right" className="site-navigation__arrow" />}
+								{!item.variant && <Icon name="arrow-right" className="site-navigation__arrow" />}
 							</a>
 						</li>
 					))}

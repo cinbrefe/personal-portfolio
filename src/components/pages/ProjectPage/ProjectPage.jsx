@@ -1,6 +1,7 @@
 import { useParams } from 'react-router';
 import { projects } from '../../../content/projects.js';
-import ArrowIcon from '../../ui/ArrowIcon.jsx';
+import Icon from '../../ui/Icon.jsx';
+import Carousel from '../../ui/Carousel/Carousel.jsx';
 import './ProjectPage.scss';
 
 export default function ProjectPage() {
@@ -14,9 +15,9 @@ export default function ProjectPage() {
 		return (
 			<article className="project-page" aria-labelledby="project-page-title">
 				<title>{`${page.notFound} | ${page.titleSuffix}`}</title>
-				<div className="container project-page__inner">
+				<div className="container container--narrow project-page__inner">
 					<a className="project-page__back icon-link" href="/#projects">
-						<ArrowIcon direction="arrow-left" className="icon-link__icon" />
+						<Icon name="arrow-left" className="icon-link__icon" />
 						{page.back}
 					</a>
 					<h1 id="project-page-title" className="project-page__title">{page.notFound}</h1>
@@ -33,9 +34,9 @@ export default function ProjectPage() {
 		<article className="project-page" aria-labelledby="project-page-title">
 			{/* React 19 moves this <title> into the page's <head> */}
 			<title>{`${project.client} | ${page.titleSuffix}`}</title>
-			<div className="container project-page__inner">
+			<div className="container container--narrow project-page__inner">
 				<a className="project-page__back icon-link" href="/#projects">
-					<ArrowIcon direction="arrow-left" className="icon-link__icon" />
+					<Icon name="arrow-left" className="icon-link__icon" />
 					{page.back}
 				</a>
 				<header className="project-page__header">
@@ -62,14 +63,16 @@ export default function ProjectPage() {
 						</ul>
 					</div>
 				</div>
-				{/* Carousel goes here (last step) */}
+			</div>
+			<Carousel slides={project.gallery} label={page.galleryLabel} />
+			<div className="container container--narrow">
 				<nav className="project-page__next" aria-label={page.navLabel}>
 					<a className="project-page__next-link" href={`/projects/${next.slug}`}>
 						<span className="project-page__next-text">
 							<span className="project-page__next-label">{page.nextLabel}</span>{' '}
 							<span className="project-page__next-client">{next.client}</span>
 						</span>
-						<ArrowIcon direction="arrow-right" className="project-page__next-icon" />
+						<Icon name="arrow-right" className="project-page__next-icon" />
 					</a>
 				</nav>
 			</div>

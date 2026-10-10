@@ -1,0 +1,167 @@
+@use '../../../styles/abstracts/variables' as *;
+@use '../../../styles/abstracts/mixins' as *;
+
+$image-max-width: $max-width-narrow;
+$slide-gap: $spacing-md; // padding on each side of a slide (half the space between two screenshots)
+$active-image-width: calc(min(70%, $image-max-width + 2 * $slide-gap) - 2 * $slide-gap);
+
+.carousel {
+	position: relative;
+
+	&__viewport {
+		margin-left: calc($container-gutter - $slide-gap);
+		overflow: hidden;
+
+		@include respond-to(md) {
+			margin-left: 0;
+		}
+	}
+
+	&__track {
+		display: flex;
+		touch-action: pan-y pinch-zoom;
+	}
+
+	&__slide {
+		flex: 0 0 85%;
+		min-width: 0;
+		padding-inline: $slide-gap;
+
+		@include respond-to(md) {
+			flex-basis: min(70%, calc($image-max-width + 2 * $slide-gap));
+		}
+	}
+
+	&__image {
+		aspect-ratio: 16 / 10;
+		display: block;
+		height: auto;
+		margin-bottom: $spacing-md;
+		opacity: 0.35;
+		transition: opacity $transition-duration $transition-easing;
+		width: 100%;
+
+		// Embla's ClassNames plugin adds .is-snapped to the active slide
+		.is-snapped & {
+			opacity: 1;
+		}
+	}
+
+	&__caption {
+		color: $color-text-muted;
+		font-size: $font-size-sm;
+		opacity: 0;
+		transition: opacity $transition-duration $transition-easing;
+
+		// Embla's ClassNames plugin adds .is-snapped to the active slide
+		.is-snapped & {
+			opacity: 1;
+		}
+	}
+
+	// Hidden on phones (people swipe there; the dots stay available for keyboard users).
+	// From md up: a box exactly over the active image (same width, same 16:10 shape), centred,
+	// with one arrow at each end. (width + aspect-ratio, because % in height/top would use the parent's height)
+	&__controls {
+		display: none;
+
+		@include respond-to(md) {
+			align-items: center;
+			aspect-ratio: 16 / 10;
+			display: flex;
+			justify-content: space-between;
+			left: 50%;
+			pointer-events: none; // clicks inside the box reach the carousel, not the box
+			position: absolute;
+			top: 0;
+			transform: translateX(-50%);
+			width: $active-image-width;
+		}
+	}
+
+	// Round arrow centred on its edge of the image (half over it, half outside).
+	// --arrow-size is a CSS variable so the size and the centring margins change together per breakpoint.
+	&__button {
+		--arrow-size: #{$control-size-md}; // small desktops
+
+		@include flex($justify: center, $align: center);
+		background-color: $color-surface-inverse;
+		border: $border-width solid $color-surface-inverse;
+		border-radius: $radius-circle;
+		box-shadow: $shadow-floating;
+		color: $color-text-inverse;
+		height: var(--arrow-size);
+		pointer-events: auto;
+		transition:
+			background-color $transition-duration $transition-easing,
+			color $transition-duration $transition-easing;
+		width: var(--arrow-size);
+
+		&:hover {
+			background-color: $color-interactive;
+			border-color: $color-interactive;
+		}
+
+		&:first-child {
+			margin-left: calc(var(--arrow-size) / -2);
+		}
+
+		&:last-child {
+			margin-right: calc(var(--arrow-size) / -2);
+		}
+
+		@include respond-to(xl) {
+			--arrow-size: #{$control-size-lg}; // big screens
+		}
+	}
+
+	&__dots {
+		@include flex($align: center, $justify: center, $wrap: wrap);
+		background-color: $color-surface-control;
+		border-radius: $radius-pill;
+		margin-inline: auto;
+		margin-top: $spacing-md;
+		padding-inline: $spacing-sm;
+		width: fit-content;
+	}
+
+	// The visible dot is small (drawn with ::before); the button is a taller tap area.
+	// The negative margin keeps the extra height from making the pill taller.
+	&__dot {
+		@include flex($justify: center, $align: center);
+		height: $control-size-sm;
+		margin-block: calc(($control-size-xs - $control-size-sm) / 2);
+		width: $control-size-xs;
+
+		&::before {
+			background-color: $color-text-muted;
+			border-radius: $radius-circle;
+			content: '';
+			height: $spacing-sm;
+			transition:
+				background-color $transition-duration $transition-easing,
+				width $transition-duration $transition-easing;
+			width: $spacing-sm;
+		}
+
+		&:hover::before {
+			background-color: $color-text;
+		}
+
+		// Active dot: teal and wider (a short pill), so it doesn't rely on colour alone
+		&[aria-current='true']::before {
+			background-color: $color-interactive;
+			border-radius: $radius-pill;
+			width: $spacing-md;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		&__image,
+		&__caption,
+		&__button,
+		&__dot::before {
+			transition: none;
+		}
+	}
+}
