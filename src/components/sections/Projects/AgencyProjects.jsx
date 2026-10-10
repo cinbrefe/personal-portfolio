@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import Icon from '../../ui/Icon.jsx';
 import './AgencyProjects.scss';
 
@@ -21,9 +22,9 @@ export default function AgencyProjects({ heading, items, otherClients }) {
 						<div className="agency-projects__item-content">
 							<div className="agency-projects__item-header">
 								<h4 className="agency-projects__item-client">
-									<a className="agency-projects__item-link" href={`/projects/${item.slug}`}>
+									<Link className="agency-projects__item-link" to={`/projects/${item.slug}`}>
 										{item.client}
-									</a>
+									</Link>
 								</h4>
 								<Icon name="arrow-right" className="agency-projects__item-icon" />
 							</div>
