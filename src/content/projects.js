@@ -1,4 +1,7 @@
-// Project content. Edit this file to add or update projects without touching component code.
+// Project content: the Projects section on the home page and the project pages (/projects/<slug>).
+// Contains: the section label/heading, `page` (fixed text on every project page), `current` (React projects)
+// and `agency` (client work: each item is a card on the home page and its own project page).
+// Edit content here without touching component code. Anything in [brackets] is a placeholder, not final copy.
 
 export const projects = {
 	label: 'Projects',

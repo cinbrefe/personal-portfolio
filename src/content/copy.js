@@ -1,4 +1,7 @@
-// Site copy. Edit this file to change text without touching component logic.
+// Site copy: every piece of text on the site except projects (those live in projects.js).
+// Contains: nav, a11y (screen-reader labels), brand, the home page sections in page order
+// (hero, about, skills, experience, education, contact) and the footer.
+// Edit text here without touching component logic. Anything in [brackets] is a placeholder, not final copy.
 
 // Section links start with "/" so they reach the home page's sections from any page (e.g. a project page)
 export const nav = [
