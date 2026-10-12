@@ -2,7 +2,7 @@
 @use '../../../styles/abstracts/mixins' as *;
 
 // Padding on the block, .container on __inner: on one element, .container's padding would win
-.error-boundary {
+.status-message {
 	padding-block: $spacing-2xl;
 
 	&__inner {

@@ -221,18 +221,18 @@ export const footer = {
 	backToTop: { label: 'Back to top', href: '#top' },
 };
 
-// Shown for a URL that doesn't exist (see NotFoundPage)
+// Shown for a URL that doesn't exist (see NotFoundPage and StatusMessage)
 export const notFoundPage = {
 	documentTitle: 'Page not found | Cindy Brenes',
 	heading: 'Page not found',
 	message: "The page you're looking for doesn't exist or may have moved.",
-	homeLink: 'Back to home',
+	link: { label: 'Back to home', href: '/' },
 };
 
-// Shown in place of the page when something breaks (see ErrorBoundary)
+// Shown in place of the page when something breaks (see ErrorBoundary and StatusMessage)
 export const errorPage = {
 	documentTitle: 'Something went wrong | Cindy Brenes',
 	heading: 'Something went wrong',
 	message: 'This page ran into a problem. Try going back to the home page.',
-	homeLink: 'Back to home',
+	link: { label: 'Back to home', href: '/' },
 };

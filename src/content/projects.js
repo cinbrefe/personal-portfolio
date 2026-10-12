@@ -45,7 +45,13 @@ export const projects = {
 		stackLabel: 'Stack:',
 		nextLabel: 'Next project',
 		navLabel: 'Project navigation',
-		notFound: 'Project not found',
+		// Shown for /projects/<slug> when no project has that slug
+		notFound: {
+			documentTitle: 'Project not found | Cindy Brenes',
+			heading: 'Project not found',
+			message: "This project doesn't exist or may have moved.",
+			link: { label: 'Back to projects', href: '/#agency-projects' },
+		},
 		titleSuffix: 'Cindy Brenes', // browser tab: "Target | Cindy Brenes"
 		galleryLabel: 'Screenshots',
 	},

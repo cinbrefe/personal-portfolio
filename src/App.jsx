@@ -4,9 +4,9 @@ import { a11y } from './content/copy.js';
 import Footer from './components/layout/Footer/Footer.jsx';
 import Header from './components/layout/Header/Header.jsx';
 import HomePage from './components/pages/HomePage.jsx';
-import NotFoundPage from './components/pages/NotFoundPage/NotFoundPage.jsx';
+import NotFoundPage from './components/pages/NotFoundPage.jsx';
 import ProjectPage from './components/pages/ProjectPage/ProjectPage.jsx';
-import ErrorBoundary from './components/ui/ErrorBoundary/ErrorBoundary.jsx';
+import ErrorBoundary from './components/ui/ErrorBoundary.jsx';
 
 export default function App() {
 	const { pathname, hash } = useLocation();

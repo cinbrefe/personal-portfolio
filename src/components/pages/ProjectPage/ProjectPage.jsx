@@ -4,6 +4,7 @@ import { projects } from '../../../content/projects.js';
 import useFocusOnMount from '../../../hooks/useFocusOnMount.js';
 import Carousel from '../../ui/Carousel/Carousel.jsx';
 import Icon from '../../ui/Icon.jsx';
+import StatusMessage from '../../ui/StatusMessage/StatusMessage.jsx';
 import './ProjectPage.scss';
 
 export default function ProjectPage() {
@@ -17,24 +18,7 @@ export default function ProjectPage() {
 
 	const titleRef = useFocusOnMount(slug);
 
-	if (!project) {
-		return (
-			<article className="project-page" aria-labelledby="project-page-title">
-				<title>{`${page.notFound} | ${page.titleSuffix}`}</title>
-				{/* The server answers 200 for any URL, so keep this page out of search results */}
-				<meta name="robots" content="noindex" />
-				<div className="container container--narrow project-page__inner">
-					<Link className="project-page__back icon-link" to="/#agency-projects">
-						<Icon name="arrow-left" className="icon-link__icon" />
-						{page.back}
-					</Link>
-					<h1 ref={titleRef} id="project-page-title" className="project-page__title" tabIndex={-1}>
-						{page.notFound}
-					</h1>
-				</div>
-			</article>
-		);
-	}
+	if (!project) return <StatusMessage copy={page.notFound} />;
 
 	return (
 		<article className="project-page" aria-labelledby="project-page-title">
