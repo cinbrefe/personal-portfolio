@@ -20,11 +20,6 @@ $bar-offset: calc(($bar-height + $bar-gap) / 2);
 	justify-content: center;
 	width: $control-size-sm;
 
-	&:focus-visible {
-		outline: $border-width solid $color-interactive;
-		outline-offset: 3px;
-	}
-
 	@include respond-to(md) {
 		display: none;
 	}

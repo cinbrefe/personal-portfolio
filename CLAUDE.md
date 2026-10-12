@@ -27,7 +27,7 @@ src/
 		abstracts/      # _variables.scss, _mixins.scss — no CSS output, imported via @use
 		base/           # _reset.scss, _base.scss, _typography.scss, _accessibility.scss — global element styles
 		components/     # shared UI classes used across components (buttons, icon links)
-		layouts/        # container, main, section wrappers
+		layouts/        # container and section wrappers
 		main.scss       # @uses base/, components/, layouts/; imported once in main.jsx
 public/                 # served as-is from the site root: images/projects/<project>/, documents/ (resume), favicons
 ```
