@@ -4,7 +4,7 @@ import './AgencyProjects.scss';
 
 export default function AgencyProjects({ heading, items, otherClients }) {
 	return (
-		<div className="agency-projects">
+		<div id="agency-projects" className="agency-projects">
 			<h3 className="agency-projects__title">{heading}</h3>
 			<ul className="agency-projects__items">
 				{items.map((item) => (

@@ -29,7 +29,7 @@ export default function ProjectPage() {
 			<article className="project-page" aria-labelledby="project-page-title">
 				<title>{`${page.notFound} | ${page.titleSuffix}`}</title>
 				<div className="container container--narrow project-page__inner">
-					<Link className="project-page__back icon-link" to="/#projects">
+					<Link className="project-page__back icon-link" to="/#agency-projects">
 						<Icon name="arrow-left" className="icon-link__icon" />
 						{page.back}
 					</Link>
@@ -46,7 +46,7 @@ export default function ProjectPage() {
 			{/* React 19 moves this <title> into the page's <head> */}
 			<title>{`${project.client} | ${page.titleSuffix}`}</title>
 			<div className="container container--narrow project-page__inner">
-				<Link className="project-page__back icon-link" to="/#projects">
+				<Link className="project-page__back icon-link" to="/#agency-projects">
 					<Icon name="arrow-left" className="icon-link__icon" />
 					{page.back}
 				</Link>
