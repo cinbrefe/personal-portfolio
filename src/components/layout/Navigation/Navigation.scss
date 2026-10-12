@@ -29,7 +29,9 @@ $bar-offset: calc(($bar-height + $bar-gap) / 2);
 	background-color: $color-text;
 	display: block;
 	height: $bar-height;
-	transition: transform 160ms ease, opacity 160ms ease;
+	transition:
+		transform $transition-duration-fast $transition-easing,
+		opacity $transition-duration-fast $transition-easing;
 	width: $bar-width;
 }
 
@@ -72,7 +74,7 @@ $bar-offset: calc(($bar-height + $bar-gap) / 2);
 	position: absolute;
 	right: 0;
 	// + 1px keeps the header's bottom border visible
-	top: calc(100% + 1px);
+	top: calc(100% + $border-width-thin);
 
 	// Undo the dropdown panel so the links sit in the header's flow
 	@include respond-to(md) {
@@ -99,7 +101,7 @@ $bar-offset: calc(($bar-height + $bar-gap) / 2);
 
 .site-navigation__link:not(.button) {
 	align-items: center;
-	border-bottom: 1px solid $color-border-strong;
+	border-bottom: $border-width-thin solid $color-border-strong;
 	color: $color-text-muted;
 	display: flex;
 	font-size: $font-size-xl;
@@ -112,9 +114,9 @@ $bar-offset: calc(($bar-height + $bar-gap) / 2);
 
 	&::after {
 		background-color: $color-interactive;
-		bottom: 1px;
+		bottom: $border-width-thin;
 		content: '';
-		height: 1px;
+		height: $border-width-thin;
 		left: 0;
 		position: absolute;
 		right: 0;

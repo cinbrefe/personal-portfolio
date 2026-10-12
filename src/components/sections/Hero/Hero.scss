@@ -21,7 +21,7 @@ $highlight-band: 8px; // outer band of the inspected-name highlight
 
 	&__availability {
 		@include flex($align: center);
-		border: 1px solid $color-interactive;
+		border: $border-width-thin solid $color-interactive;
 		border-radius: $radius-pill;
 		font-size: $font-size-sm;
 		font-weight: $font-weight-semibold;

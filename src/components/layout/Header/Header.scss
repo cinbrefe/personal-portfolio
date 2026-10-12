@@ -3,7 +3,7 @@
 @use '../../../styles/abstracts/mixins' as *;
 
 $header-blur: 12px;
-$header-transition: 220ms ease;
+$header-transition: $transition-duration-slow $transition-easing;
 
 .site-header {
 	backdrop-filter: blur($header-blur);

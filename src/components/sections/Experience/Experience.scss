@@ -3,7 +3,7 @@
 
 // Timeline next to the roles
 $timeline-dot: 10px;
-$timeline-line: 1px;
+$timeline-line: $border-width-thin;
 $roles-gap: $spacing-2xl; // space between roles; the line stretches across it
 // Centers the ring on the first line of the role title (its font size × heading line height)
 $timeline-dot-top: calc(($font-size-lg * $line-height-heading - $timeline-dot) / 2);

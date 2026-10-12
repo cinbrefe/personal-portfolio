@@ -52,7 +52,7 @@ $arrow-size: 7px;
 	// Line between items: every item that follows another item gets a short line on its left.
 	// Drawn as a 1px-wide background so it can be shorter than the item (a border can't).
 	&__item + &__item {
-		background: linear-gradient($color-border-inverse, $color-border-inverse) left center / 1px $divider-height no-repeat;
+		background: linear-gradient($color-border-inverse, $color-border-inverse) left center / $border-width-thin $divider-height no-repeat;
 		padding-left: $spacing-sm; // space after each line
 	}
 
@@ -63,7 +63,7 @@ $arrow-size: 7px;
 		gap: $spacing-xs;
 
 		&::before {
-			border: 1px solid currentColor;
+			border: $border-width-thin solid currentColor;
 			border-radius: $radius-xs;
 			content: '';
 			height: 1em; // sized to the text

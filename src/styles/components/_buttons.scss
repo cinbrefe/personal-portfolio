@@ -3,7 +3,7 @@
 .button {
 	align-items: center;
 	border-radius: $radius-pill;
-	border: 1px solid transparent;
+	border: $border-width-thin solid transparent;
 	display: inline-flex;
 	font: inherit;
 	font-weight: $font-weight-semibold;

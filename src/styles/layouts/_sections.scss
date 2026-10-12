@@ -1,7 +1,7 @@
 @use '../abstracts/variables' as *;
 
 .page-section {
-	border-bottom: 1px solid $color-border;
+	border-bottom: $border-width-thin solid $color-border;
 	padding-block: $spacing-2xl;
 }
 

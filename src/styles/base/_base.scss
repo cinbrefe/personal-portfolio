@@ -21,5 +21,5 @@ body {
 
 :focus-visible {
 	outline: $border-width solid $color-interactive;
-	outline-offset: 3px;
+	outline-offset: $focus-ring-offset;
 }
