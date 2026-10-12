@@ -52,12 +52,9 @@ export default function ProjectPage() {
 					<Icon name="arrow-left" className="icon-link__icon" />
 					{page.back}
 				</Link>
+				{/* The meta list comes after the <h1> in the code, so screen readers reach it after the focused title;
+				    CSS (order: -1) still shows it above the title. */}
 				<header className="project-page__header">
-					<ul className="project-page__meta">
-						<li>{heading}</li>
-						<li>{project.agency}</li>
-						<li>{project.period}</li>
-					</ul>
 					<h1
 						ref={titleRef}
 						id="project-page-title"
@@ -66,6 +63,11 @@ export default function ProjectPage() {
 					>
 						{project.client}
 					</h1>
+					<ul className="project-page__meta">
+						<li>{heading}</li>
+						<li>{project.agency}</li>
+						<li>{project.period}</li>
+					</ul>
 				</header>
 				<div className="project-page__content">
 					<p className="project-page__intro">{project.intro}</p>

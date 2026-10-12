@@ -30,7 +30,7 @@ export default function CurrentProjects({ heading, period, items }) {
 										href={link.href}
 										target="_blank"
 										rel="noopener noreferrer"
-										aria-label={`${link.label} ${a11y.newTab}`}
+										aria-label={`${link.label}: ${item.title} ${a11y.newTab}`}
 									>
 										{link.label}
 										<Icon name="arrow-up-right" className="icon-link__icon" />

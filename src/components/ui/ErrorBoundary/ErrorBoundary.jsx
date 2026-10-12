@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import { Component, createRef } from 'react';
 import { errorPage } from '../../../content/copy.js';
 import './ErrorBoundary.scss';
 
@@ -7,10 +7,21 @@ import './ErrorBoundary.scss';
 // React already logs the error to the console, so there is no componentDidCatch here.
 export default class ErrorBoundary extends Component {
 	state = { hasError: false };
+	titleRef = createRef();
 
 	// Called by React when a child throws while rendering; the returned object updates the state
 	static getDerivedStateFromError() {
 		return { hasError: true };
+	}
+
+	// Move focus to the message, like the other pages do. A crash on the first render shows the
+	// message on mount; a later crash shows it on update.
+	componentDidMount() {
+		if (this.state.hasError) this.titleRef.current?.focus();
+	}
+
+	componentDidUpdate(_prevProps, prevState) {
+		if (!prevState.hasError && this.state.hasError) this.titleRef.current?.focus();
 	}
 
 	render() {
@@ -20,7 +31,9 @@ export default class ErrorBoundary extends Component {
 		return (
 			<section className="error-boundary container container--narrow" aria-labelledby="error-boundary-title">
 				<title>{errorPage.documentTitle}</title>
-				<h1 id="error-boundary-title" className="error-boundary__title">{errorPage.heading}</h1>
+				<h1 ref={this.titleRef} id="error-boundary-title" className="error-boundary__title" tabIndex={-1}>
+					{errorPage.heading}
+				</h1>
 				<p className="error-boundary__message">{errorPage.message}</p>
 				<a className="error-boundary__link button button--primary" href="/">{errorPage.homeLink}</a>
 			</section>

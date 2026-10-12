@@ -37,6 +37,7 @@ $next-icon-size: 28px;
 	&__meta {
 		@include meta-text;
 		@include dot-list;
+		order: -1;
 	}
 
 	&__content {
