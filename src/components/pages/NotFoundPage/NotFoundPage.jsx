@@ -1,15 +1,10 @@
-import { useEffect, useRef } from 'react';
 import { Link } from 'react-router';
 import { notFoundPage } from '../../../content/copy.js';
+import useFocusOnMount from '../../../hooks/useFocusOnMount.js';
 import './NotFoundPage.scss';
 
 export default function NotFoundPage() {
-	const titleRef = useRef(null);
-
-	// Move keyboard and screen-reader focus to the title after navigating here
-	useEffect(() => {
-		titleRef.current?.focus();
-	}, []);
+	const titleRef = useFocusOnMount();
 
 	return (
 		<section className="not-found-page" aria-labelledby="not-found-page-title">

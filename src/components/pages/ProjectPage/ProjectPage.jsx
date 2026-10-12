@@ -1,7 +1,7 @@
-import { useEffect, useRef } from 'react';
 import { Link, useParams } from 'react-router';
 import { site } from '../../../content/copy.js';
 import { projects } from '../../../content/projects.js';
+import useFocusOnMount from '../../../hooks/useFocusOnMount.js';
 import Carousel from '../../ui/Carousel/Carousel.jsx';
 import Icon from '../../ui/Icon.jsx';
 import './ProjectPage.scss';
@@ -15,13 +15,7 @@ export default function ProjectPage() {
 	const project = items[index]; // undefined when no project has this slug (index is -1)
 	const next = items[(index + 1) % items.length]; // loops from the last back to the first
 
-	const titleRef = useRef(null);
-
-	// After navigating here (or to another project), move keyboard and screen-reader focus to the page title.
-	// Hooks must run on every render, so this sits above the early return below.
-	useEffect(() => {
-		titleRef.current?.focus();
-	}, [slug]);
+	const titleRef = useFocusOnMount(slug);
 
 	if (!project) {
 		return (
