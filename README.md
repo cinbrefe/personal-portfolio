@@ -18,6 +18,7 @@ The portfolio of Cindy Brenes, a frontend developer. Built with React and Sass, 
 - Visible focus styles; decorative icons and shapes are hidden from screen readers
 - Respects `prefers-reduced-motion`
 - Descriptive alt text for every screenshot
+- Color contrast checked against WCAG AA for every text and control color (most pairs also pass AAA)
 
 ## Tech stack
 
