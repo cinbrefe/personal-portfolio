@@ -5,7 +5,7 @@ import './AgencyProjects.scss';
 export default function AgencyProjects({ heading, items, otherClients }) {
 	return (
 		<div id="agency-projects" className="agency-projects">
-			<h3 className="agency-projects__title">{heading}</h3>
+			<h3 id="agency-projects-title" className="agency-projects__title" tabIndex={-1}>{heading}</h3>
 			<ul className="agency-projects__items">
 				{items.map((item) => (
 					<li key={item.client} className="agency-projects__item">

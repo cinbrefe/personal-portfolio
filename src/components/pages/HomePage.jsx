@@ -10,14 +10,23 @@ import Projects from '../sections/Projects/Projects.jsx';
 import Skills from '../sections/Skills/Skills.jsx';
 
 export default function HomePage() {
-	const { hash } = useLocation();
+	const { hash, key } = useLocation();
 
 	// The browser can't scroll to "/#contact" on its own, because React builds the sections after the page loads.
-	// Once they exist, scroll to the section named in the URL (e.g. coming from a nav link on a project page).
+	// Once they exist, scroll to the section named in the URL (e.g. coming from a nav link on a project page),
+	// and move keyboard and screen-reader focus to its heading ("<id>-title") so the next Tab continues from there.
+	// Without a hash, coming from another page puts focus on the hero title, like ProjectPage does.
+	// (key is 'default' only on the first page load, where focus should stay at the top.)
 	useEffect(() => {
-		if (!hash) return;
-		document.getElementById(hash.slice(1))?.scrollIntoView();
-	}, [hash]);
+		if (!hash) {
+			if (key !== 'default') document.getElementById('hero-title')?.focus();
+			return;
+		}
+
+		const id = hash.slice(1);
+		document.getElementById(id)?.scrollIntoView();
+		document.getElementById(`${id}-title`)?.focus({ preventScroll: true });
+	}, [hash, key]);
 
 	return (
 		<>

@@ -11,7 +11,7 @@ export default function Hero() {
 			<div className="container hero__inner">
 				<div className="hero__header">
 					<p className="hero__availability">{availability}</p>
-					<h1 id="hero-title" className="hero__title">
+					<h1 id="hero-title" className="hero__title" tabIndex={-1}>
 						{greeting}{' '}
 						<span className="hero__name">
 							{name}
