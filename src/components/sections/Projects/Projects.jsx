@@ -1,7 +1,7 @@
 import { projects } from '../../../content/projects.js';
 import SectionHeader from '../../ui/SectionHeader/SectionHeader.jsx';
-import CurrentProjects from './CurrentProjects.jsx';
 import AgencyProjects from './AgencyProjects.jsx';
+import CurrentProjects from './CurrentProjects.jsx';
 import './Projects.scss';
 
 export default function Projects() {

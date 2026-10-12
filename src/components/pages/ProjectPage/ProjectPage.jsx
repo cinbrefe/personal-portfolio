@@ -1,8 +1,8 @@
 import { useEffect, useRef } from 'react';
 import { Link, useParams } from 'react-router';
 import { projects } from '../../../content/projects.js';
-import Icon from '../../ui/Icon.jsx';
 import Carousel from '../../ui/Carousel/Carousel.jsx';
+import Icon from '../../ui/Icon.jsx';
 import './ProjectPage.scss';
 
 export default function ProjectPage() {

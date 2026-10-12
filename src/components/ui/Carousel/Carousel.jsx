@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import useEmblaCarousel from 'embla-carousel-react';
 import ClassNames from 'embla-carousel-class-names';
+import useEmblaCarousel from 'embla-carousel-react';
 import { a11y } from '../../../content/copy.js';
 import Icon from '../Icon.jsx';
 import './Carousel.scss';
