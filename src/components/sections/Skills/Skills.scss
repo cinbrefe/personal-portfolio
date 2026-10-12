@@ -8,10 +8,10 @@
 
 	&__group {
 		@include sidebar-row;
+	}
 
-		&-name {
-			white-space: nowrap;
-		}
+	&__group-name {
+		white-space: nowrap;
 	}
 
 	&__tags {

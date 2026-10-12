@@ -164,11 +164,4 @@ $bar-offset: calc(($bar-height + $bar-gap) / 2);
 			width: auto;
 		}
 	}
-
-	@media (prefers-reduced-motion: reduce) {
-		&__bar,
-		&__link::after {
-			transition: none;
-		}
-	}
 }

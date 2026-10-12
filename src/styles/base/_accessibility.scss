@@ -30,3 +30,13 @@
 :is(main, h1, h2, h3)[tabindex='-1']:focus {
 	outline: none;
 }
+
+// People who ask for less motion get no transitions anywhere. One global rule instead of one per component;
+// !important so it also beats component rules that set a transition.
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		transition: none !important;
+	}
+}

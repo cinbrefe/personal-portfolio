@@ -47,10 +47,3 @@
 .button__icon {
 	flex: none;
 }
-
-@media (prefers-reduced-motion: reduce) {
-	.button {
-		transition: none;
-	}
-
-}

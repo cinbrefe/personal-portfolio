@@ -122,3 +122,14 @@
 		white-space: normal;
 	}
 }
+
+// Link without an underline that turns teal on hover or keyboard focus (project back link, project "Code" links, footer)
+@mixin quiet-link($color: $color-text) {
+	color: $color;
+	text-decoration: none;
+
+	&:focus-visible,
+	&:hover {
+		color: $color-interactive;
+	}
+}

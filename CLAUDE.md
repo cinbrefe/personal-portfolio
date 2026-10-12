@@ -41,7 +41,8 @@ Conventions:
 - All user-facing text and project data lives in `src/content/` (`copy.js`, `projects.js`), not inline in JSX — this is what the `portfolio-copywriter` skill edits, and it should never need to touch component logic.
 - Placeholder text in `src/content/` is wrapped in `[brackets]` — anything still bracketed is not real content yet.
 - Icons: use `<Icon name="…" />` from `components/ui/Icon.jsx` (one list of icon shapes + a shared `<svg>` wrapper with `aria-hidden` and `currentColor`). Add new icons there, not as separate components.
-- Shared looks are Sass mixins in `_mixins.scss` (e.g. `label-text`, `meta-text`, `dot-list`, `inline-dot-list`, `sidebar-rows`); reuse them before writing a new pattern.
+- Shared looks are Sass mixins in `_mixins.scss` (e.g. `label-text`, `meta-text`, `dot-list`, `inline-dot-list`, `sidebar-rows`, `quiet-link`); reuse them before writing a new pattern.
+- Reduced motion is handled once, globally, in `base/_accessibility.scss` — components don't need their own `prefers-reduced-motion` block for transitions.
 
 ## Commands
 

@@ -160,13 +160,4 @@ $active-image-width: calc(min(70%, $image-max-width + 2 * $slide-gap) - 2 * $sli
 			width: $spacing-md;
 		}
 	}
-
-	@media (prefers-reduced-motion: reduce) {
-		&__image,
-		&__caption,
-		&__button,
-		&__dot::before {
-			transition: none;
-		}
-	}
 }

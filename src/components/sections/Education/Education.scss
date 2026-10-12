@@ -8,11 +8,9 @@
 		max-width: $max-width-narrow;
 	}
 
-	&__group {
-		&-name {
-			@include label-text;
-			margin-bottom: $spacing-sm;
-		}
+	&__group-name {
+		@include label-text;
+		margin-bottom: $spacing-sm;
 	}
 
 	&__item {
@@ -20,36 +18,36 @@
 		border-top: $border-width solid $color-border;
 		gap: $spacing-sm;
 		padding-block: $spacing-md;
+	}
 
-		&-content {
-			@include flex(column);
-			gap: $spacing-xs;
+	&__item-content {
+		@include flex(column);
+		gap: $spacing-xs;
 
-			@include respond-to(md) {
-				flex-direction: row;
-				flex-wrap: wrap;
-				gap: $spacing-sm;
+		@include respond-to(md) {
+			flex-direction: row;
+			flex-wrap: wrap;
+			gap: $spacing-sm;
+		}
+	}
+
+	&__item-title {
+		font-weight: $font-weight-semibold;
+	}
+
+	&__item-institution {
+		color: $color-text-muted;
+		font-size: $font-size-sm;
+
+		@include respond-to(md) {
+			&::before {
+				content: '— ' / '';
 			}
 		}
+	}
 
-		&-title {
-			font-weight: $font-weight-semibold;
-		}
-
-		&-institution {
-			color: $color-text-muted;
-			font-size: $font-size-sm;
-
-			@include respond-to(md) {
-				&::before {
-					content: '— ' / '';
-				}
-			}
-		}
-
-		&-period {
-			@include meta-text;
-			flex-shrink: 0;
-		}
+	&__item-period {
+		@include meta-text;
+		flex-shrink: 0;
 	}
 }

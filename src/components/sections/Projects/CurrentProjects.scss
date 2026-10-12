@@ -43,58 +43,52 @@ $number-column: $spacing-2xl; // fits "01"–"99"
 			grid-column: 1 / -1;
 			grid-template-columns: subgrid; // reuses the parent's four columns
 		}
+	}
 
-		&-number {
-			@include label-text;
-		}
+	&__item-number {
+		@include label-text;
+	}
 
-		&-content {
-			@include flex(column);
-			gap: $spacing-sm;
-		}
+	&__item-content {
+		@include flex(column);
+		gap: $spacing-sm;
+	}
 
-		&-title {
-			font-size: $font-size-xl;
-		}
+	&__item-title {
+		font-size: $font-size-xl;
+	}
 
-		&-description {
+	&__item-description {
+		color: $color-text-muted;
+	}
+
+	// Hidden on phones to save space; the full stack is on GitHub behind "Code"
+	&__item-stack {
+		display: none;
+
+		@include respond-to(md) {
+			@include dot-list;
 			color: $color-text-muted;
-		}
-
-		// Hidden on phones to save space; the full stack is on GitHub behind "Code"
-		&-stack {
-			display: none;
-
-			@include respond-to(md) {
-				@include dot-list;
-				color: $color-text-muted;
-				font-size: $font-size-sm;
-			}
-		}
-
-		&-links {
-			@include flex(row);
-			gap: $spacing-lg;
-			margin-top: $spacing-sm; // + the row's 0.5rem gap = 1rem above the links on phones
-
-			@include respond-to(md) {
-				justify-self: end;
-				margin-top: 0;
-			}
-		}
-
-		// Layout (icon + text) comes from the shared .icon-link class
-		&-link {
-			color: $color-text;
 			font-size: $font-size-sm;
-			font-weight: $font-weight-semibold;
-			min-height: $control-size-sm; // comfortable tap target; the extra height is invisible
-			text-decoration: none;
-
-			&:focus-visible,
-			&:hover {
-				color: $color-interactive;
-			}
 		}
+	}
+
+	&__item-links {
+		@include flex(row);
+		gap: $spacing-lg;
+		margin-top: $spacing-sm; // + the row's 0.5rem gap = 1rem above the links on phones
+
+		@include respond-to(md) {
+			justify-self: end;
+			margin-top: 0;
+		}
+	}
+
+	// Layout (icon + text) comes from the shared .icon-link class
+	&__item-link {
+		@include quiet-link;
+		font-size: $font-size-sm;
+		font-weight: $font-weight-semibold;
+		min-height: $control-size-sm; // comfortable tap target; the extra height is invisible
 	}
 }

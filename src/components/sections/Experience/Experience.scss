@@ -15,19 +15,19 @@ $timeline-dot-top: calc(($font-size-lg * $line-height-heading - $timeline-dot) /
 
 	&__company {
 		@include sidebar-row;
+	}
 
-		&-name {
-			font-size: $font-size-xl;
-		}
+	&__company-name {
+		font-size: $font-size-xl;
+	}
 
-		&-note {
-			color: $color-text-muted;
-			font-size: $font-size-sm;
-		}
+	&__company-note {
+		color: $color-text-muted;
+		font-size: $font-size-sm;
+	}
 
-		&-period {
-			@include meta-text;
-		}
+	&__company-period {
+		@include meta-text;
 	}
 
 	&__roles {
@@ -70,23 +70,23 @@ $timeline-dot-top: calc(($font-size-lg * $line-height-heading - $timeline-dot) /
 		&:last-child::after {
 			display: none;
 		}
+	}
 
-		&-header {
-			@include flex($direction: column, $justify: space-between, $wrap: wrap);
-			gap: $spacing-sm;
+	&__role-header {
+		@include flex($direction: column, $justify: space-between, $wrap: wrap);
+		gap: $spacing-sm;
 
-			@include respond-to(md) {
-				flex-direction: row;
-			}
+		@include respond-to(md) {
+			flex-direction: row;
 		}
+	}
 
-		&-title {
-			font-size: $font-size-lg;
-		}
+	&__role-title {
+		font-size: $font-size-lg;
+	}
 
-		&-period {
-			@include meta-text;
-		}
+	&__role-period {
+		@include meta-text;
 	}
 
 	&__bullets {
