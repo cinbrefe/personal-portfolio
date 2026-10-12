@@ -12,7 +12,6 @@ export default function CurrentProjects({ heading, period, items }) {
 			<ul className="current-projects__items">
 				{items.map((item, index) => (
 					<li key={item.title} className="current-projects__item">
-						{/* "01", "02"… from the list order, so reordering projects never needs renumbering */}
 						<p className="current-projects__item-number">{String(index + 1).padStart(2, '0')}</p>
 						<div className="current-projects__item-content">
 							<h4 className="current-projects__item-title">{item.title}</h4>

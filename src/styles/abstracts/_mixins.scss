@@ -1,7 +1,7 @@
 @use 'sass:map';
 @use 'variables' as *;
 
-// Responsive layout (min-width, mobile-first): respond-to(md) looks the width up in $breakpoints
+// Responsive layout (min-width, mobile-first)
 @mixin respond-to($breakpoint) {
 	@if not map.has-key($breakpoints, $breakpoint) {
 		@error 'Unknown breakpoint: #{$breakpoint}';
@@ -120,7 +120,7 @@
 	}
 }
 
-// Link without an underline that turns teal on hover or keyboard focus (project back link, project "Code" links, footer)
+// Link without an underline that turns teal on hover or keyboard focus
 @mixin quiet-link($color: $color-text) {
 	color: $color;
 	text-decoration: none;

@@ -31,8 +31,7 @@
 	outline: none;
 }
 
-// People who ask for less motion get no transitions anywhere. One global rule instead of one per component;
-// !important so it also beats component rules that set a transition.
+// Reduced motion for the whole site in one rule; !important beats any component's transition
 @media (prefers-reduced-motion: reduce) {
 	*,
 	*::before,

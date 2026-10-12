@@ -69,7 +69,7 @@ $bar-offset: calc(($bar-height + $bar-gap) / 2);
 		padding: $spacing-md $spacing-xl;
 		position: absolute;
 		right: 0;
-		// + 1px keeps the header's bottom border visible
+		// + the border width keeps the header's bottom border visible
 		top: calc(100% + $border-width-thin);
 
 		// Undo the dropdown panel so the links sit in the header's flow
