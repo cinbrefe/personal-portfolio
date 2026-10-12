@@ -17,8 +17,7 @@ export default function Header() {
 		return () => window.removeEventListener('scroll', updateScrolledState);
 	}, []);
 
-	// Shares the header's real height with CSS (--site-header-height), so scroll-padding keeps
-	// focused links and anchor targets out from under it, even when the nav wraps to two rows.
+	// Share the header's real height with CSS (it grows when the nav wraps) for scroll-padding-top
 	useEffect(() => {
 		const observer = new ResizeObserver(([entry]) => {
 			document.documentElement.style.setProperty('--site-header-height', `${entry.borderBoxSize[0].blockSize}px`);

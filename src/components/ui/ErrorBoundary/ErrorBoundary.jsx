@@ -9,13 +9,11 @@ export default class ErrorBoundary extends Component {
 	state = { hasError: false };
 	titleRef = createRef();
 
-	// Called by React when a child throws while rendering; the returned object updates the state
 	static getDerivedStateFromError() {
 		return { hasError: true };
 	}
 
-	// Move focus to the message, like the other pages do. A crash on the first render shows the
-	// message on mount; a later crash shows it on update.
+	// Focus the message: a crash on the first render shows it on mount, a later crash on update
 	componentDidMount() {
 		if (this.state.hasError) this.titleRef.current?.focus();
 	}

@@ -43,10 +43,10 @@ $arrow-size: 7px;
 		font-weight: $font-weight-medium;
 	}
 
-	// Wraps onto a second line only on very narrow screens (or zoomed in), instead of overflowing
+	// Wraps instead of overflowing on very narrow screens
 	&__body {
 		@include flex(row, $justify: center, $align: center, $wrap: wrap);
-		gap: $spacing-xs $spacing-sm; // row gap when wrapped · space before each line
+		gap: $spacing-xs $spacing-sm;
 	}
 
 	// Line between items: every item that follows another item gets a short line on its left.

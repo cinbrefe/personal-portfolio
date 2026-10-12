@@ -1,8 +1,7 @@
 @use '../../../styles/abstracts/variables' as *;
 @use '../../../styles/abstracts/mixins' as *;
 
-// Padding sits on the block and layout on __inner (which also has .container), so the shared
-// .container padding can't override this block's padding (same specificity, later in the CSS).
+// Padding on the block, .container on __inner: on one element, .container's padding would win
 .error-boundary {
 	padding-block: $spacing-2xl;
 

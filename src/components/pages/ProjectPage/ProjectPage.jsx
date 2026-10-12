@@ -27,7 +27,7 @@ export default function ProjectPage() {
 		return (
 			<article className="project-page" aria-labelledby="project-page-title">
 				<title>{`${page.notFound} | ${page.titleSuffix}`}</title>
-				{/* The server answers 200 for any URL, so tell search engines not to index this page */}
+				{/* The server answers 200 for any URL, so keep this page out of search results */}
 				<meta name="robots" content="noindex" />
 				<div className="container container--narrow project-page__inner">
 					<Link className="project-page__back icon-link" to="/#agency-projects">
@@ -52,8 +52,7 @@ export default function ProjectPage() {
 					<Icon name="arrow-left" className="icon-link__icon" />
 					{page.back}
 				</Link>
-				{/* The meta list comes after the <h1> in the code, so screen readers reach it after the focused title;
-				    CSS (order: -1) still shows it above the title. */}
+				{/* Meta comes after the <h1> so screen readers read it after the focused title; CSS shows it above */}
 				<header className="project-page__header">
 					<h1
 						ref={titleRef}

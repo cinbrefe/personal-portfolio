@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-// True when the node is inside any of the given elements. Lives outside the hook because it uses
-// no state or props, so effects can call it without listing it as a dependency.
+// Outside the hook: it uses no state or props, so effects don't need it as a dependency
 function isInside(node, ...refs) {
 	return refs.some((ref) => ref.current?.contains(node));
 }
@@ -13,12 +12,10 @@ export default function useMobileMenu() {
 	const toggleRef = useRef(null);
 	const panelRef = useRef(null);
 
-	// Plain functions: they're only passed to DOM elements, so they don't need useCallback.
-	// The effects below call setIsOpen directly, because React keeps setIsOpen the same on every render.
+	// No useCallback needed: these only go to DOM elements, and the effects use setIsOpen (always stable)
 	const toggle = () => setIsOpen((open) => !open);
 	const close = () => setIsOpen(false);
 
-	// Escape closes the menu and returns focus to the toggle
 	useEffect(() => {
 		if (!isOpen) return;
 
@@ -32,7 +29,6 @@ export default function useMobileMenu() {
 		return () => document.removeEventListener('keydown', handleKeyDown);
 	}, [isOpen]);
 
-	// Clicking or tapping anywhere outside the toggle and panel closes the menu
 	useEffect(() => {
 		if (!isOpen) return;
 
@@ -62,8 +58,7 @@ export default function useMobileMenu() {
 		return () => observer.disconnect();
 	}, [isOpen]);
 
-	// Keyboard focus leaving both the toggle and panel closes the menu.
-	// A null relatedTarget means a pointer interaction, which the outside-click effect handles.
+	// A null relatedTarget means a pointer interaction, which the outside-click effect handles
 	const handleBlur = (event) => {
 		const next = event.relatedTarget;
 		if (next && !isInside(next, panelRef, toggleRef)) close();

@@ -14,8 +14,7 @@ export default function Navigation() {
 	const { isOpen, toggle, close, toggleRef, panelRef, handleBlur } = useMobileMenu();
 
 	return (
-		// The toggle sits inside <nav>, so the "Main" navigation landmark exists even while the menu is closed.
-		// Only the list is the dropdown panel that shows and hides.
+		// The toggle sits inside <nav>, so the "Main" navigation landmark exists even while the menu is closed
 		<nav className="site-navigation" aria-label={a11y.mainNav}>
 			<button
 				ref={toggleRef}
@@ -40,8 +39,7 @@ export default function Navigation() {
 			>
 				{nav.map((item) => (
 					<li key={item.href}>
-						{/* Files that open in a new tab (the resume) stay plain <a>; site pages use <Link>,
-						    so moving between pages doesn't reload the whole app */}
+						{/* The resume opens in a new tab as a plain <a>; site pages use <Link> (no reload) */}
 						{item.newTab ? (
 							<a
 								className={getLinkClassName(item)}

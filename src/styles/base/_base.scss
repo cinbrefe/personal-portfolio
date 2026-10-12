@@ -2,8 +2,7 @@
 
 html {
 	font-size: $font-size-base;
-	// Keeps anchor targets and focused elements clear of the sticky header.
-	// --site-header-height is set by Header.jsx; the fallback covers the moment before it runs.
+	// Keeps anchor targets and focused elements clear of the sticky header (height set by Header.jsx)
 	scroll-padding-top: calc(var(--site-header-height, #{$spacing-3xl}) + #{$spacing-sm});
 
 	@media (prefers-reduced-motion: no-preference) {

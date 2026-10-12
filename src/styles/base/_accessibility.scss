@@ -26,8 +26,7 @@
 	}
 }
 
-// <main> (skip-link target) and page/section headings receive focus from code, not from Tab; they don't need a ring.
-// Limited to these elements so a future widget using tabindex="-1" keeps its focus ring.
+// <main> and headings get focus from code, not Tab, so they don't need a ring
 :is(main, h1, h2, h3)[tabindex='-1']:focus {
 	outline: none;
 }

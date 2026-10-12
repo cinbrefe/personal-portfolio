@@ -23,7 +23,6 @@ export default function Carousel({ slides, label }) {
 	);
 	const [selectedIndex, setSelectedIndex] = useState(0);
 
-	// When Embla changes slide (swipe, arrows, dots, looping), remember which one is active
 	useEffect(() => {
 		if (!emblaApi) return;
 
@@ -32,7 +31,7 @@ export default function Carousel({ slides, label }) {
 		return () => emblaApi.off('select', onSelect);
 	}, [emblaApi]);
 
-	// A project without screenshots shows no carousel (this sits after the hooks, which must always run)
+	// No screenshots, no carousel (placed after the hooks, which must always run)
 	if (!slides?.length) return null;
 
 	return (
@@ -87,8 +86,7 @@ export default function Carousel({ slides, label }) {
 					/>
 				))}
 			</div>
-			{/* Screen readers announce the new slide after a change. It stays quiet on page load,
-			    because a live region only speaks when its text changes. */}
+			{/* Announces slide changes to screen readers (a live region is quiet until its text changes) */}
 			<p className="visually-hidden" aria-live="polite" aria-atomic="true">
 				{`${a11y.carouselSlide} ${selectedIndex + 1} ${a11y.carouselOf} ${slides.length}: ${slides[selectedIndex].title}`}
 			</p>
