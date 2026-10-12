@@ -1,6 +1,6 @@
 # personal-portfolio
 
-Personal portfolio site. Single developer (Cindy) plus a set of specialized review/writing subagents (see `.claude/agents/`).
+Personal portfolio site. Single developer (Cindy) plus specialized review subagents (`.claude/agents/`) and a copywriting skill (`.claude/skills/`).
 
 ## Stack
 
@@ -20,7 +20,7 @@ src/
 		pages/                                          # one component per route: HomePage (sections), ProjectPage/
 		layout/                                         # site frame on every page: Header, Navigation, Footer
 		sections/                                       # home page content, one per nav anchor: Hero, About, Skills, Projects…
-		ui/                                             # small reusable pieces: SectionHeader, InspectTip, Carousel, Icon
+		ui/                                             # small reusable pieces: SectionHeader, InspectTip, Carousel, Icon, ErrorBoundary
 	hooks/                                              # reusable custom hooks (e.g. useMobileMenu.js)
 	content/                                            # copy.js (site text, a11y labels), projects.js (project data + project page text)
 	styles/
@@ -38,7 +38,7 @@ Conventions:
 - Component styles `@use` the abstracts layer directly. Classes are global, so prefix every class with its BEM block name (e.g. `.site-navigation__link`) to avoid collisions.
 - Import order in every file, with no blank lines between imports: React/external packages → content (`src/content/`) → hooks → components → the file's own `.scss` last. Use file extensions (`.js`, `.jsx`) in relative imports.
 - JSX attribute order: `key`/`ref` → `id` → `className` → other attributes → `aria-*` → event handlers (`onClick`, …). No blank lines inside a component's JSX.
-- All user-facing text and project data lives in `src/content/` (`copy.js`, `projects.js`), not inline in JSX — this is what the `copywriter` agent edits, and it should never need to touch component logic.
+- All user-facing text and project data lives in `src/content/` (`copy.js`, `projects.js`), not inline in JSX — this is what the `portfolio-copywriter` skill edits, and it should never need to touch component logic.
 - Placeholder text in `src/content/` is wrapped in `[brackets]` — anything still bracketed is not real content yet.
 - Icons: use `<Icon name="…" />` from `components/ui/Icon.jsx` (one list of icon shapes + a shared `<svg>` wrapper with `aria-hidden` and `currentColor`). Add new icons there, not as separate components.
 - Shared looks are Sass mixins in `_mixins.scss` (e.g. `label-text`, `meta-text`, `dot-list`, `inline-dot-list`, `sidebar-rows`); reuse them before writing a new pattern.
@@ -51,10 +51,12 @@ Conventions:
 
 ## The agent team
 
-Custom subagents in `.claude/agents/` — invoke by name or ask in plain language:
-- **accessibility-tester** — WCAG audit (semantics, ARIA, keyboard, contrast, forms, motion). Read-only, reports findings.
-- **copywriter** — writes/edits `src/content/copy.js` and `src/content/projects.js`. Does not touch components or styles.
-- **react-sass-reviewer** — reviews component structure and Sass architecture against the conventions above. Read-only, reports findings.
-- **performance-seo-auditor** — bundle size, image optimization, meta tags, Core Web Vitals concerns. Read-only, reports findings.
+Custom subagents in `.claude/agents/` — invoke by name or ask in plain language. All are read-only and report findings:
+- **frontend-mentor** — senior React + Sass mentor: reviews components and stylesheets against the conventions above and explains how to level them up.
+- **accessibility-expert** — WCAG 2.2 AA audit (semantics, ARIA, keyboard, contrast, forms, motion).
+- **performance-seo-auditor** — Core Web Vitals, bundle size, images, fonts, meta tags, social previews, sitemap.
 
-Default workflow after building or changing a section: run `react-sass-reviewer` and `accessibility-tester` on it before considering it done. Run `performance-seo-auditor` before a deploy. Run `copywriter` whenever `[bracketed]` placeholder content needs to become real copy.
+Skill in `.claude/skills/`:
+- **portfolio-copywriter** — writes/edits copy (hero/about, project case studies, READMEs, microcopy, SEO titles/descriptions) in `src/content/copy.js` and `src/content/projects.js`. Does not touch components or styles.
+
+Default workflow after building or changing a section: run `frontend-mentor` and `accessibility-expert` on it before considering it done. Run `performance-seo-auditor` before a deploy. Use `portfolio-copywriter` whenever `[bracketed]` placeholder content needs to become real copy.
