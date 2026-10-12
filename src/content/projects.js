@@ -8,7 +8,7 @@ export const projects = {
 	heading: 'Selected projects',
 	current: {
 		heading: 'Current projects — React',
-		period: '2025 – present',
+		period: '2026',
 		items: [
 		{
 			number: "01",
