@@ -86,7 +86,8 @@ export default function ProjectPage() {
 					</div>
 				</div>
 			</div>
-			<Carousel slides={project.gallery} label={page.galleryLabel} />
+			{/* key: a new project gets a fresh carousel, starting at slide 1 */}
+			<Carousel key={project.slug} slides={project.gallery} label={page.galleryLabel} />
 			<div className="container container--narrow">
 				<nav className="project-page__next" aria-label={page.navLabel}>
 					<Link className="project-page__next-link" to={`/projects/${next.slug}`}>

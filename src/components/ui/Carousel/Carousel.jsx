@@ -32,6 +32,9 @@ export default function Carousel({ slides, label }) {
 		return () => emblaApi.off('select', onSelect);
 	}, [emblaApi]);
 
+	// A project without screenshots shows no carousel (this sits after the hooks, which must always run)
+	if (!slides?.length) return null;
+
 	return (
 		<section className="carousel" aria-label={label}>
 			<div className="carousel__viewport" ref={emblaRef}>
