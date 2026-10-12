@@ -1,13 +1,11 @@
 @use '../../../styles/abstracts/variables' as *;
 @use '../../../styles/abstracts/mixins' as *;
 
-$groups-max-width: 800px;
-
 .education {
 	&__groups {
 		@include flex(column);
 		gap: $spacing-xl;
-		max-width: $groups-max-width;
+		max-width: $max-width-narrow;
 	}
 
 	&__group {
