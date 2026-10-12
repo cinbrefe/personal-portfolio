@@ -4,6 +4,7 @@ import { a11y } from './content/copy.js';
 import Header from './components/layout/Header/Header.jsx';
 import HomePage from './components/pages/HomePage.jsx';
 import ProjectPage from './components/pages/ProjectPage/ProjectPage.jsx';
+import ErrorBoundary from './components/ui/ErrorBoundary/ErrorBoundary.jsx';
 import Footer from './components/layout/Footer/Footer.jsx';
 
 export default function App() {
@@ -21,10 +22,14 @@ export default function App() {
 			<a className="skip-link" href="#main">{a11y.skipLink}</a>
 			<Header />
 			<main id="main" tabIndex={-1}>
-				<Routes>
-					<Route path="/" element={<HomePage />} />
-					<Route path="/projects/:slug" element={<ProjectPage />} />
-				</Routes>
+				{/* Only the page content is wrapped, so Header and Footer keep working after a crash.
+				    key={pathname}: a new page gets a fresh boundary, so the error clears when you navigate away. */}
+				<ErrorBoundary key={pathname}>
+					<Routes>
+						<Route path="/" element={<HomePage />} />
+						<Route path="/projects/:slug" element={<ProjectPage />} />
+					</Routes>
+				</ErrorBoundary>
 			</main>
 			<Footer />
 		</div>

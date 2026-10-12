@@ -1,6 +1,6 @@
 // Site copy: every piece of text on the site except projects (those live in projects.js).
 // Contains: nav, a11y (screen-reader labels), brand, the home page sections in page order
-// (hero, about, skills, experience, education, contact) and the footer.
+// (hero, about, skills, experience, education, contact), the footer and the error page.
 // Edit text here without touching component logic. Anything in [brackets] is a placeholder, not final copy.
 
 // Section links start with "/" so they reach the home page's sections from any page (e.g. a project page)
@@ -218,4 +218,12 @@ export const footer = {
 	text: `© ${new Date().getFullYear()} Cindy Brenes · St. Paul, MN`,
 	credit: 'Designed & built by me',
 	backToTop: { label: 'Back to top ↑', href: '#top' },
+};
+
+// Shown in place of the page when something breaks (see ErrorBoundary)
+export const errorPage = {
+	documentTitle: 'Something went wrong | Cindy Brenes',
+	heading: 'Something went wrong',
+	message: 'This page ran into a problem. Try going back to the home page.',
+	homeLink: 'Back to home',
 };
