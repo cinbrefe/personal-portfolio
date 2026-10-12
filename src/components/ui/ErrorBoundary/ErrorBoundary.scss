@@ -1,10 +1,15 @@
 @use '../../../styles/abstracts/variables' as *;
 @use '../../../styles/abstracts/mixins' as *;
 
+// Padding sits on the block and layout on __inner (which also has .container), so the shared
+// .container padding can't override this block's padding (same specificity, later in the CSS).
 .error-boundary {
-	@include flex(column);
-	gap: $spacing-md;
 	padding-block: $spacing-2xl;
+
+	&__inner {
+		@include flex(column);
+		gap: $spacing-md;
+	}
 
 	&__message {
 		color: $color-text-muted;

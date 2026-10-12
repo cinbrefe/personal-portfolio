@@ -29,13 +29,15 @@ export default class ErrorBoundary extends Component {
 
 		// A plain <a> (not <Link>) reloads the whole site, so the app starts fresh
 		return (
-			<section className="error-boundary container container--narrow" aria-labelledby="error-boundary-title">
+			<section className="error-boundary" aria-labelledby="error-boundary-title">
 				<title>{errorPage.documentTitle}</title>
-				<h1 ref={this.titleRef} id="error-boundary-title" className="error-boundary__title" tabIndex={-1}>
-					{errorPage.heading}
-				</h1>
-				<p className="error-boundary__message">{errorPage.message}</p>
-				<a className="error-boundary__link button button--primary" href="/">{errorPage.homeLink}</a>
+				<div className="container container--narrow error-boundary__inner">
+					<h1 ref={this.titleRef} id="error-boundary-title" className="error-boundary__title" tabIndex={-1}>
+						{errorPage.heading}
+					</h1>
+					<p className="error-boundary__message">{errorPage.message}</p>
+					<a className="error-boundary__link button button--primary" href="/">{errorPage.homeLink}</a>
+				</div>
 			</section>
 		);
 	}
