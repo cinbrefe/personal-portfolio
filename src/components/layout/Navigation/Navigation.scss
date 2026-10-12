@@ -7,170 +7,168 @@ $bar-gap: $spacing-xs;
 // Moves each bar to the shared center line so they cross into an "X"
 $bar-offset: calc(($bar-height + $bar-gap) / 2);
 
-// Toggle button
-
-.site-navigation__toggle {
-	align-items: center;
-	border-radius: $radius-circle;
-	border: $border-width solid $color-interactive;
-	display: flex;
-	flex-direction: column;
-	gap: $bar-gap;
-	height: $control-size-sm;
-	justify-content: center;
-	width: $control-size-sm;
-
-	@include respond-to(md) {
-		display: none;
-	}
-}
-
-.site-navigation__bar {
-	background-color: $color-text;
-	display: block;
-	height: $bar-height;
-	transition:
-		transform $transition-duration-fast $transition-easing,
-		opacity $transition-duration-fast $transition-easing;
-	width: $bar-width;
-}
-
-.site-navigation__toggle--open {
-	.site-navigation__bar--top {
-		transform: translateY($bar-offset) rotate(45deg);
-	}
-
-	.site-navigation__bar--bottom {
-		transform: translateY(calc(-1 * $bar-offset)) rotate(-45deg);
-	}
-}
-
 // Nav wrapper: holds the toggle and the list. It stays static (not positioned),
 // so the absolute list below is placed against the header, not against the nav.
-
 .site-navigation {
 	margin-left: auto; // pushes the toggle to the right on mobile
 
 	@include respond-to(md) {
 		margin-left: 0;
 	}
-}
 
-// Link list: a dropdown panel on mobile, a row in the header from md up
+	// Toggle button
 
-.site-navigation__list {
-	align-items: stretch;
-	background-color: $color-background;
-	box-shadow: $shadow-overlay;
-	display: none;
-	flex-direction: column;
-	gap: $spacing-xs;
-	left: 0;
-	// 100% is the header's height, so the panel scrolls instead of running off-screen
-	max-height: calc(100dvh - 100%);
-	overflow-y: auto;
-	overscroll-behavior: contain;
-	padding: $spacing-md $spacing-xl;
-	position: absolute;
-	right: 0;
-	// + 1px keeps the header's bottom border visible
-	top: calc(100% + $border-width-thin);
-
-	// Undo the dropdown panel so the links sit in the header's flow
-	@include respond-to(md) {
+	&__toggle {
 		align-items: center;
-		background-color: transparent;
-		box-shadow: none;
+		border-radius: $radius-circle;
+		border: $border-width solid $color-interactive;
 		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		gap: $spacing-sm $spacing-xl;
-		justify-content: flex-end;
-		max-height: none;
-		overflow-y: visible;
-		padding: 0;
-		position: static;
-	}
-}
+		flex-direction: column;
+		gap: $bar-gap;
+		height: $control-size-sm;
+		justify-content: center;
+		width: $control-size-sm;
 
-.site-navigation__list--open {
-	display: flex;
-}
-
-// Links
-
-.site-navigation__link:not(.button) {
-	align-items: center;
-	border-bottom: $border-width-thin solid $color-border-strong;
-	color: $color-text-muted;
-	display: flex;
-	font-size: $font-size-xl;
-	font-weight: $font-weight-bold;
-	justify-content: space-between;
-	min-height: $control-size-sm;
-	padding: $spacing-sm 0;
-	position: relative;
-	text-decoration: none;
-
-	&::after {
-		background-color: $color-interactive;
-		bottom: $border-width-thin;
-		content: '';
-		height: $border-width-thin;
-		left: 0;
-		position: absolute;
-		right: 0;
-		transform-origin: left;
-		transform: scaleX(0);
-		transition: transform $transition-duration $transition-easing;
-	}
-
-	&:hover,
-	&:focus-visible {
-		color: $color-interactive;
-
-		&::after {
-			transform: scaleX(1);
+		@include respond-to(md) {
+			display: none;
 		}
 	}
 
-	@include respond-to(md) {
-		border-bottom: 0;
+	&__bar {
+		background-color: $color-text;
 		display: block;
-		font-size: $font-size-sm;
-		font-weight: $font-weight-semibold;
-		min-height: 0;
-		padding: $spacing-xs 0;
+		height: $bar-height;
+		transition:
+			transform $transition-duration-fast $transition-easing,
+			opacity $transition-duration-fast $transition-easing;
+		width: $bar-width;
 	}
-}
 
-.site-navigation__arrow {
-	color: $color-interactive;
-	display: block;
-	flex-shrink: 0;
+	&__toggle--open &__bar--top {
+		transform: translateY($bar-offset) rotate(45deg);
+	}
 
-	@include respond-to(md) {
+	&__toggle--open &__bar--bottom {
+		transform: translateY(calc(-1 * $bar-offset)) rotate(-45deg);
+	}
+
+	// Link list: a dropdown panel on mobile, a row in the header from md up
+
+	&__list {
+		align-items: stretch;
+		background-color: $color-background;
+		box-shadow: $shadow-overlay;
 		display: none;
+		flex-direction: column;
+		gap: $spacing-xs;
+		left: 0;
+		// 100% is the header's height, so the panel scrolls instead of running off-screen
+		max-height: calc(100dvh - 100%);
+		overflow-y: auto;
+		overscroll-behavior: contain;
+		padding: $spacing-md $spacing-xl;
+		position: absolute;
+		right: 0;
+		// + 1px keeps the header's bottom border visible
+		top: calc(100% + $border-width-thin);
+
+		// Undo the dropdown panel so the links sit in the header's flow
+		@include respond-to(md) {
+			align-items: center;
+			background-color: transparent;
+			box-shadow: none;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			gap: $spacing-sm $spacing-xl;
+			justify-content: flex-end;
+			max-height: none;
+			overflow-y: visible;
+			padding: 0;
+			position: static;
+		}
 	}
-}
 
-.site-navigation__link.button {
-	align-self: flex-start;
-	font-size: $font-size-md;
-	margin-top: $spacing-md;
-	width: 100%;
-
-	@include respond-to(md) {
-		align-self: auto;
-		font-size: $font-size-sm;
-		margin-top: 0;
-		width: auto;
+	&__list--open {
+		display: flex;
 	}
-}
 
-@media (prefers-reduced-motion: reduce) {
-	.site-navigation__bar,
-	.site-navigation__link::after {
-		transition: none;
+	// Links
+
+	&__link {
+		align-items: center;
+		border-bottom: $border-width-thin solid $color-border-strong;
+		color: $color-text-muted;
+		display: flex;
+		font-size: $font-size-xl;
+		font-weight: $font-weight-bold;
+		justify-content: space-between;
+		min-height: $control-size-sm;
+		padding: $spacing-sm 0;
+		position: relative;
+		text-decoration: none;
+
+		&::after {
+			background-color: $color-interactive;
+			bottom: $border-width-thin;
+			content: '';
+			height: $border-width-thin;
+			left: 0;
+			position: absolute;
+			right: 0;
+			transform-origin: left;
+			transform: scaleX(0);
+			transition: transform $transition-duration $transition-easing;
+		}
+
+		&:hover,
+		&:focus-visible {
+			color: $color-interactive;
+
+			&::after {
+				transform: scaleX(1);
+			}
+		}
+
+		@include respond-to(md) {
+			border-bottom: 0;
+			display: block;
+			font-size: $font-size-sm;
+			font-weight: $font-weight-semibold;
+			min-height: 0;
+			padding: $spacing-xs 0;
+		}
+	}
+
+	&__arrow {
+		color: $color-interactive;
+		display: block;
+		flex-shrink: 0;
+
+		@include respond-to(md) {
+			display: none;
+		}
+	}
+
+	// Resume button: looks come from the shared .button classes; this only adjusts size and placement
+	&__button {
+		align-self: flex-start;
+		font-size: $font-size-md;
+		margin-top: $spacing-md;
+		width: 100%;
+
+		@include respond-to(md) {
+			align-self: auto;
+			font-size: $font-size-sm;
+			margin-top: 0;
+			width: auto;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		&__bar,
+		&__link::after {
+			transition: none;
+		}
 	}
 }

@@ -8,7 +8,7 @@ import './Navigation.scss';
 function getLinkClassName(item) {
 	if (!item.variant) return 'site-navigation__link';
 
-	return `site-navigation__link button button--${item.variant} button--sm`;
+	return `site-navigation__button button button--${item.variant} button--sm`;
 }
 
 export default function Navigation() {
