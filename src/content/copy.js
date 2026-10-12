@@ -24,6 +24,8 @@ export const a11y = {
 	carouselPrevious: 'Previous screenshot',
 	carouselNext: 'Next screenshot',
 	carouselGoTo: 'Go to screenshot',
+	carouselSlide: 'Screenshot', // announced on slide change: "Screenshot 2 of 8: <caption>"
+	carouselOf: 'of',
 };
 
 // The live site's address, used for canonical links (keep in sync with public/sitemap.xml)

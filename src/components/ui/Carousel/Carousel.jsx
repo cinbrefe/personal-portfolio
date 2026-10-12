@@ -84,6 +84,11 @@ export default function Carousel({ slides, label }) {
 					/>
 				))}
 			</div>
+			{/* Screen readers announce the new slide after a change. It stays quiet on page load,
+			    because a live region only speaks when its text changes. */}
+			<p className="visually-hidden" aria-live="polite" aria-atomic="true">
+				{`${a11y.carouselSlide} ${selectedIndex + 1} ${a11y.carouselOf} ${slides.length}: ${slides[selectedIndex].title}`}
+			</p>
 		</section>
 	);
 }
