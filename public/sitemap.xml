@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- One <url> per page. Update when a project is added or renamed in src/content/projects.js -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<url><loc>https://www.cindybrenes.dev/</loc></url>
+	<url><loc>https://www.cindybrenes.dev/projects/target</loc></url>
+	<url><loc>https://www.cindybrenes.dev/projects/f5-labs</loc></url>
+	<url><loc>https://www.cindybrenes.dev/projects/american-express</loc></url>
+	<url><loc>https://www.cindybrenes.dev/projects/gap-corporate</loc></url>
+</urlset>

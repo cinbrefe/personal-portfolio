@@ -1,5 +1,5 @@
 // Site copy: every piece of text on the site except projects (those live in projects.js).
-// Contains: nav, a11y (screen-reader labels), brand, the home page sections in page order
+// Contains: nav, a11y (screen-reader labels), site (live URL), brand, the home page sections in page order
 // (hero, about, skills, experience, education, contact), the footer, the not-found page and the error page.
 // Edit text here without touching component logic. Anything in [brackets] is a placeholder, not final copy.
 
@@ -24,6 +24,11 @@ export const a11y = {
 	carouselPrevious: 'Previous screenshot',
 	carouselNext: 'Next screenshot',
 	carouselGoTo: 'Go to screenshot',
+};
+
+// The live site's address, used for canonical links (keep in sync with public/sitemap.xml)
+export const site = {
+	url: 'https://www.cindybrenes.dev',
 };
 
 export const brand = {

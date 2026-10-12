@@ -15,6 +15,8 @@ export default function NotFoundPage() {
 	return (
 		<section className="not-found-page container container--narrow" aria-labelledby="not-found-page-title">
 			<title>{notFoundPage.documentTitle}</title>
+			{/* The server answers 200 for any URL, so tell search engines not to index this page */}
+			<meta name="robots" content="noindex" />
 			<h1 ref={titleRef} id="not-found-page-title" className="not-found-page__title" tabIndex={-1}>
 				{notFoundPage.heading}
 			</h1>

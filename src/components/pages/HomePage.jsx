@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router';
+import { site } from '../../content/copy.js';
 import About from '../sections/About/About.jsx';
 import Contact from '../sections/Contact/Contact.jsx';
 import Education from '../sections/Education/Education.jsx';
@@ -20,6 +21,8 @@ export default function HomePage() {
 
 	return (
 		<>
+			{/* Tells search engines the official URL of this page (React 19 moves it into <head>) */}
+			<link rel="canonical" href={`${site.url}/`} />
 			<Hero />
 			<About />
 			<Skills />

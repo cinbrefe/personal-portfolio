@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Link, useParams } from 'react-router';
+import { site } from '../../../content/copy.js';
 import { projects } from '../../../content/projects.js';
 import Carousel from '../../ui/Carousel/Carousel.jsx';
 import Icon from '../../ui/Icon.jsx';
@@ -26,6 +27,8 @@ export default function ProjectPage() {
 		return (
 			<article className="project-page" aria-labelledby="project-page-title">
 				<title>{`${page.notFound} | ${page.titleSuffix}`}</title>
+				{/* The server answers 200 for any URL, so tell search engines not to index this page */}
+				<meta name="robots" content="noindex" />
 				<div className="container container--narrow project-page__inner">
 					<Link className="project-page__back icon-link" to="/#agency-projects">
 						<Icon name="arrow-left" className="icon-link__icon" />
@@ -41,8 +44,9 @@ export default function ProjectPage() {
 
 	return (
 		<article className="project-page" aria-labelledby="project-page-title">
-			{/* React 19 moves this <title> into the page's <head> */}
+			{/* React 19 moves <title> and <link> into the page's <head> */}
 			<title>{`${project.client} | ${page.titleSuffix}`}</title>
+			<link rel="canonical" href={`${site.url}/projects/${project.slug}`} />
 			<div className="container container--narrow project-page__inner">
 				<Link className="project-page__back icon-link" to="/#agency-projects">
 					<Icon name="arrow-left" className="icon-link__icon" />
