@@ -101,6 +101,12 @@ $active-image-width: calc(min(70%, $image-max-width + 2 * $slide-gap) - 2 * $sli
 			border-color: $color-interactive;
 		}
 
+		// Dark edge between the light button and the teal focus ring, so the ring stands out (8.7:1)
+		&:focus-visible {
+			border-color: $color-text-inverse;
+			outline-offset: 0;
+		}
+
 		&:first-child {
 			margin-left: calc(var(--arrow-size) / -2);
 		}

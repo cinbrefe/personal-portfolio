@@ -4,6 +4,7 @@
 const icons = {
 	'arrow-left': { size: 18, shapes: <path d="M19 12H5M11 6l-6 6 6 6" /> },
 	'arrow-right': { size: 18, shapes: <path d="M5 12h14M13 6l6 6-6 6" /> },
+	'arrow-up': { size: 16, shapes: <path d="M12 19V5M6 11l6-6 6 6" /> },
 	'arrow-up-right': { size: 16, shapes: <path d="M7 17L17 7M8 7h9v9" /> },
 	'chevron-left': { size: 22, strokeWidth: 2.4, shapes: <path d="M15 5l-7 7 7 7" /> },
 	'chevron-right': { size: 22, strokeWidth: 2.4, shapes: <path d="M9 5l7 7-7 7" /> },

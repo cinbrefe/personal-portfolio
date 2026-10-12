@@ -26,8 +26,10 @@
 		margin-left: $spacing-sm;
 	}
 
+	// Layout (text + icon) comes from the shared .icon-link class
 	&__top-link {
 		color: $color-text;
+		min-height: $control-size-xs; // tap target of at least 24px (WCAG 2.5.8)
 		text-decoration: none;
 
 		&:focus-visible,

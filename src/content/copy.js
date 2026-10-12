@@ -47,7 +47,7 @@ export const hero = {
 	inspectTip: { tag: 'span', selectorClass: '.cindy-brenes', size: '251 x 44', font: 'Aa 13.3' },
 	body: "I build accessible, responsive interfaces with close attention to detail, and I'm now bringing that same care to React.",
 	primaryCta: { label: 'View my projects', href: '#projects', icon: 'arrow-right' },
-	secondaryCta: { label: 'Download resume', href: '/documents/cindy-brenes-resume.pdf' },
+	secondaryCta: { label: 'Download resume (PDF)', href: '/documents/cindy-brenes-resume.pdf' },
 };
 
 export const about = {
@@ -218,7 +218,7 @@ export const contact = {
 export const footer = {
 	text: `© ${new Date().getFullYear()} Cindy Brenes · St. Paul, MN`,
 	credit: 'Designed & built by me, with help from AI',
-	backToTop: { label: 'Back to top ↑', href: '#top' },
+	backToTop: { label: 'Back to top', href: '#top' },
 };
 
 // Shown for a URL that doesn't exist (see NotFoundPage)
