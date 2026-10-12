@@ -1,0 +1,17 @@
+@use '../../../styles/abstracts/variables' as *;
+@use '../../../styles/abstracts/mixins' as *;
+
+.not-found-page {
+	@include flex(column);
+	gap: $spacing-md;
+	padding-block: $spacing-2xl;
+
+	&__message {
+		color: $color-text-muted;
+		font-size: $font-size-lg;
+	}
+
+	&__link {
+		align-self: flex-start;
+	}
+}

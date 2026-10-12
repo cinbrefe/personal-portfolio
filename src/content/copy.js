@@ -1,6 +1,6 @@
 // Site copy: every piece of text on the site except projects (those live in projects.js).
 // Contains: nav, a11y (screen-reader labels), brand, the home page sections in page order
-// (hero, about, skills, experience, education, contact), the footer and the error page.
+// (hero, about, skills, experience, education, contact), the footer, the not-found page and the error page.
 // Edit text here without touching component logic. Anything in [brackets] is a placeholder, not final copy.
 
 // Section links start with "/" so they reach the home page's sections from any page (e.g. a project page)
@@ -212,6 +212,14 @@ export const footer = {
 	text: `© ${new Date().getFullYear()} Cindy Brenes · St. Paul, MN`,
 	credit: 'Designed & built by me, with help from AI',
 	backToTop: { label: 'Back to top ↑', href: '#top' },
+};
+
+// Shown for a URL that doesn't exist (see NotFoundPage)
+export const notFoundPage = {
+	documentTitle: 'Page not found | Cindy Brenes',
+	heading: 'Page not found',
+	message: "The page you're looking for doesn't exist or may have moved.",
+	homeLink: 'Back to home',
 };
 
 // Shown in place of the page when something breaks (see ErrorBoundary)
