@@ -20,7 +20,7 @@ src/
 		pages/                                          # one component per route: HomePage (sections), ProjectPage/, NotFoundPage (any unknown URL)
 		layout/                                         # site frame on every page: Header, Navigation, Footer
 		sections/                                       # home page content, one per nav anchor: Hero, About, Skills, Projects…
-		ui/                                             # small reusable pieces: SectionHeader, InspectTip, Carousel, Icon, ErrorBoundary, StatusMessage
+		ui/                                             # small reusable pieces: SectionHeader, InspectTip, Carousel, Icon, ExternalLink, ErrorBoundary, StatusMessage
 	hooks/                                              # reusable custom hooks (e.g. useMobileMenu.js)
 	content/                                            # copy.js (site text, a11y labels), projects.js (project data + project page text)
 	styles/

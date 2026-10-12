@@ -1,6 +1,7 @@
 import { Link } from 'react-router';
 import { a11y, nav } from '../../../content/copy.js';
 import useMobileMenu from '../../../hooks/useMobileMenu.js';
+import ExternalLink from '../../ui/ExternalLink.jsx';
 import Icon from '../../ui/Icon.jsx';
 import './Navigation.scss';
 
@@ -41,17 +42,10 @@ export default function Navigation() {
 					<li key={item.href}>
 						{/* The resume opens in a new tab as a plain <a>; site pages use <Link> (no reload) */}
 						{item.newTab ? (
-							<a
-								className={getLinkClassName(item)}
-								href={item.href}
-								target="_blank"
-								rel="noopener noreferrer"
-								aria-label={`${item.label} ${a11y.newTab}`}
-								onClick={close}
-							>
+							<ExternalLink className={getLinkClassName(item)} href={item.href} label={item.label} onClick={close}>
 								{item.label}
 								{item.icon && <Icon name={item.icon} className="button__icon" />}
-							</a>
+							</ExternalLink>
 						) : (
 							<Link className={getLinkClassName(item)} to={item.href} onClick={close}>
 								{item.label}

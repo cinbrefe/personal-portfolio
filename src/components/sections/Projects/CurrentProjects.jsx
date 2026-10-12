@@ -1,4 +1,4 @@
-import { a11y } from '../../../content/copy.js';
+import ExternalLink from '../../ui/ExternalLink.jsx';
 import Icon from '../../ui/Icon.jsx';
 import './CurrentProjects.scss';
 
@@ -25,16 +25,14 @@ export default function CurrentProjects({ heading, period, items }) {
 						<ul className="current-projects__item-links">
 							{item.links.map((link) => (
 								<li key={link.label}>
-									<a
+									<ExternalLink
 										className="current-projects__item-link icon-link"
 										href={link.href}
-										target="_blank"
-										rel="noopener noreferrer"
-										aria-label={`${link.label}: ${item.title} ${a11y.newTab}`}
+										label={`${link.label}: ${item.title}`}
 									>
 										{link.label}
 										<Icon name="arrow-up-right" className="icon-link__icon" />
-									</a>
+									</ExternalLink>
 								</li>
 							))}
 						</ul>
