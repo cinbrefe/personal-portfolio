@@ -29,6 +29,8 @@ export default function Navigation() {
 				<span className="site-navigation__bar site-navigation__bar--top" aria-hidden="true" />
 				<span className="site-navigation__bar site-navigation__bar--bottom" aria-hidden="true" />
 			</button>
+			{/* onBlur only listens for focus leaving the links inside (it bubbles up here); it's not a click handler */}
+			{/* oxlint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */}
 			<ul
 				ref={panelRef}
 				id="site-navigation-links"
