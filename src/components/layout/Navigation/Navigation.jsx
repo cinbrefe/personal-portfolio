@@ -3,7 +3,6 @@ import useMobileMenu from '../../../hooks/useMobileMenu.js';
 import Icon from '../../ui/Icon.jsx';
 import './Navigation.scss';
 
-// Plain links get the nav style; items with a variant render as small buttons
 function getLinkClassName(item) {
 	if (!item.variant) return 'site-navigation__link';
 

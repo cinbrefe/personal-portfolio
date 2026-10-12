@@ -2,7 +2,6 @@
 @use '../../../styles/abstracts/mixins' as *;
 
 .about {
-	// Intro text and the "Currently" card: stacked on mobile, side by side from md up
 	&__content {
 		display: grid;
 		gap: $spacing-xl $spacing-2xl;

@@ -78,8 +78,8 @@ $number-column: $spacing-2xl; // fits "01"–"99"
 			margin-top: $spacing-sm; // + the row's 0.5rem gap = 1rem above the links on phones
 
 			@include respond-to(md) {
-				justify-self: end; // links sit at the right edge of their column
-				margin-top: 0; // side by side in the grid, no extra space needed
+				justify-self: end;
+				margin-top: 0;
 			}
 		}
 

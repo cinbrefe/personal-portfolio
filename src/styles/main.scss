@@ -1,18 +1,14 @@
-// Abstracts
 @use 'abstracts/variables';
 @use 'abstracts/mixins';
 
-// Base
 @use 'base/reset';
 @use 'base/base';
 @use 'base/typography';
 @use 'base/accessibility';
 
-// Components
 @use 'components/buttons';
 @use 'components/icon-links';
 
-// Layouts
 @use 'layouts/container';
 @use 'layouts/main';
 @use 'layouts/sections';

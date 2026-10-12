@@ -65,15 +65,15 @@ $container-gutter-md: $spacing-2xl; // side padding of .container from md up
 $max-width-text: 65ch; // comfortable reading line length for paragraphs
 $sidebar-width: 15rem; // 240px — left column in Skills and Experience; fits the longest skill group name
 
-$control-size-xs: 24px; // smallest visual control (carousel dots); the tap area is made larger
 // Interactive controls (buttons, links, icon buttons) — height, or width + height for square ones
+$control-size-xs: 24px; // smallest visual control (carousel dots); the tap area is made larger
 $control-size-sm: 44px; // smallest comfortable tap size
 $control-size-md: 52px; // default button
 $control-size-lg: 72px; // large round buttons (carousel arrows on big screens)
 
 // Lines
 $border-width: 2px; // row dividers, rings, focus outlines and link underlines
-$underline-offset: 0.25em; // gap between text and its underline
+$underline-offset: 0.25em;
 
 // Border radius
 $radius-xs: 0.125rem; // 2px — tiny details (checkbox-style icons)
@@ -88,9 +88,6 @@ $breakpoint-lg: 992px;
 $breakpoint-xl: 1200px;
 
 // Shadows
-$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
-$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-$shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
 $shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.18);
 $shadow-floating: 0 8px 24px rgba(0, 0, 0, 0.35); // buttons floating over images
 

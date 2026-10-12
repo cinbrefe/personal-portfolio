@@ -22,7 +22,6 @@ export default function CurrentProjects({ heading, period, items }) {
 								<li key={tech} className="current-projects__item-tech">{tech}</li>
 							))}
 						</ul>
-
 						<ul className="current-projects__item-links">
 							{item.links.map((link) => (
 								<li key={link.label}>

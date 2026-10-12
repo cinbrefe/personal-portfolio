@@ -21,6 +21,7 @@ export default function App() {
 		<div id="top">
 			<a className="skip-link" href="#main">{a11y.skipLink}</a>
 			<Header />
+			{/* tabIndex={-1} lets the skip link move focus here (a <main> can't take focus otherwise) */}
 			<main id="main" tabIndex={-1}>
 				{/* Only the page content is wrapped, so Header and Footer keep working after a crash.
 				    key={pathname}: a new page gets a fresh boundary, so the error clears when you navigate away. */}

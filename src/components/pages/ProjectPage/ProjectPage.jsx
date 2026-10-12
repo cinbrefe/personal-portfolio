@@ -10,7 +10,6 @@ export default function ProjectPage() {
 	const { page } = projects;
 	const { heading, items } = projects.agency;
 
-	// Find the project once by its position, then read the item and the next one from that position
 	const index = items.findIndex((item) => item.slug === slug);
 	const project = items[index]; // undefined when no project has this slug (index is -1)
 	const next = items[(index + 1) % items.length]; // loops from the last back to the first
@@ -23,7 +22,6 @@ export default function ProjectPage() {
 		titleRef.current?.focus();
 	}, [slug]);
 
-	// Wrong or old URL: no project has this slug
 	if (!project) {
 		return (
 			<article className="project-page" aria-labelledby="project-page-title">

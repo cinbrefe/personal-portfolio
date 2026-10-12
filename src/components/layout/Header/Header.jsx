@@ -6,6 +6,7 @@ import './Header.scss';
 export default function Header() {
 	const [isScrolled, setIsScrolled] = useState(false);
 
+	// Header turns solid after a few pixels of scroll. `passive` tells the browser this listener never blocks scrolling.
 	useEffect(() => {
 		const updateScrolledState = () => setIsScrolled(window.scrollY > 8);
 

@@ -10,6 +10,7 @@ export default function AgencyProjects({ heading, items, otherClients }) {
 				{items.map((item) => (
 					<li key={item.client} className="agency-projects__item">
 						<div className="agency-projects__item-media">
+							{/* width/height reserve the image's space before it loads, so the page doesn't jump */}
 							<img
 								className="agency-projects__item-image"
 								src={item.image.src}

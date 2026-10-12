@@ -39,6 +39,7 @@ export default function Carousel({ slides, label }) {
 					{slides.map((slide) => (
 						<li key={slide.src} className="carousel__slide">
 							<figure className="carousel__figure">
+								{/* width/height give the browser the 16:10 shape before the image loads, so the page doesn't jump */}
 								<img
 									className="carousel__image"
 									alt={slide.alt}

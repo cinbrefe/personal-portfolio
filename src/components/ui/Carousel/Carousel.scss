@@ -53,7 +53,6 @@ $active-image-width: calc(min(70%, $image-max-width + 2 * $slide-gap) - 2 * $sli
 		opacity: 0;
 		transition: opacity $transition-duration $transition-easing;
 
-		// Embla's ClassNames plugin adds .is-snapped to the active slide
 		.is-snapped & {
 			opacity: 1;
 		}
