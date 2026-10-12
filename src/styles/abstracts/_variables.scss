@@ -88,6 +88,7 @@ $breakpoint-sm: 576px;
 $breakpoint-md: 768px;
 $breakpoint-lg: 992px;
 $breakpoint-xl: 1200px;
+$breakpoints: (sm: $breakpoint-sm, md: $breakpoint-md, lg: $breakpoint-lg, xl: $breakpoint-xl); // names for respond-to()
 
 // Shadows
 $shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.18);

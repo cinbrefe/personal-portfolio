@@ -1,6 +1,6 @@
 @use 'sass:color';
-@use '../../../styles/abstracts/variables' as *;
-@use '../../../styles/abstracts/mixins' as *;
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins' as *;
 
 $header-blur: 12px;
 $header-transition: $transition-duration-slow $transition-easing;

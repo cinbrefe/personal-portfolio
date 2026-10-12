@@ -1,5 +1,5 @@
-@use '../../../styles/abstracts/variables' as *;
-@use '../../../styles/abstracts/mixins' as *;
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins' as *;
 
 // Padding on the block, .container on __inner: on one element, .container's padding would win
 .status-message {
