@@ -60,7 +60,7 @@ export const projects = {
 			agency: 'POP',
 			period: '2012 – 2021',
 			description: 'Corporate redesign and three years with the Roundel team on landing pages and banners.',
-			image: { src: '/images/projects/target/target-cover.webp', alt: 'Target landing page built at POP' },
+			image: { src: '/images/projects/target/target-cover.webp', alt: "Target's corporate homepage, with a featured-story carousel" },
 			intro: "Target was one of my longest-running clients at POP. For about three years I worked with Roundel, Target's media network, building landing pages and banners while also keeping pages on the corporate site up to date. I then helped redesign the corporate site section by section, owning the styles and the reusable components behind them.",
 			contributions: [
 				'Built landing pages and banners for Roundel campaigns, as part of a team based in Costa Rica',
@@ -86,7 +86,7 @@ export const projects = {
 			agency: 'POP',
 			period: '2017 – 2021',
 			description: 'AEM site redesign with a distributed Agile team across the US, Poland and Costa Rica.',
-			image: { src: '/images/projects/f5/f5-cover.webp', alt: 'F5 Labs website redesign' },
+			image: { src: '/images/projects/f5/f5-cover.webp', alt: 'F5 Labs homepage in a dark theme, with featured research articles' },
 			intro: "F5 Labs is F5's threat research site, part of f5.com. As a POP frontend developer working directly with F5's team, I took on the styles for its redesign in AEM. The code lived in a large codebase shared with the main f5.com site and a team across the US, Poland and Costa Rica.",
 			contributions: [
 				'Built the style foundation for the redesign and the homepage components, including the hero, content library, threat reports and vulnerability trends sections',
@@ -109,7 +109,7 @@ export const projects = {
 			agency: 'DCG ONE',
 			period: '2018 – 2025',
 			description: 'Brand-strict email templates, growing into landing pages and app prototypes.',
-			image: { src: '/images/projects/amex/amex-cover.webp', alt: 'American Express email template' },
+			image: { src: '/images/projects/amex/amex-cover.webp', alt: 'Welcome page for the Hilton Honors American Express Business Card' },
 			intro: 'At DCG ONE, I started as the email developer for American Express, building templates to strict brand guidelines that had to render pixel-perfect in every major email client. Over nearly seven years, the role grew into landing pages, app prototypes and card member microsites.',
 			contributions: [
 				'Built email templates to strict American Express brand guidelines and made sure they rendered pixel-perfect across all major email clients',
@@ -134,7 +134,7 @@ export const projects = {
 			agency: 'POP',
 			period: '2017 – 2021',
 			description: 'Corporate site redesign on Kentico, with shared components themed for each Gap Inc. brand.',
-			image: { src: '/images/projects/gap/gap-cover.webp', alt: 'Gap Corporate website' },
+			image: { src: '/images/projects/gap/gap-cover.webp', alt: 'Gap Inc. careers homepage with a job search bar' },
 			intro: 'Gap Inc. wanted a complete redesign of its corporate site, built from scratch on Kentico CMS. The team was one back-end developer and two frontend developers: I owned the markup and styles, while the other frontend developer focused on JavaScript.',
 			contributions: [
 				'Turned the first-phase Newsroom styles into reusable components and shared base styles for the rest of the site, my main focus on the project',
