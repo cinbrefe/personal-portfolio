@@ -11,7 +11,6 @@ export const projects = {
 		period: '2026',
 		items: [
 		{
-			number: "01",
 			title: 'React Search App',
 			description: 'A search and discovery app for movies and shows, powered by the TMDB API.',
 			stack: ['React', 'JavaScript', 'Sass', 'TMDB API'],
@@ -20,7 +19,6 @@ export const projects = {
 			],
 		},
 		{
-			number: "02",
 			title: 'React Project Manager',
 			description: 'Create, organize and track projects, each with its own task list.',
 			stack: ['React 19', 'Custom Hooks', 'Tailwind CSS'],
@@ -29,7 +27,6 @@ export const projects = {
 			],
 		},
 		{
-			number: "03",
 			title: 'This portfolio',
 			description: 'Token-driven dark theme tuned for WCAG contrast, built with AI as a pair programmer.',
 			stack: ['React', 'React Router', 'Sass', 'Vercel'],
