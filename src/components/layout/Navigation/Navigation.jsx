@@ -14,7 +14,9 @@ export default function Navigation() {
 	const { isOpen, toggle, close, toggleRef, panelRef, handleBlur } = useMobileMenu();
 
 	return (
-		<>
+		// The toggle sits inside <nav>, so the "Main" navigation landmark exists even while the menu is closed.
+		// Only the list is the dropdown panel that shows and hides.
+		<nav className="site-navigation" aria-label={a11y.mainNav}>
 			<button
 				ref={toggleRef}
 				className={`site-navigation__toggle${isOpen ? ' site-navigation__toggle--open' : ''}`}
@@ -28,33 +30,30 @@ export default function Navigation() {
 				<span className="site-navigation__bar site-navigation__bar--top" aria-hidden="true" />
 				<span className="site-navigation__bar site-navigation__bar--bottom" aria-hidden="true" />
 			</button>
-			<nav
+			<ul
 				ref={panelRef}
 				id="site-navigation-links"
-				className={`site-navigation${isOpen ? ' site-navigation--open' : ''}`}
-				aria-label={a11y.mainNav}
+				className={`site-navigation__list${isOpen ? ' site-navigation__list--open' : ''}`}
 				onBlur={handleBlur}
 			>
-				<ul className="site-navigation__list">
-					{nav.map((item) => (
-						<li key={item.href}>
-							<a
-								className={getLinkClassName(item)}
-								href={item.href}
-								target={item.newTab ? '_blank' : undefined}
-								rel={item.newTab ? 'noopener noreferrer' : undefined}
-								aria-label={item.newTab ? `${item.label} ${a11y.newTab}` : undefined}
-								onClick={close}
-							>
-								{item.label}
-								{item.icon && <Icon name={item.icon} className="button__icon" />}
-								{/* Plain links get an arrow; CSS only shows it on mobile */}
-								{!item.variant && <Icon name="arrow-right" className="site-navigation__arrow" />}
-							</a>
-						</li>
-					))}
-				</ul>
-			</nav>
-		</>
+				{nav.map((item) => (
+					<li key={item.href}>
+						<a
+							className={getLinkClassName(item)}
+							href={item.href}
+							target={item.newTab ? '_blank' : undefined}
+							rel={item.newTab ? 'noopener noreferrer' : undefined}
+							aria-label={item.newTab ? `${item.label} ${a11y.newTab}` : undefined}
+							onClick={close}
+						>
+							{item.label}
+							{item.icon && <Icon name={item.icon} className="button__icon" />}
+							{/* Plain links get an arrow; CSS only shows it on mobile */}
+							{!item.variant && <Icon name="arrow-right" className="site-navigation__arrow" />}
+						</a>
+					</li>
+				))}
+			</ul>
+		</nav>
 	);
 }

@@ -18,7 +18,6 @@ $bar-offset: calc(($bar-height + $bar-gap) / 2);
 	gap: $bar-gap;
 	height: $control-size-sm;
 	justify-content: center;
-	margin-left: auto;
 	width: $control-size-sm;
 
 	&:focus-visible {
@@ -49,52 +48,56 @@ $bar-offset: calc(($bar-height + $bar-gap) / 2);
 	}
 }
 
-// Dropdown panel
+// Nav wrapper: holds the toggle and the list. It stays static (not positioned),
+// so the absolute list below is placed against the header, not against the nav.
 
 .site-navigation {
-	display: none;
-	left: 0;
-	// 100% is the header's height, so the panel scrolls instead of running off-screen
-	max-height: calc(100dvh - 100%);
-	overflow-y: auto;
-	overscroll-behavior: contain;
-	position: absolute;
-	right: 0;
-	// + 1px keeps the header's bottom border visible
-	top: calc(100% + 1px);
+	margin-left: auto; // pushes the toggle to the right on mobile
 
-	// Undo the dropdown panel so the nav sits in the header's flow
 	@include respond-to(md) {
-		display: block;
-		max-height: none;
-		overflow-y: visible;
-		position: static;
+		margin-left: 0;
 	}
 }
 
-.site-navigation--open {
-	display: block;
-}
+// Link list: a dropdown panel on mobile, a row in the header from md up
 
 .site-navigation__list {
 	align-items: stretch;
 	background-color: $color-background;
 	box-shadow: $shadow-overlay;
-	display: flex;
+	display: none;
 	flex-direction: column;
 	gap: $spacing-xs;
+	left: 0;
+	// 100% is the header's height, so the panel scrolls instead of running off-screen
+	max-height: calc(100dvh - 100%);
+	overflow-y: auto;
+	overscroll-behavior: contain;
 	padding: $spacing-md $spacing-xl;
+	position: absolute;
+	right: 0;
+	// + 1px keeps the header's bottom border visible
+	top: calc(100% + 1px);
 
+	// Undo the dropdown panel so the links sit in the header's flow
 	@include respond-to(md) {
 		align-items: center;
 		background-color: transparent;
 		box-shadow: none;
+		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
 		gap: $spacing-sm $spacing-xl;
 		justify-content: flex-end;
+		max-height: none;
+		overflow-y: visible;
 		padding: 0;
+		position: static;
 	}
+}
+
+.site-navigation__list--open {
+	display: flex;
 }
 
 // Links
