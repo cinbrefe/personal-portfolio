@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import { a11y, nav } from '../../../content/copy.js';
 import useMobileMenu from '../../../hooks/useMobileMenu.js';
 import Icon from '../../ui/Icon.jsx';
@@ -39,19 +40,28 @@ export default function Navigation() {
 			>
 				{nav.map((item) => (
 					<li key={item.href}>
-						<a
-							className={getLinkClassName(item)}
-							href={item.href}
-							target={item.newTab ? '_blank' : undefined}
-							rel={item.newTab ? 'noopener noreferrer' : undefined}
-							aria-label={item.newTab ? `${item.label} ${a11y.newTab}` : undefined}
-							onClick={close}
-						>
-							{item.label}
-							{item.icon && <Icon name={item.icon} className="button__icon" />}
-							{/* Plain links get an arrow; CSS only shows it on mobile */}
-							{!item.variant && <Icon name="arrow-right" className="site-navigation__arrow" />}
-						</a>
+						{/* Files that open in a new tab (the resume) stay plain <a>; site pages use <Link>,
+						    so moving between pages doesn't reload the whole app */}
+						{item.newTab ? (
+							<a
+								className={getLinkClassName(item)}
+								href={item.href}
+								target="_blank"
+								rel="noopener noreferrer"
+								aria-label={`${item.label} ${a11y.newTab}`}
+								onClick={close}
+							>
+								{item.label}
+								{item.icon && <Icon name={item.icon} className="button__icon" />}
+							</a>
+						) : (
+							<Link className={getLinkClassName(item)} to={item.href} onClick={close}>
+								{item.label}
+								{item.icon && <Icon name={item.icon} className="button__icon" />}
+								{/* Plain links get an arrow; CSS only shows it on mobile */}
+								{!item.variant && <Icon name="arrow-right" className="site-navigation__arrow" />}
+							</Link>
+						)}
 					</li>
 				))}
 			</ul>

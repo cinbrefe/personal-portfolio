@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router';
 import { a11y, brand } from '../../../content/copy.js';
 import Navigation from '../Navigation/Navigation.jsx';
 import './Header.scss';
@@ -33,9 +34,9 @@ export default function Header() {
 			className={`site-header page-section page-section--compact${isScrolled ? ' site-header--scrolled' : ''}`}
 		>
 			<div className="container site-header__inner">
-				<a className="site-header__brand" href="/" aria-label={`${brand.name}${brand.suffix} ${a11y.homeLink}`}>
+				<Link className="site-header__brand" to="/" aria-label={`${brand.name}${brand.suffix} ${a11y.homeLink}`}>
 					{brand.name}<span className="site-header__brand-suffix">{brand.suffix}</span>
-				</a>
+				</Link>
 				<Navigation />
 			</div>
 		</header>
