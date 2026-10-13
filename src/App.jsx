@@ -11,11 +11,11 @@ import ErrorBoundary from './components/ui/ErrorBoundary.jsx';
 export default function App() {
 	const { pathname, hash } = useLocation();
 
-	// <Link> keeps the scroll position, so start each new page at the top.
-	// Links with a #hash (like /#projects) are skipped: HomePage scrolls to that section instead.
+	// <Link> keeps the scroll position, so start each new page at the top, instantly (not with CSS smooth scrolling).
+	// #hash links are skipped: HomePage scrolls to that section instead.
 	useEffect(() => {
 		if (hash) return;
-		window.scrollTo(0, 0);
+		window.scrollTo({ top: 0, behavior: 'instant' });
 	}, [pathname, hash]);
 
 	return (
