@@ -62,8 +62,9 @@ $bar-offset: calc(($bar-height + $bar-gap) / 2);
 		flex-direction: column;
 		gap: $spacing-xs;
 		left: 0;
-		// 100% is the header's height, so the panel scrolls instead of running off-screen
-		max-height: calc(100dvh - 100%);
+		// Fills the screen below the header (100% is the header's height), hiding the page behind;
+		// scrolls inside if the links don't fit
+		height: calc(100dvh - 100% - $border-width-thin);
 		overflow-y: auto;
 		overscroll-behavior: contain;
 		padding: $spacing-md $spacing-xl;
@@ -81,8 +82,8 @@ $bar-offset: calc(($bar-height + $bar-gap) / 2);
 			flex-direction: row;
 			flex-wrap: wrap;
 			gap: $spacing-sm $spacing-xl;
+			height: auto;
 			justify-content: flex-end;
-			max-height: none;
 			overflow-y: visible;
 			padding: 0;
 			position: static;
