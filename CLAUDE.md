@@ -1,6 +1,12 @@
 # personal-portfolio
 
-Personal portfolio site. Single developer (Cindy) plus specialized review subagents (`.claude/agents/`) and a copywriting skill (`.claude/skills/`).
+Personal portfolio site, built by one developer with specialized review subagents (`.claude/agents/`) and a copywriting skill (`.claude/skills/`).
+
+The code and these instructions aren't tied to one person. Everything personal lives in a few places, so the site can be reused for another portfolio by changing only these:
+- `src/content/copy.js` and `src/content/projects.js`: all text, links, project data and `site.url`
+- `public/`: project images, the resume PDF, `og-image.png`, favicons, `sitemap.xml` and `robots.txt` (both list the site URL)
+- `index.html`: the page title, meta description, Open Graph tags and the JSON-LD `Person` data
+- `.claude/skills/portfolio-copywriter/SKILL.md`: the owner's bio, which the copywriter uses
 
 ## Stack
 
