@@ -198,7 +198,7 @@ export const education = {
 			{
 			title: 'Front-End Developer Professional Certificate',
 			institution: 'Meta · via Coursera',
-			period: 'In progress · 7 of 9 courses',
+			period: 'In progress',
 			},
 		],
 		},
