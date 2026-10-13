@@ -4,26 +4,36 @@
 .site-footer {
 	padding-block: $spacing-lg;
 
+	// One column on phones; a row with the credit and "Back to top" on the right from md up
 	&__inner {
-		@include flex($justify: space-between, $align: center, $wrap: wrap);
+		@include flex(column, $align: flex-start);
 		font-size: $font-size-sm;
 		font-weight: $font-weight-semibold;
 		gap: $spacing-sm;
 		letter-spacing: $letter-spacing-wide;
 
 		@include respond-to(md) {
+			@include flex($justify: space-between, $align: center, $wrap: wrap);
 			gap: $spacing-md $spacing-xl;
 		}
 	}
 
 	&__meta {
-		@include flex($align: center);
+		@include flex(column, $align: flex-start);
 		gap: $spacing-sm;
+
+		@include respond-to(md) {
+			align-items: center;
+			flex-direction: row;
+		}
 	}
 
+	// Separator only when the credit and "Back to top" sit side by side
 	&__credit::after {
-		content: '·' / '';
-		margin-left: $spacing-sm;
+		@include respond-to(md) {
+			content: '·' / '';
+			margin-left: $spacing-sm;
+		}
 	}
 
 	// Layout (text + icon) comes from the shared .icon-link class
