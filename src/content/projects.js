@@ -15,6 +15,7 @@ export const projects = {
 			description: 'A search and discovery app for movies and shows, powered by the TMDB API.',
 			stack: ['React', 'JavaScript', 'Sass', 'TMDB API'],
 			links: [
+			{ label: 'Live demo', href: 'https://search.cindybrenes.dev/' },
 			{ label: 'Code', href: 'https://github.com/cinbrefe/react-search-app' },
 			],
 		},
@@ -23,6 +24,7 @@ export const projects = {
 			description: 'Create, organize and track projects, each with its own task list.',
 			stack: ['React 19', 'Custom Hooks', 'Tailwind CSS'],
 			links: [
+			{ label: 'Live demo', href: 'https://projects.cindybrenes.dev/' },
 			{ label: 'Code', href: 'https://github.com/cinbrefe/react-project-manager' },
 			],
 		},
