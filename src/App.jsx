@@ -19,18 +19,20 @@ export default function App() {
 	}, [pathname, hash]);
 
 	return (
-		<div id="top">
-			<a className="skip-link" href="#main">{a11y.skipLink}</a>
+		<div id='top'>
+			<a className='skip-link' href='#main'>
+				{a11y.skipLink}
+			</a>
 			<Header />
 			{/* tabIndex={-1} lets the skip link move focus here (a <main> can't take focus otherwise) */}
-			<main id="main" tabIndex={-1}>
+			<main id='main' tabIndex={-1}>
 				{/* Only the page content is wrapped, so Header and Footer keep working after a crash.
 				    key={pathname}: a new page gets a fresh boundary, so the error clears when you navigate away. */}
 				<ErrorBoundary key={pathname}>
 					<Routes>
-						<Route path="/" element={<HomePage />} />
-						<Route path="/projects/:slug" element={<ProjectPage />} />
-						<Route path="*" element={<NotFoundPage />} />
+						<Route path='/' element={<HomePage />} />
+						<Route path='/projects/:slug' element={<ProjectPage />} />
+						<Route path='*' element={<NotFoundPage />} />
 					</Routes>
 				</ErrorBoundary>
 			</main>

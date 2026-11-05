@@ -14,9 +14,12 @@ export default function HomePage() {
 	const isArriving = useRef(true);
 
 	// Reset on unmount (and StrictMode's dev remount), so the next scroll counts as an arrival
-	useEffect(() => () => {
-		isArriving.current = true;
-	}, []);
+	useEffect(
+		() => () => {
+			isArriving.current = true;
+		},
+		[],
+	);
 
 	// React renders the sections after load, so scroll to "/#section" here and focus its heading: a jump when
 	// arriving from another page, smooth on the home page itself. Without a hash, focus the hero title after
@@ -37,7 +40,7 @@ export default function HomePage() {
 
 	return (
 		<>
-			<link rel="canonical" href={`${site.url}/`} />
+			<link rel='canonical' href={`${site.url}/`} />
 			<Hero />
 			<About />
 			<Skills />

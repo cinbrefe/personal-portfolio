@@ -35,51 +35,51 @@ export default function Carousel({ slides, label }) {
 	if (!slides?.length) return null;
 
 	return (
-		<section className="carousel" aria-label={label}>
-			<div className="carousel__viewport" ref={emblaRef}>
-				<ul className="carousel__track">
+		<section className='carousel' aria-label={label}>
+			<div className='carousel__viewport' ref={emblaRef}>
+				<ul className='carousel__track'>
 					{slides.map((slide) => (
-						<li key={slide.src} className="carousel__slide">
-							<figure className="carousel__figure">
+						<li key={slide.src} className='carousel__slide'>
+							<figure className='carousel__figure'>
 								{/* width/height give the browser the 16:10 shape before the image loads, so the page doesn't jump */}
 								<img
-									className="carousel__image"
+									className='carousel__image'
 									alt={slide.alt}
-									height="1000"
-									loading="lazy"
+									height='1000'
+									loading='lazy'
 									src={slide.src}
-									width="1600"
+									width='1600'
 								/>
-								<figcaption className="carousel__caption">{slide.title}</figcaption>
+								<figcaption className='carousel__caption'>{slide.title}</figcaption>
 							</figure>
 						</li>
 					))}
 				</ul>
 			</div>
-			<div className="carousel__controls">
+			<div className='carousel__controls'>
 				<button
-					type="button"
-					className="carousel__button"
+					type='button'
+					className='carousel__button'
 					aria-label={a11y.carouselPrevious}
 					onClick={() => emblaApi?.scrollPrev(prefersReducedMotion())}
 				>
-					<Icon name="chevron-left" className="carousel__button-icon" />
+					<Icon name='chevron-left' className='carousel__button-icon' />
 				</button>
 				<button
-					type="button"
-					className="carousel__button"
+					type='button'
+					className='carousel__button'
 					aria-label={a11y.carouselNext}
 					onClick={() => emblaApi?.scrollNext(prefersReducedMotion())}
 				>
-					<Icon name="chevron-right" className="carousel__button-icon" />
+					<Icon name='chevron-right' className='carousel__button-icon' />
 				</button>
 			</div>
-			<div className="carousel__dots">
+			<div className='carousel__dots'>
 				{slides.map((slide, index) => (
 					<button
 						key={slide.src}
-						type="button"
-						className="carousel__dot"
+						type='button'
+						className='carousel__dot'
 						aria-label={`${a11y.carouselGoTo} ${index + 1}: ${slide.title}`}
 						aria-current={index === selectedIndex ? 'true' : undefined}
 						onClick={() => emblaApi?.scrollTo(index, prefersReducedMotion())}
@@ -87,7 +87,7 @@ export default function Carousel({ slides, label }) {
 				))}
 			</div>
 			{/* Announces slide changes to screen readers (a live region is quiet until its text changes) */}
-			<p className="visually-hidden" aria-live="polite" aria-atomic="true">
+			<p className='visually-hidden' aria-live='polite' aria-atomic='true'>
 				{`${a11y.carouselSlide} ${selectedIndex + 1} ${a11y.carouselOf} ${slides.length}: ${slides[selectedIndex].title}`}
 			</p>
 		</section>

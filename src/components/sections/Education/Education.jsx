@@ -6,19 +6,19 @@ export default function Education() {
 	const { label, heading, groups } = education;
 
 	return (
-		<Section name="education" label={label} heading={heading}>
-			<div className="education__groups">
+		<Section name='education' label={label} heading={heading}>
+			<div className='education__groups'>
 				{groups.map((group) => (
-					<div key={group.heading} className="education__group">
-						<h3 className="education__group-name">{group.heading}</h3>
-						<ul className="education__items">
+					<div key={group.heading} className='education__group'>
+						<h3 className='education__group-name'>{group.heading}</h3>
+						<ul className='education__items'>
 							{group.items.map((item) => (
-								<li key={item.title} className="education__item">
-									<div className="education__item-content">
-										<h4 className="education__item-title">{item.title}</h4>
-										<p className="education__item-institution">{item.institution}</p>
+								<li key={item.title} className='education__item'>
+									<div className='education__item-content'>
+										<h4 className='education__item-title'>{item.title}</h4>
+										<p className='education__item-institution'>{item.institution}</p>
 									</div>
-									<p className="education__item-period">{item.period}</p>
+									<p className='education__item-period'>{item.period}</p>
 								</li>
 							))}
 						</ul>

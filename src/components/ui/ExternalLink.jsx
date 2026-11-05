@@ -7,8 +7,8 @@ export default function ExternalLink({ className, href, label, onClick, children
 		<a
 			className={className}
 			href={href}
-			target="_blank"
-			rel="noopener noreferrer"
+			target='_blank'
+			rel='noopener noreferrer'
 			aria-label={`${label} ${a11y.newTab}`}
 			onClick={onClick}
 		>

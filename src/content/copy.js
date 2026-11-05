@@ -11,7 +11,13 @@ export const nav = [
 	{ label: 'Experience', href: '/#experience' },
 	{ label: 'Education', href: '/#education' },
 	{ label: 'Contact', href: '/#contact' },
-	{ label: 'Resume (PDF)', href: '/documents/cindy-brenes-resume.pdf', variant: 'ghost', icon: 'arrow-up-right', newTab: true },
+	{
+		label: 'Resume (PDF)',
+		href: '/documents/cindy-brenes-resume.pdf',
+		variant: 'ghost',
+		icon: 'arrow-up-right',
+		newTab: true,
+	},
 ];
 
 // Text only screen readers hear (labels for icon buttons, landmarks and links)
@@ -76,24 +82,55 @@ export const skills = {
 	heading: 'Toolkit',
 	groups: [
 		{
-		name: 'Frontend Development',
-		items: ['HTML5', 'CSS3', 'CSS Grid', 'Flexbox', 'Sass/SCSS', 'Responsive Design', 'Semantic HTML', 'Cross-Browser Compatibility', 'Design-to-Code Implementation', 'ARIA & Accessibility (WCAG 2.1)'],
+			name: 'Frontend Development',
+			items: [
+				'HTML5',
+				'CSS3',
+				'CSS Grid',
+				'Flexbox',
+				'Sass/SCSS',
+				'Responsive Design',
+				'Semantic HTML',
+				'Cross-Browser Compatibility',
+				'Design-to-Code Implementation',
+				'ARIA & Accessibility (WCAG 2.1)',
+			],
 		},
 		{
-		name: 'React & JavaScript',
-		items: ['React', 'React Hooks', 'React Router', 'JavaScript', 'Tailwind CSS'],
+			name: 'React & JavaScript',
+			items: ['React', 'React Hooks', 'React Router', 'JavaScript', 'Tailwind CSS'],
 		},
 		{
-		name: 'CMS & Platforms',
-		items: ['Kentico CMS', 'Adobe Experience Manager (AEM)', 'WordPress', 'Classic ASP', 'Email Campaign Development'],
+			name: 'CMS & Platforms',
+			items: [
+				'Kentico CMS',
+				'Adobe Experience Manager (AEM)',
+				'WordPress',
+				'Classic ASP',
+				'Email Campaign Development',
+			],
 		},
 		{
-		name: 'Tools & Workflow',
-		items: ['Git/GitHub', 'Bitbucket', 'Vite', 'Grunt', 'Gulp', 'npm', 'ESLint', 'Prettier', 'Stylelint', 'Jira', 'Azure DevOps', 'Confluence', 'Claude Code'],
+			name: 'Tools & Workflow',
+			items: [
+				'Git/GitHub',
+				'Bitbucket',
+				'Vite',
+				'Grunt',
+				'Gulp',
+				'npm',
+				'ESLint',
+				'Prettier',
+				'Stylelint',
+				'Jira',
+				'Azure DevOps',
+				'Confluence',
+				'Claude Code',
+			],
 		},
 		{
-		name: 'Design & Creative Tools',
-		items: ['Adobe Photoshop', 'Adobe Illustrator', 'Figma', 'Graphic Design Fundamentals'],
+			name: 'Design & Creative Tools',
+			items: ['Adobe Photoshop', 'Adobe Illustrator', 'Figma', 'Graphic Design Fundamentals'],
 		},
 	],
 };
@@ -103,67 +140,67 @@ export const experience = {
 	heading: "Where I've worked",
 	companies: [
 		{
-		name: 'Independent',
-		note: 'Self-directed learning',
-		period: '2025 – Present',
-		roles: [
-			{
-			title: 'Skill Development',
-			period: 'Feb 2025 – Present',
-			bullets: [
-				'Took focused time to modernize my frontend skills, combining structured React coursework with portfolio projects built from components and hooks.',
-				"Completed Meta's React Specialization and finished 7 of 9 courses in Meta's Front-End Developer Professional Certificate.",
+			name: 'Independent',
+			note: 'Self-directed learning',
+			period: '2025 – Present',
+			roles: [
+				{
+					title: 'Skill Development',
+					period: 'Feb 2025 – Present',
+					bullets: [
+						'Took focused time to modernize my frontend skills, combining structured React coursework with portfolio projects built from components and hooks.',
+						"Completed Meta's React Specialization and finished 7 of 9 courses in Meta's Front-End Developer Professional Certificate.",
+					],
+					tags: ['React', 'JSX', 'Hooks', 'Tailwind CSS'],
+				},
 			],
-			tags: ['React', 'JSX', 'Hooks', 'Tailwind CSS'],
-			},
-		],
 		},
 		{
-		name: 'DCG ONE',
-		note: 'Contract',
-		period: '2018 – 2025',
-		roles: [
-			{
-			title: 'Frontend Developer',
-			period: 'Apr 2018 – Jan 2025',
-			bullets: [
-				'Built email templates for American Express following strict brand guidelines, ensuring pixel-perfect rendering across all major email clients.',
-				'Grew from email into landing pages, app prototypes, and building and maintaining more than 25 card member microsites in ASP.',
-				'Applied accessibility best practices (WCAG, ARIA, semantic HTML) across all projects as a standard part of development.',
-				'Delivered frontend work for additional clients including AMEX Travel, Seabourn and Vivacity Care Clinics.',
+			name: 'DCG ONE',
+			note: 'Contract',
+			period: '2018 – 2025',
+			roles: [
+				{
+					title: 'Frontend Developer',
+					period: 'Apr 2018 – Jan 2025',
+					bullets: [
+						'Built email templates for American Express following strict brand guidelines, ensuring pixel-perfect rendering across all major email clients.',
+						'Grew from email into landing pages, app prototypes, and building and maintaining more than 25 card member microsites in ASP.',
+						'Applied accessibility best practices (WCAG, ARIA, semantic HTML) across all projects as a standard part of development.',
+						'Delivered frontend work for additional clients including AMEX Travel, Seabourn and Vivacity Care Clinics.',
+					],
+					tags: ['HTML Email', 'ASP', 'Landing Pages', 'Prototypes', 'WCAG / ARIA'],
+				},
 			],
-			tags: ['HTML Email', 'ASP', 'Landing Pages', 'Prototypes', 'WCAG / ARIA'],
-			},
-		],
 		},
 		{
-		name: 'POP',
-		note: '2 roles · Promoted 2017',
-		period: '2012 – 2021',
-		roles: [
-			{
-			title: 'Senior Frontend Developer',
-			period: 'Jul 2017 – Jul 2021',
-			bullets: [
-				'Built websites, microsites, landing pages, email campaigns and banners for Gap Corporate, Target, Costco Travel, Microsoft, eBay, Nintendo and Starbucks.',
-				'Built a shared component system for the Gap Inc. corporate site, themed for Gap, Old Navy, Banana Republic and Athleta.',
-				'Used Kentico and Grunt/Gulp build workflows, including file minification and image optimization to improve page performance.',
-				'Collaborated directly with F5 Networks on the F5 Labs site redesign using AEM and Agile methodology, working across a distributed team in the US, Poland and Costa Rica.',
-				'Incorporated WCAG and ARIA accessibility standards into all projects, with particular attention to high-compliance enterprise clients like Target and Microsoft.',
+			name: 'POP',
+			note: '2 roles · Promoted 2017',
+			period: '2012 – 2021',
+			roles: [
+				{
+					title: 'Senior Frontend Developer',
+					period: 'Jul 2017 – Jul 2021',
+					bullets: [
+						'Built websites, microsites, landing pages, email campaigns and banners for Gap Corporate, Target, Costco Travel, Microsoft, eBay, Nintendo and Starbucks.',
+						'Built a shared component system for the Gap Inc. corporate site, themed for Gap, Old Navy, Banana Republic and Athleta.',
+						'Used Kentico and Grunt/Gulp build workflows, including file minification and image optimization to improve page performance.',
+						'Collaborated directly with F5 Networks on the F5 Labs site redesign using AEM and Agile methodology, working across a distributed team in the US, Poland and Costa Rica.',
+						'Incorporated WCAG and ARIA accessibility standards into all projects, with particular attention to high-compliance enterprise clients like Target and Microsoft.',
+					],
+					tags: ['Kentico CMS', 'AEM', 'Grunt / Gulp', 'Agile', 'WCAG / ARIA'],
+				},
+				{
+					title: 'Frontend Developer',
+					period: 'Jan 2012 – Jul 2017',
+					bullets: [
+						'Joined POP as a Web Developer focused on HTML email development, progressing to full frontend production across major enterprise brands, including The Home Depot.',
+						'Worked as part of the Target Roundel team for 3 years, building production landing pages and banners using HTML and CSS.',
+						'Promoted to Senior Frontend Developer in Jul 2017 in recognition of technical execution, reliability and attention to detail.',
+					],
+					tags: ['HTML', 'CSS', 'HTML Email'],
+				},
 			],
-			tags: ['Kentico CMS', 'AEM', 'Grunt / Gulp', 'Agile', 'WCAG / ARIA'],
-			},
-			{
-			title: 'Frontend Developer',
-			period: 'Jan 2012 – Jul 2017',
-			bullets: [
-				'Joined POP as a Web Developer focused on HTML email development, progressing to full frontend production across major enterprise brands, including The Home Depot.',
-				'Worked as part of the Target Roundel team for 3 years, building production landing pages and banners using HTML and CSS.',
-				'Promoted to Senior Frontend Developer in Jul 2017 in recognition of technical execution, reliability and attention to detail.',
-			],
-			tags: ['HTML', 'CSS', 'HTML Email'],
-			},
-		],
 		},
 	],
 };
@@ -173,34 +210,34 @@ export const education = {
 	heading: 'Education & certifications',
 	groups: [
 		{
-		heading: 'Degrees',
-		items: [
-			{
-			title: "Bachelor's Degree, Graphic Design",
-			institution: 'Universidad Americana, Costa Rica',
-			period: '2006 – 2011',
-			},
-			{
-			title: "Bachelor's Degree, Advertising",
-			institution: 'Universidad Latina de Costa Rica',
-			period: '2002 – 2005',
-			},
-		],
+			heading: 'Degrees',
+			items: [
+				{
+					title: "Bachelor's Degree, Graphic Design",
+					institution: 'Universidad Americana, Costa Rica',
+					period: '2006 – 2011',
+				},
+				{
+					title: "Bachelor's Degree, Advertising",
+					institution: 'Universidad Latina de Costa Rica',
+					period: '2002 – 2005',
+				},
+			],
 		},
 		{
-		heading: 'Certifications',
-		items: [
-			{
-			title: 'React Specialization',
-			institution: 'Meta · via Coursera',
-			period: 'Sep 2025',
-			},
-			{
-			title: 'Front-End Developer Professional Certificate',
-			institution: 'Meta · via Coursera',
-			period: 'In progress',
-			},
-		],
+			heading: 'Certifications',
+			items: [
+				{
+					title: 'React Specialization',
+					institution: 'Meta · via Coursera',
+					period: 'Sep 2025',
+				},
+				{
+					title: 'Front-End Developer Professional Certificate',
+					institution: 'Meta · via Coursera',
+					period: 'In progress',
+				},
+			],
 		},
 	],
 };

@@ -16,6 +16,7 @@ The code and these instructions aren't tied to one person. Everything personal l
 - **Embla Carousel** (`embla-carousel-react` + `embla-carousel-class-names` plugin) powers the screenshot carousel on project pages.
 - Deployed on **Vercel**: `vercel.json` rewrites every non-file URL to `index.html` so direct visits to `/projects/<slug>` work.
 - Linting: `oxlint` (`npm run lint`), including the `jsx-a11y` and `react/exhaustive-deps` rules.
+- Formatting: **Prettier** (`npm run format`), configured in `.prettierrc.json` (tabs, single quotes, 120-character lines). Markdown files are skipped (`.prettierignore`).
 
 ## Structure
 
@@ -60,6 +61,7 @@ Conventions:
 - `npm run build` — production build
 - `npm run preview` — preview the production build
 - `npm run lint` — oxlint
+- `npm run format` — format every file with Prettier
 
 ## The agent team
 

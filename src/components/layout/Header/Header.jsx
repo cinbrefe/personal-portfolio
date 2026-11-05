@@ -32,9 +32,14 @@ export default function Header() {
 			ref={headerRef}
 			className={`site-header page-section page-section--compact${isScrolled ? ' site-header--scrolled' : ''}`}
 		>
-			<div className="container site-header__inner">
-				<Link className="site-header__brand" to="/" aria-label={`${brand.name}${brand.suffix} ${a11y.homeLink}`}>
-					{brand.name}<span className="site-header__brand-suffix">{brand.suffix}</span>
+			<div className='container site-header__inner'>
+				<Link
+					className='site-header__brand'
+					to='/'
+					aria-label={`${brand.name}${brand.suffix} ${a11y.homeLink}`}
+				>
+					{brand.name}
+					<span className='site-header__brand-suffix'>{brand.suffix}</span>
 				</Link>
 				<Navigation />
 			</div>

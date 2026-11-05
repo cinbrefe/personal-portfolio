@@ -16,7 +16,6 @@ $header-transition: $transition-duration-slow $transition-easing;
 		backdrop-filter $header-transition;
 	z-index: $z-header;
 
-
 	&--scrolled {
 		background-color: color.change($color-background, $alpha: 0.96);
 		box-shadow: $shadow-overlay;
