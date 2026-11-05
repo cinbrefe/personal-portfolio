@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import ClassNames from 'embla-carousel-class-names';
 import useEmblaCarousel from 'embla-carousel-react';
-import { a11y } from '../../../content/copy.js';
-import Icon from '../Icon.jsx';
-import './Carousel.scss';
+import { a11y } from '@/content/copy.js';
+import Icon from '@/components/ui/Icon.jsx';
+import '@/components/ui/Carousel/Carousel.scss';
 
 // People who ask for less motion get an instant jump instead of the sliding animation.
 // Checked on each click, so it follows the setting even if it changes while the page is open.

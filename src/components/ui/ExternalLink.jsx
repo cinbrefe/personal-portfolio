@@ -1,4 +1,4 @@
-import { a11y } from '../../content/copy.js';
+import { a11y } from '@/content/copy.js';
 
 // rel stops the new tab from controlling this page; the accessible name ends with "(opens in new tab)".
 // label: the start of that name (the visible text, plus any context).

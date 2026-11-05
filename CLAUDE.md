@@ -15,7 +15,7 @@ The code and these instructions aren't tied to one person. Everything personal l
 - **React Router** (`react-router`): `/` is the one-page home (anchor-linked sections), `/projects/:slug` is a page per agency project. Nav links use `/#section` so they work from any page.
 - **Embla Carousel** (`embla-carousel-react` + `embla-carousel-class-names` plugin) powers the screenshot carousel on project pages.
 - Deployed on **Vercel**: `vercel.json` rewrites every non-file URL to `index.html` so direct visits to `/projects/<slug>` work.
-- Linting: `oxlint` (`npm run lint`), including the `jsx-a11y` and `react/exhaustive-deps` rules.
+- Linting: **ESLint** (`npm run lint`), configured in `eslint.config.js`, including the `jsx-a11y` and `react-hooks` (`exhaustive-deps`) rules.
 - Formatting: **Prettier** (`npm run format`), configured in `.prettierrc.json` (tabs, single quotes, 120-character lines). Markdown files are skipped (`.prettierignore`).
 
 ## Structure
@@ -43,7 +43,8 @@ Conventions:
 - Colors, spacing, typography, and breakpoints are all Sass variables in `styles/abstracts/_variables.scss` — never hardcode a color/spacing value in a component's `.scss`, reference the variable (use `sass:color` functions for alpha variants).
 - Colors have two layers: a palette (`$gray-900`, `$teal-400` …) and roles (`$color-text`, `$color-surface` …). Components use only `$color-*` roles; roles point at palette colors, never at other roles.
 - Component styles `@use` the abstracts layer directly with the short path `@use 'abstracts/variables' as *;` (`vite.config.js` adds `src/styles` to Sass's load paths) — never `'../../../styles/…'`. Classes are global, so prefix every class with its BEM block name (e.g. `.site-navigation__link`) to avoid collisions.
-- Import order in every file, with no blank lines between imports: React/external packages → content (`src/content/`) → hooks → components → the file's own `.scss` last. Within a group, `react` comes first, then sort alphabetically by path (so components group by folder: layout → pages → sections → ui → local `./` files). Names inside `{ }` are alphabetical too. Use file extensions (`.js`, `.jsx`) in relative imports. Exception: `main.jsx` imports `styles/main.scss` before `App`, so global styles come first in the CSS and component classes can override them.
+- Import order in every file, with no blank lines between imports: React/external packages → content (`src/content/`) → hooks → components → the file's own `.scss` last. Within a group, `react` comes first, then sort alphabetically by path (so components group by folder: layout → pages → sections → ui). Names inside `{ }` are alphabetical too.
+- Imports inside `src` use the `@/` alias for `src/` (set in `vite.config.js`, mirrored in `jsconfig.json` for the editor), never relative paths: `import Icon from '@/components/ui/Icon.jsx';`, including a component's own stylesheet (`import '@/components/sections/Hero/Hero.scss';`). Always include the file extension (`.js`, `.jsx`). Exception: `main.jsx` imports `styles/main.scss` before `App`, so global styles come first in the CSS and component classes can override them.
 - JSX attribute order: `key`/`ref` → `id` → `className` → other attributes → `aria-*` → event handlers (`onClick`, …). No blank lines inside a component's JSX.
 - All user-facing text and project data lives in `src/content/` (`copy.js`, `projects.js`), not inline in JSX — this is what the `portfolio-copywriter` skill edits, and it should never need to touch component logic.
 - Placeholder text in `src/content/` is wrapped in `[brackets]` — anything still bracketed is not real content yet.
@@ -60,7 +61,7 @@ Conventions:
 - `npm run dev` — start dev server
 - `npm run build` — production build
 - `npm run preview` — preview the production build
-- `npm run lint` — oxlint
+- `npm run lint` — ESLint
 - `npm run format` — format every file with Prettier
 
 ## The agent team

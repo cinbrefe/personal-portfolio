@@ -1,6 +1,6 @@
-import { about } from '../../../content/copy.js';
-import Section from '../../ui/Section.jsx';
-import './About.scss';
+import { about } from '@/content/copy.js';
+import Section from '@/components/ui/Section.jsx';
+import '@/components/sections/About/About.scss';
 
 export default function About() {
 	const { label, heading, lead, body, currently } = about;

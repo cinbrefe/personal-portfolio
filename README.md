@@ -23,7 +23,7 @@ The portfolio of Cindy Brenes, a frontend developer. Built with React and Sass, 
 
 ## Tech stack
 
-React 19 · Vite · React Router · Sass · Embla Carousel · oxlint · Vercel
+React 19 · Vite · React Router · Sass · Embla Carousel · ESLint · Prettier · Vercel
 
 ## Key decisions
 
@@ -58,7 +58,8 @@ npm install
 npm run dev       # start the dev server
 npm run build     # production build
 npm run preview   # preview the production build
-npm run lint      # lint with oxlint
+npm run lint      # lint with ESLint
+npm run format    # format with Prettier
 ```
 
 ## How I built it

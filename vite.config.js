@@ -10,4 +10,9 @@ export default defineConfig({
 			scss: { loadPaths: [fileURLToPath(new URL('./src/styles', import.meta.url))] },
 		},
 	},
+	resolve: {
+		alias: {
+			'@': fileURLToPath(new URL('./src', import.meta.url)),
+		},
+	},
 });

@@ -1,6 +1,6 @@
 import { Component } from 'react';
-import { errorPage } from '../../content/copy.js';
-import StatusMessage from './StatusMessage/StatusMessage.jsx';
+import { errorPage } from '@/content/copy.js';
+import StatusMessage from '@/components/ui/StatusMessage/StatusMessage.jsx';
 
 // Catches a crash in any component inside it and shows a friendly message instead of a blank page.
 // Error boundaries must be class components: React has no hook for catching render errors.

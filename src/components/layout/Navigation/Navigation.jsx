@@ -1,9 +1,9 @@
 import { Link } from 'react-router';
-import { a11y, nav } from '../../../content/copy.js';
-import useMobileMenu from '../../../hooks/useMobileMenu.js';
-import ExternalLink from '../../ui/ExternalLink.jsx';
-import Icon from '../../ui/Icon.jsx';
-import './Navigation.scss';
+import { a11y, nav } from '@/content/copy.js';
+import useMobileMenu from '@/hooks/useMobileMenu.js';
+import ExternalLink from '@/components/ui/ExternalLink.jsx';
+import Icon from '@/components/ui/Icon.jsx';
+import '@/components/layout/Navigation/Navigation.scss';
 
 function getLinkClassName(item) {
 	if (!item.variant) return 'site-navigation__link';
@@ -31,7 +31,6 @@ export default function Navigation() {
 				<span className='site-navigation__bar site-navigation__bar--bottom' aria-hidden='true' />
 			</button>
 			{/* onBlur only listens for focus leaving the links inside (it bubbles up here); it's not a click handler */}
-			{/* oxlint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */}
 			<ul
 				ref={panelRef}
 				id='site-navigation-links'

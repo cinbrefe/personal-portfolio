@@ -1,13 +1,13 @@
 import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router';
-import { site } from '../../content/copy.js';
-import About from '../sections/About/About.jsx';
-import Contact from '../sections/Contact/Contact.jsx';
-import Education from '../sections/Education/Education.jsx';
-import Experience from '../sections/Experience/Experience.jsx';
-import Hero from '../sections/Hero/Hero.jsx';
-import Projects from '../sections/Projects/Projects.jsx';
-import Skills from '../sections/Skills/Skills.jsx';
+import { site } from '@/content/copy.js';
+import About from '@/components/sections/About/About.jsx';
+import Contact from '@/components/sections/Contact/Contact.jsx';
+import Education from '@/components/sections/Education/Education.jsx';
+import Experience from '@/components/sections/Experience/Experience.jsx';
+import Hero from '@/components/sections/Hero/Hero.jsx';
+import Projects from '@/components/sections/Projects/Projects.jsx';
+import Skills from '@/components/sections/Skills/Skills.jsx';
 
 export default function HomePage() {
 	const { hash, key } = useLocation();

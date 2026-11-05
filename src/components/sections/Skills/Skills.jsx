@@ -1,6 +1,6 @@
-import { skills } from '../../../content/copy.js';
-import Section from '../../ui/Section.jsx';
-import './Skills.scss';
+import { skills } from '@/content/copy.js';
+import Section from '@/components/ui/Section.jsx';
+import '@/components/sections/Skills/Skills.scss';
 
 export default function Skills() {
 	const { label, heading, groups } = skills;

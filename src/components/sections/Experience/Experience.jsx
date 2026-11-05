@@ -1,6 +1,6 @@
-import { experience } from '../../../content/copy.js';
-import Section from '../../ui/Section.jsx';
-import './Experience.scss';
+import { experience } from '@/content/copy.js';
+import Section from '@/components/ui/Section.jsx';
+import '@/components/sections/Experience/Experience.scss';
 
 export default function Experience() {
 	const { label, heading, companies } = experience;

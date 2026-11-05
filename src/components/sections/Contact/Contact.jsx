@@ -1,8 +1,8 @@
-import { contact } from '../../../content/copy.js';
-import ExternalLink from '../../ui/ExternalLink.jsx';
-import Icon from '../../ui/Icon.jsx';
-import Section from '../../ui/Section.jsx';
-import './Contact.scss';
+import { contact } from '@/content/copy.js';
+import ExternalLink from '@/components/ui/ExternalLink.jsx';
+import Icon from '@/components/ui/Icon.jsx';
+import Section from '@/components/ui/Section.jsx';
+import '@/components/sections/Contact/Contact.scss';
 
 export default function Contact() {
 	const { label, heading, links } = contact;

@@ -1,6 +1,6 @@
 import { Link } from 'react-router';
-import useFocusOnMount from '../../../hooks/useFocusOnMount.js';
-import './StatusMessage.scss';
+import useFocusOnMount from '@/hooks/useFocusOnMount.js';
+import '@/components/ui/StatusMessage/StatusMessage.scss';
 
 // noindex: the server answers 200 for any URL. reload: a plain <a> restarts the whole site (after a crash).
 export default function StatusMessage({ copy, reload = false }) {

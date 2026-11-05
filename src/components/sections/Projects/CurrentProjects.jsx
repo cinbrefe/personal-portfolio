@@ -1,6 +1,6 @@
-import ExternalLink from '../../ui/ExternalLink.jsx';
-import Icon from '../../ui/Icon.jsx';
-import './CurrentProjects.scss';
+import ExternalLink from '@/components/ui/ExternalLink.jsx';
+import Icon from '@/components/ui/Icon.jsx';
+import '@/components/sections/Projects/CurrentProjects.scss';
 
 export default function CurrentProjects({ heading, period, items }) {
 	return (

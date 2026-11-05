@@ -1,6 +1,6 @@
 import { Link } from 'react-router';
-import Icon from '../../ui/Icon.jsx';
-import './AgencyProjects.scss';
+import Icon from '@/components/ui/Icon.jsx';
+import '@/components/sections/Projects/AgencyProjects.scss';
 
 export default function AgencyProjects({ heading, items, otherClients }) {
 	return (

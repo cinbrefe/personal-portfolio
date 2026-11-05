@@ -1,4 +1,4 @@
-import './InspectTip.scss';
+import '@/components/ui/InspectTip/InspectTip.scss';
 
 // The fake inspector parts (selector, size, font) are decorative,
 // so they're hidden from screen readers. Role and location stay readable.

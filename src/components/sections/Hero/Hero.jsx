@@ -1,7 +1,7 @@
-import { hero } from '../../../content/copy.js';
-import Icon from '../../ui/Icon.jsx';
-import InspectTip from '../../ui/InspectTip/InspectTip.jsx';
-import './Hero.scss';
+import { hero } from '@/content/copy.js';
+import Icon from '@/components/ui/Icon.jsx';
+import InspectTip from '@/components/ui/InspectTip/InspectTip.jsx';
+import '@/components/sections/Hero/Hero.scss';
 
 export default function Hero() {
 	const { availability, greeting, name, role, location, inspectTip, body, primaryCta, secondaryCta } = hero;

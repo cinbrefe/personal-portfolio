@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router';
-import { a11y, brand } from '../../../content/copy.js';
-import Navigation from '../Navigation/Navigation.jsx';
-import './Header.scss';
+import { a11y, brand } from '@/content/copy.js';
+import Navigation from '@/components/layout/Navigation/Navigation.jsx';
+import '@/components/layout/Header/Header.scss';
 
 export default function Header() {
 	const [isScrolled, setIsScrolled] = useState(false);

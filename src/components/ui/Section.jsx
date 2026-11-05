@@ -1,4 +1,4 @@
-import SectionHeader from './SectionHeader/SectionHeader.jsx';
+import SectionHeader from '@/components/ui/SectionHeader/SectionHeader.jsx';
 
 // One name sets the anchor id, the BEM block and the heading id for aria-labelledby, so they can't drift apart
 export default function Section({ name, label, heading, children }) {

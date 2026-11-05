@@ -1,6 +1,6 @@
-import { footer } from '../../../content/copy.js';
-import Icon from '../../ui/Icon.jsx';
-import './Footer.scss';
+import { footer } from '@/content/copy.js';
+import Icon from '@/components/ui/Icon.jsx';
+import '@/components/layout/Footer/Footer.scss';
 
 export default function Footer() {
 	const { text, credit, backToTop } = footer;

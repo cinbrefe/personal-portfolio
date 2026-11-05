@@ -1,11 +1,11 @@
 import { Link, useParams } from 'react-router';
-import { site } from '../../../content/copy.js';
-import { projects } from '../../../content/projects.js';
-import useFocusOnMount from '../../../hooks/useFocusOnMount.js';
-import Carousel from '../../ui/Carousel/Carousel.jsx';
-import Icon from '../../ui/Icon.jsx';
-import StatusMessage from '../../ui/StatusMessage/StatusMessage.jsx';
-import './ProjectPage.scss';
+import { site } from '@/content/copy.js';
+import { projects } from '@/content/projects.js';
+import useFocusOnMount from '@/hooks/useFocusOnMount.js';
+import Carousel from '@/components/ui/Carousel/Carousel.jsx';
+import Icon from '@/components/ui/Icon.jsx';
+import StatusMessage from '@/components/ui/StatusMessage/StatusMessage.jsx';
+import '@/components/pages/ProjectPage/ProjectPage.scss';
 
 export default function ProjectPage() {
 	const { slug } = useParams();

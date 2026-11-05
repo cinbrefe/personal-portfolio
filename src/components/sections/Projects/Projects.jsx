@@ -1,8 +1,8 @@
-import { projects } from '../../../content/projects.js';
-import Section from '../../ui/Section.jsx';
-import AgencyProjects from './AgencyProjects.jsx';
-import CurrentProjects from './CurrentProjects.jsx';
-import './Projects.scss';
+import { projects } from '@/content/projects.js';
+import AgencyProjects from '@/components/sections/Projects/AgencyProjects.jsx';
+import CurrentProjects from '@/components/sections/Projects/CurrentProjects.jsx';
+import Section from '@/components/ui/Section.jsx';
+import '@/components/sections/Projects/Projects.scss';
 
 export default function Projects() {
 	const { label, heading, current, agency } = projects;

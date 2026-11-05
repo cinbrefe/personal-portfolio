@@ -1,6 +1,6 @@
-import { education } from '../../../content/copy.js';
-import Section from '../../ui/Section.jsx';
-import './Education.scss';
+import { education } from '@/content/copy.js';
+import Section from '@/components/ui/Section.jsx';
+import '@/components/sections/Education/Education.scss';
 
 export default function Education() {
 	const { label, heading, groups } = education;

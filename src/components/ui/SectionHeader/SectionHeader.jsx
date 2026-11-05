@@ -1,4 +1,4 @@
-import './SectionHeader.scss';
+import '@/components/ui/SectionHeader/SectionHeader.scss';
 
 export default function SectionHeader({ name, label, heading }) {
 	return (
