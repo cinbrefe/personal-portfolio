@@ -64,6 +64,8 @@ Conventions:
 - `npm run lint` — ESLint
 - `npm run format` — format every file with Prettier
 
+Before every commit, run `npm run format` so new files never get missed.
+
 ## The agent team
 
 Custom subagents in `.claude/agents/` — invoke by name or ask in plain language. All are read-only and report findings:
